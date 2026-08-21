@@ -4,33 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>INVENIO AI SOLUTIONS | Business AI Automation</title>
+  <title>INVENIO AI SOLUTIONS | Powering Your Business Through Intelligence</title>
 
   <meta
     name="description"
-    content="INVENIO AI SOLUTIONS builds intelligent automation systems for customer service, administration, HR, CRM, sales, voice and business operations."
+    content="INVENIO AI SOLUTIONS helps businesses save money, generate more revenue and operate smarter through AI automation, intelligent systems, digital improvement and AI strategy."
   />
 
   <style>
     :root {
-      --black: #070708;
-      --charcoal: #0d0e10;
-      --charcoal-2: #131519;
-      --card: rgba(20, 22, 26, 0.72);
+      --black: #06080a;
+      --black-soft: #0a0d10;
+      --charcoal: #101419;
+      --charcoal-2: #161b21;
 
-      --white: #f7f7f5;
-      --silver: #c8cbd0;
-      --muted: #9398a1;
+      --white: #f7f7f4;
+      --silver: #c8cdd2;
+      --muted: #8d959e;
 
-      --gold: #c9a55a;
-      --gold-light: #e1c277;
+      --emerald: #0b725a;
+      --emerald-dark: #064536;
+      --lime: #baff45;
+      --lime-soft: #d5ff8a;
 
-      --cyan: #46c8d8;
-      --cyan-soft: rgba(70, 200, 216, 0.16);
+      --gold: #c6a968;
+      --gold-soft: #dfc98e;
 
-      --border: rgba(255, 255, 255, 0.09);
+      --cyan: #47bdc7;
+
+      --border: rgba(255,255,255,0.09);
+      --border-strong: rgba(255,255,255,0.14);
 
       --max: 1240px;
+      --radius: 20px;
     }
 
     * {
@@ -44,6 +50,9 @@
     }
 
     body {
+      background: var(--black);
+      color: var(--white);
+
       font-family:
         Inter,
         ui-sans-serif,
@@ -53,130 +62,234 @@
         "Segoe UI",
         sans-serif;
 
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
       background:
         radial-gradient(
-          circle at 20% 10%,
-          rgba(201, 165, 90, 0.06),
-          transparent 30%
+          circle at 15% 15%,
+          rgba(198,169,104,0.05),
+          transparent 28%
         ),
         radial-gradient(
-          circle at 85% 30%,
-          rgba(70, 200, 216, 0.06),
+          circle at 85% 35%,
+          rgba(11,114,90,0.07),
           transparent 32%
-        ),
-        var(--black);
+        );
 
-      color: var(--white);
-      overflow-x: hidden;
+      z-index: -1;
     }
 
     a {
       color: inherit;
     }
 
-    /* =========================
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: auto;
+    }
+
+    section {
+      padding: 110px 28px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+
+      font-weight: 800;
+      color: var(--lime-soft);
+
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: "";
+
+      width: 18px;
+      height: 1px;
+
+      background: var(--lime);
+    }
+
+    .section-title {
+      max-width: 880px;
+
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.02;
+
+      letter-spacing: -2.5px;
+    }
+
+    .section-description {
+      max-width: 760px;
+
+      color: var(--muted);
+
+      margin-top: 22px;
+
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .lime {
+      color: var(--lime);
+    }
+
+    .gold {
+      color: var(--gold-soft);
+    }
+
+    /* ===========================
        NAVIGATION
-    ========================== */
+    ============================ */
 
     nav {
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
 
-      z-index: 999;
+      z-index: 1000;
 
-      background: rgba(7, 7, 8, 0.78);
+      background: rgba(6,8,10,0.82);
       backdrop-filter: blur(20px);
 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.055);
     }
 
     .nav-inner {
       max-width: var(--max);
-      margin: auto;
 
-      padding: 20px 28px;
+      margin: auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      gap: 25px;
+
+      padding: 13px 28px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+
+      gap: 11px;
 
       text-decoration: none;
     }
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
+    .brand-logo {
+      width: 54px;
+      height: 44px;
 
-      border-radius: 10px;
+      object-fit: contain;
 
-      display: grid;
-      place-items: center;
+      border-radius: 9px;
 
-      border: 1px solid rgba(201, 165, 90, 0.35);
+      background: white;
 
-      background:
-        linear-gradient(
-          135deg,
-          rgba(201, 165, 90, 0.16),
-          rgba(70, 200, 216, 0.05)
-        );
-
-      color: var(--gold-light);
-
-      font-weight: 800;
-      font-size: 18px;
+      padding: 2px;
     }
 
-    .brand-name {
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 2px;
+    .brand-copy strong {
+      display: block;
+
+      font-size: 14px;
+
+      letter-spacing: 1.4px;
+    }
+
+    .brand-copy span {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 9px;
+
+      margin-top: 3px;
+
+      letter-spacing: 0.7px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
+
+      gap: 27px;
     }
 
     .nav-links a {
-      text-decoration: none;
       color: var(--silver);
 
-      font-size: 14px;
+      font-size: 13px;
 
-      transition: 0.25s;
+      text-decoration: none;
+
+      transition: .2s;
     }
 
     .nav-links a:hover {
-      color: var(--white);
+      color: white;
     }
 
-    .nav-contact {
-      border: 1px solid rgba(201, 165, 90, 0.45);
+    .nav-whatsapp {
+      padding: 10px 16px;
 
-      padding: 10px 17px;
+      border-radius: 9px;
+
+      background: rgba(186,255,69,0.09);
+
+      border: 1px solid rgba(186,255,69,0.35);
+
+      color: var(--lime-soft) !important;
+    }
+
+    .mobile-menu-button {
+      display: none;
+
+      background: none;
+      color: white;
+
+      border: 1px solid var(--border);
+
       border-radius: 8px;
 
-      color: var(--gold-light) !important;
+      padding: 8px 11px;
+
+      cursor: pointer;
     }
 
-    /* =========================
+    /* ===========================
        HERO
-    ========================== */
+    ============================ */
 
     .hero {
-      position: relative;
-
       min-height: 100vh;
+
+      position: relative;
 
       display: flex;
       align-items: center;
@@ -186,577 +299,971 @@
       padding: 145px 28px 90px;
     }
 
-    /*
-      LATER:
-      We can put your real video here as a full-screen
-      hero background without redesigning the website.
-    */
+    .hero-video-wrap {
+      position: absolute;
 
-    .hero-grid {
+      inset: 0;
+
+      overflow: hidden;
+
+      z-index: 0;
+    }
+
+    #heroVideo {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter:
+        saturate(.85)
+        contrast(1.06)
+        brightness(.55);
+    }
+
+    .hero-overlay {
       position: absolute;
       inset: 0;
 
-      opacity: 0.17;
-
-      background-image:
-        linear-gradient(
-          rgba(255,255,255,0.04) 1px,
-          transparent 1px
-        ),
+      background:
         linear-gradient(
           90deg,
-          rgba(255,255,255,0.04) 1px,
-          transparent 1px
-        );
-
-      background-size: 70px 70px;
-
-      mask-image:
+          rgba(5,7,9,.97) 0%,
+          rgba(5,7,9,.90) 34%,
+          rgba(5,7,9,.53) 68%,
+          rgba(5,7,9,.35) 100%
+        ),
         linear-gradient(
-          to bottom,
-          black,
-          transparent 85%
+          0deg,
+          rgba(6,8,10,.96) 0%,
+          transparent 38%
         );
 
-      pointer-events: none;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      pointer-events: none;
-    }
-
-    .orb-gold {
-      width: 430px;
-      height: 430px;
-
-      background: rgba(201,165,90,0.09);
-
-      top: 12%;
-      left: -160px;
-    }
-
-    .orb-cyan {
-      width: 430px;
-      height: 430px;
-
-      background: rgba(70,200,216,0.08);
-
-      bottom: 5%;
-      right: -170px;
+      z-index: 1;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 2;
+      z-index: 3;
 
       max-width: var(--max);
+
       width: 100%;
+
       margin: auto;
-
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-
-      gap: 70px;
-      align-items: center;
     }
 
-    .eyebrow {
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
+
       gap: 10px;
 
-      margin-bottom: 25px;
+      padding: 9px 13px;
 
-      color: var(--gold-light);
+      border: 1px solid rgba(255,255,255,.12);
 
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: 700;
+      background: rgba(6,8,10,.50);
+
+      backdrop-filter: blur(10px);
+
+      border-radius: 100px;
+
+      margin-bottom: 26px;
+
+      color: var(--silver);
+
+      font-size: 11px;
+
+      letter-spacing: 1.7px;
 
       text-transform: uppercase;
     }
 
-    .eyebrow-dot {
+    .hero-dot {
       width: 7px;
       height: 7px;
 
-      background: var(--cyan);
-
       border-radius: 50%;
 
+      background: var(--lime);
+
       box-shadow:
-        0 0 20px rgba(70,200,216,0.8);
+        0 0 17px rgba(186,255,69,.7);
     }
 
-    h1 {
-      font-size: clamp(56px, 8vw, 105px);
+    .hero h1 {
+      max-width: 900px;
+
+      font-size: clamp(57px, 7.6vw, 108px);
+
+      line-height: .93;
 
       letter-spacing: -5px;
-      line-height: 0.92;
-
-      margin-bottom: 24px;
-    }
-
-    .hero-slogan {
-      font-size: clamp(23px, 3vw, 38px);
-
-      line-height: 1.2;
-
-      color: var(--silver);
 
       margin-bottom: 25px;
     }
 
-    .gold-text {
-      color: var(--gold-light);
+    .hero h1 span {
+      color: var(--lime-soft);
+    }
+
+    .hero-subtitle {
+      max-width: 780px;
+
+      font-size: clamp(22px,2.5vw,34px);
+
+      line-height: 1.25;
+
+      color: var(--silver);
+
+      margin-bottom: 24px;
     }
 
     .hero-description {
       max-width: 700px;
 
-      color: var(--muted);
+      color: #abb1b8;
+
+      font-size: 17px;
 
       line-height: 1.75;
-      font-size: 17px;
     }
 
-    .hero-buttons {
+    .hero-actions {
+      margin-top: 37px;
+
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
 
-      margin-top: 38px;
+      gap: 13px;
     }
 
     .btn {
+      min-height: 52px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      min-height: 52px;
+      gap: 9px;
 
       padding: 0 24px;
 
-      border-radius: 9px;
+      border-radius: 10px;
 
       text-decoration: none;
 
-      font-weight: 700;
       font-size: 14px;
+      font-weight: 800;
 
       transition:
-        transform 0.25s,
-        border-color 0.25s,
-        background 0.25s;
+        transform .2s,
+        border-color .2s,
+        background .2s;
     }
 
     .btn:hover {
       transform: translateY(-3px);
     }
 
-    .btn-primary {
+    .btn-main {
+      color: #091007;
+
       background:
         linear-gradient(
           135deg,
-          var(--gold-light),
-          var(--gold)
+          var(--lime-soft),
+          var(--lime)
         );
 
-      color: #111;
+      box-shadow:
+        0 12px 45px rgba(186,255,69,.10);
     }
 
     .btn-secondary {
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,.16);
 
-      background: rgba(255,255,255,0.025);
+      background: rgba(10,12,15,.58);
 
-      color: var(--white);
+      backdrop-filter: blur(10px);
     }
 
-    /* HERO VISUAL */
+    .hero-stats {
+      margin-top: 50px;
 
-    .hero-visual {
-      position: relative;
+      display: flex;
+      flex-wrap: wrap;
 
-      min-height: 520px;
-
-      display: grid;
-      place-items: center;
+      gap: 11px;
     }
 
-    .core {
-      position: relative;
-
-      width: min(390px, 80vw);
-      aspect-ratio: 1;
-
-      border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      border: 1px solid rgba(201,165,90,0.18);
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(201,165,90,0.13),
-          rgba(7,7,8,0.2) 45%,
-          transparent 70%
-        );
-
-      animation: breathe 5s ease-in-out infinite;
-    }
-
-    @keyframes breathe {
-      0%,100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.03);
-      }
-    }
-
-    .core-ring {
-      position: absolute;
-
-      inset: 11%;
-
-      border-radius: 50%;
-
-      border:
-        1px solid rgba(70,200,216,0.2);
-
-      animation:
-        rotate 24s linear infinite;
-    }
-
-    .core-ring::before,
-    .core-ring::after {
-      content: "";
-
-      position: absolute;
-
-      width: 10px;
-      height: 10px;
-
-      border-radius: 50%;
-
-      background: var(--cyan);
-
-      box-shadow:
-        0 0 20px rgba(70,200,216,0.7);
-    }
-
-    .core-ring::before {
-      top: -5px;
-      left: 50%;
-    }
-
-    .core-ring::after {
-      bottom: -5px;
-      right: 35%;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .core-inner {
-      width: 170px;
-      height: 170px;
-
-      border-radius: 30px;
-
-      display: grid;
-      place-items: center;
-
-      border: 1px solid rgba(201,165,90,0.35);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.06),
-          rgba(255,255,255,0.015)
-        );
-
-      box-shadow:
-        0 30px 90px rgba(0,0,0,0.55);
-    }
-
-    .core-letter {
-      font-size: 70px;
-      font-weight: 800;
-
-      background:
-        linear-gradient(
-          to bottom,
-          #f3e5b9,
-          var(--gold)
-        );
-
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .floating-chip {
-      position: absolute;
-
-      padding: 11px 15px;
+    .hero-stat {
+      padding: 11px 14px;
 
       border-radius: 9px;
 
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,.10);
 
-      background: rgba(15,16,19,0.83);
+      background: rgba(6,8,10,.52);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
 
-      color: var(--silver);
+      color: #d7dade;
 
       font-size: 12px;
     }
 
-    .chip-1 {
-      top: 13%;
-      left: 2%;
+    .hero-stat strong {
+      color: var(--lime-soft);
     }
 
-    .chip-2 {
-      top: 20%;
-      right: 0;
+    .video-progress {
+      position: absolute;
+
+      bottom: 30px;
+      right: 35px;
+
+      z-index: 4;
+
+      display: flex;
+
+      gap: 7px;
     }
 
-    .chip-3 {
-      bottom: 19%;
-      left: 3%;
+    .video-dot {
+      width: 24px;
+      height: 3px;
+
+      background: rgba(255,255,255,.22);
+
+      border-radius: 20px;
+
+      transition: .3s;
     }
 
-    .chip-4 {
-      bottom: 12%;
-      right: 4%;
+    .video-dot.active {
+      background: var(--lime);
+      width: 42px;
     }
 
-    /* =========================
-       SECTIONS
-    ========================== */
+    /* ===========================
+       2026 REALITY
+    ============================ */
 
-    section {
-      padding: 110px 28px;
-    }
-
-    .container {
-      max-width: var(--max);
-      margin: auto;
-    }
-
-    .section-label {
-      color: var(--gold-light);
-
-      font-size: 11px;
-
-      font-weight: 700;
-      letter-spacing: 3px;
-
-      margin-bottom: 14px;
-
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-size: clamp(36px, 5vw, 60px);
-
-      line-height: 1.05;
-
-      letter-spacing: -2px;
-
-      max-width: 850px;
-    }
-
-    .section-description {
-      max-width: 740px;
-
-      color: var(--muted);
-
-      line-height: 1.75;
-      font-size: 17px;
-
-      margin-top: 20px;
-    }
-
-    /* =========================
-       BUSINESS PAIN
-    ========================== */
-
-    .pain-section {
+    .reality {
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
 
       background:
         linear-gradient(
           180deg,
-          rgba(255,255,255,0.015),
+          rgba(255,255,255,.018),
           transparent
         );
     }
 
-    .pain-grid {
+    .reality-grid {
       margin-top: 55px;
 
       display: grid;
+
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
-      gap: 15px;
+      gap: 14px;
     }
 
-    .pain-item {
-      padding: 26px;
+    .pain-card {
+      min-height: 190px;
 
-      border-radius: 14px;
+      padding: 25px;
 
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,0.018);
-    }
-
-    .pain-number {
-      color: var(--cyan);
-
-      font-size: 12px;
-      font-weight: 700;
-
-      margin-bottom: 25px;
-    }
-
-    .pain-item h3 {
-      font-size: 18px;
-      margin-bottom: 11px;
-    }
-
-    .pain-item p {
-      font-size: 14px;
-      color: var(--muted);
-
-      line-height: 1.6;
-    }
-
-    /* =========================
-       SERVICES
-    ========================== */
-
-    .services-grid {
-      margin-top: 55px;
-
-      display: grid;
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 18px;
-    }
-
-    .service-card {
-      position: relative;
-
-      padding: 34px;
-
-      min-height: 230px;
-
-      border-radius: 18px;
-
-      overflow: hidden;
+      border-radius: 15px;
 
       border: 1px solid var(--border);
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,0.035),
-          rgba(255,255,255,0.008)
+          rgba(255,255,255,.027),
+          rgba(255,255,255,.006)
+        );
+    }
+
+    .pain-icon {
+      width: 36px;
+      height: 36px;
+
+      border-radius: 9px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 23px;
+
+      color: var(--gold-soft);
+
+      border: 1px solid rgba(198,169,104,.22);
+
+      background: rgba(198,169,104,.06);
+    }
+
+    .pain-card h3 {
+      font-size: 17px;
+
+      margin-bottom: 9px;
+    }
+
+    .pain-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+    /* ===========================
+       TEAM CAPACITY
+    ============================ */
+
+    .capacity-section {
+      padding-top: 60px;
+    }
+
+    .capacity-box {
+      padding: 60px;
+
+      border-radius: 26px;
+
+      border: 1px solid rgba(186,255,69,.17);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(186,255,69,.045),
+          rgba(255,255,255,.018) 40%,
+          rgba(198,169,104,.035)
         );
 
-      transition:
-        transform 0.25s,
-        border-color 0.25s;
+      position: relative;
+
+      overflow: hidden;
     }
 
-    .service-card:hover {
-      transform: translateY(-5px);
+    .capacity-box::after {
+      content: "";
 
-      border-color:
-        rgba(201,165,90,0.38);
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      border-radius: 50%;
+
+      right: -140px;
+      top: -150px;
+
+      background: rgba(11,114,90,.12);
+
+      filter: blur(70px);
     }
 
-    .service-number {
-      color: var(--gold-light);
+    .capacity-grid {
+      position: relative;
+      z-index: 2;
 
-      font-size: 12px;
+      display: grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .capacity-copy h2 {
+      font-size: clamp(42px,5vw,68px);
+
+      letter-spacing: -3px;
+
+      line-height: 1;
+
+      margin-bottom: 24px;
+    }
+
+    .capacity-copy p {
+      color: var(--muted);
+
+      line-height: 1.75;
+
+      max-width: 690px;
+    }
+
+    .capacity-copy p + p {
+      margin-top: 16px;
+    }
+
+    .capacity-highlight {
+      margin-top: 28px;
+
+      color: var(--white);
+
+      font-size: 19px;
+
       font-weight: 700;
-
-      margin-bottom: 35px;
     }
 
-    .service-card h3 {
-      font-size: 25px;
+    .capacity-highlight span {
+      color: var(--lime);
+    }
+
+    .team-visual {
+      display: grid;
+
+      grid-template-columns:
+        1fr 90px 1fr;
+
+      align-items: center;
+
+      gap: 14px;
+    }
+
+    .traditional,
+    .invenio-system {
+      padding: 26px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 17px;
+
+      background: rgba(6,8,10,.55);
+    }
+
+    .team-label {
+      color: var(--muted);
+
+      font-size: 11px;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .people {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap: 8px;
+    }
+
+    .person {
+      aspect-ratio: 1;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--charcoal-2);
+
+      border: 1px solid var(--border);
+
+      color: #777f88;
+
+      font-size: 13px;
+    }
+
+    .arrow {
+      text-align: center;
+
+      color: var(--lime);
+
+      font-size: 38px;
+    }
+
+    .system-core {
+      min-height: 205px;
+
+      border-radius: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      text-align: center;
+
+      border: 1px solid rgba(186,255,69,.22);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(186,255,69,.08),
+          transparent 55%
+        );
+    }
+
+    .system-number {
+      font-size: 50px;
+
+      color: var(--lime);
+
+      font-weight: 850;
+    }
+
+    .system-core p {
+      color: var(--silver);
+
+      font-size: 13px;
+
+      max-width: 170px;
+
+      line-height: 1.5;
+
+      margin-top: 5px;
+    }
+
+    /* ===========================
+       VALUE
+    ============================ */
+
+    .value-grid {
+      margin-top: 55px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+    .value-card {
+      padding: 33px;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.018);
+    }
+
+    .value-kicker {
+      color: var(--lime-soft);
+
+      text-transform: uppercase;
+
+      font-size: 10px;
+
+      letter-spacing: 1.5px;
+
+      font-weight: 800;
+
+      margin-bottom: 18px;
+    }
+
+    .value-card h3 {
+      font-size: 24px;
 
       margin-bottom: 13px;
     }
 
-    .service-card p {
-      max-width: 500px;
-
+    .value-card p {
       color: var(--muted);
 
       line-height: 1.7;
+
+      font-size: 14px;
     }
 
-    .service-glow {
-      position: absolute;
+    /* ===========================
+       SOLUTIONS
+    ============================ */
 
-      width: 150px;
-      height: 150px;
-
-      border-radius: 50%;
-
-      filter: blur(60px);
-
+    .solutions-section {
       background:
-        rgba(70,200,216,0.06);
-
-      bottom: -70px;
-      right: -40px;
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(11,114,90,.025),
+          transparent
+        );
     }
 
-    /* =========================
-       HOW IT WORKS
-    ========================== */
-
-    .process {
-      margin-top: 60px;
+    .solutions-grid {
+      margin-top: 55px;
 
       display: grid;
-      grid-template-columns:
-        repeat(4,1fr);
 
-      gap: 0;
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
     }
 
-    .process-step {
-      padding: 30px 25px;
+    .solution-card {
+      min-height: 370px;
+
+      padding: 28px;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--border);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.027),
+          rgba(255,255,255,.007)
+        );
+
+      display: flex;
+      flex-direction: column;
+
+      transition:
+        transform .25s,
+        border-color .25s;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(186,255,69,.23);
+    }
+
+    .solution-number {
+      color: var(--gold-soft);
+
+      font-size: 11px;
+
+      margin-bottom: 25px;
+    }
+
+    .solution-card h3 {
+      font-size: 22px;
+
+      margin-bottom: 13px;
+    }
+
+    .solution-summary {
+      color: var(--muted);
+
+      line-height: 1.65;
+
+      font-size: 14px;
+
+      margin-bottom: 22px;
+    }
+
+    .outcome {
+      padding-top: 14px;
 
       border-top: 1px solid var(--border);
 
-      position: relative;
+      margin-top: 10px;
+    }
+
+    .outcome strong {
+      display: block;
+
+      font-size: 11px;
+
+      color: var(--lime-soft);
+
+      margin-bottom: 5px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .8px;
+    }
+
+    .outcome p {
+      color: #a4abb2;
+
+      line-height: 1.55;
+
+      font-size: 13px;
+    }
+
+    .best-for {
+      margin-top: auto;
+
+      padding-top: 20px;
+
+      color: #777f87;
+
+      font-size: 12px;
+
+      line-height: 1.55;
+    }
+
+    .best-for b {
+      color: var(--silver);
+    }
+
+    /* ===========================
+       MULTILINGUAL
+    ============================ */
+
+    .language-box {
+      padding: 55px;
+
+      display: grid;
+
+      grid-template-columns:
+        .8fr 1.2fr;
+
+      gap: 60px;
+
+      border-radius: 24px;
+
+      border: 1px solid rgba(71,189,199,.18);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(71,189,199,.045),
+          rgba(255,255,255,.012)
+        );
+    }
+
+    .language-big {
+      font-size: clamp(55px,8vw,100px);
+
+      letter-spacing: -5px;
+
+      color: var(--cyan);
+
+      font-weight: 850;
+
+      line-height: .9;
+    }
+
+    .language-copy h2 {
+      font-size: clamp(32px,4vw,50px);
+
+      margin-bottom: 20px;
+
+      letter-spacing: -2px;
+    }
+
+    .language-copy p {
+      color: var(--muted);
+
+      line-height: 1.75;
+    }
+
+    /* ===========================
+       INDUSTRIES
+    ============================ */
+
+    .industry-levels {
+      margin-top: 55px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+    .industry-column {
+      padding: 31px;
+
+      border-radius: 17px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.017);
+    }
+
+    .industry-column h3 {
+      font-size: 21px;
+
+      margin-bottom: 8px;
+    }
+
+    .industry-column > p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+      margin-bottom: 20px;
+    }
+
+    .industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+    .industry-tag {
+      padding: 7px 9px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 6px;
+
+      color: var(--silver);
+
+      font-size: 11px;
+
+      background: rgba(255,255,255,.015);
+    }
+
+    .industry-question {
+      margin-top: 50px;
+
+      padding: 36px;
+
+      border-left: 2px solid var(--lime);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(186,255,69,.035),
+          transparent
+        );
+
+      font-size: clamp(23px,3vw,36px);
+
+      line-height: 1.35;
+
+      color: var(--silver);
+    }
+
+    /* ===========================
+       TRUST
+    ============================ */
+
+    .trust-grid {
+      margin-top: 55px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+    .trust-card {
+      padding: 29px;
+
+      border-radius: 17px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.015);
+    }
+
+    .trust-number {
+      color: var(--lime);
+
+      font-size: 11px;
+
+      margin-bottom: 24px;
+    }
+
+    .trust-card h3 {
+      margin-bottom: 11px;
+
+      font-size: 19px;
+    }
+
+    .trust-card p {
+      color: var(--muted);
+
+      line-height: 1.65;
+
+      font-size: 14px;
+    }
+
+    /* ===========================
+       DELIVERY PROMISE
+    ============================ */
+
+    .promise-section {
+      padding-top: 30px;
+    }
+
+    .promise-box {
+      padding: 55px;
+
+      border-radius: 24px;
+
+      border: 1px solid rgba(198,169,104,.23);
+
+      display: grid;
+
+      grid-template-columns:
+        .75fr 1.25fr;
+
+      gap: 60px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(198,169,104,.06),
+          rgba(255,255,255,.012)
+        );
+    }
+
+    .promise-big {
+      font-size: clamp(42px,5vw,65px);
+
+      line-height: 1;
+
+      letter-spacing: -3px;
+
+      color: var(--gold-soft);
+    }
+
+    .promise-copy p {
+      color: var(--muted);
+
+      line-height: 1.8;
+
+      font-size: 16px;
+    }
+
+    .promise-copy strong {
+      color: white;
+    }
+
+    /* ===========================
+       PROCESS
+    ============================ */
+
+    .process-grid {
+      margin-top: 60px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+    }
+
+    .process-step {
+      padding: 28px 23px;
+
+      border-top: 1px solid var(--border);
+
+      min-height: 210px;
     }
 
     .process-step:not(:last-child) {
@@ -766,227 +1273,203 @@
     .process-step span {
       display: block;
 
-      color: var(--cyan);
+      color: var(--lime);
 
-      font-weight: 700;
-      font-size: 12px;
+      font-size: 11px;
 
-      margin-bottom: 25px;
+      margin-bottom: 26px;
     }
 
     .process-step h3 {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+
+      font-size: 17px;
     }
 
     .process-step p {
       color: var(--muted);
 
+      font-size: 13px;
+
       line-height: 1.65;
-
-      font-size: 14px;
     }
 
-    /* =========================
-       DEMOS
-    ========================== */
+    /* ===========================
+       DIGITAL-FIRST
+    ============================ */
 
-    .demo-section {
-      background:
-        linear-gradient(
-          180deg,
-          transparent,
-          rgba(201,165,90,0.025),
-          transparent
-        );
-    }
-
-    .demo-grid {
-      margin-top: 55px;
-
+    .digital-first {
       display: grid;
-      grid-template-columns:
-        repeat(3, 1fr);
 
-      gap: 18px;
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 50px;
+
+      align-items: center;
     }
 
-    .demo-card {
-      border-radius: 18px;
-
-      overflow: hidden;
+    .digital-panel {
+      padding: 45px;
 
       border: 1px solid var(--border);
 
-      background: var(--charcoal);
-    }
-
-    .demo-screen {
-      height: 190px;
-
-      display: grid;
-      place-items: center;
-
-      position: relative;
-
-      background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(70,200,216,0.12),
-          transparent 45%
-        ),
-        #0c0d0f;
-    }
-
-    .demo-play {
-      width: 56px;
-      height: 56px;
-
-      border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      border: 1px solid rgba(201,165,90,0.4);
-
-      color: var(--gold-light);
-
-      font-size: 18px;
-    }
-
-    .demo-content {
-      padding: 24px;
-    }
-
-    .demo-type {
-      color: var(--cyan);
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
-      margin-bottom: 10px;
-    }
-
-    .demo-content h3 {
-      margin-bottom: 10px;
-    }
-
-    .demo-content p {
-      color: var(--muted);
-
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    /* =========================
-       AUTOMATION CTA
-    ========================== */
-
-    .automation-box {
-      position: relative;
-
-      overflow: hidden;
-
-      padding: 70px;
-
-      border-radius: 24px;
-
-      border:
-        1px solid rgba(201,165,90,0.24);
+      border-radius: 22px;
 
       background:
         linear-gradient(
-          135deg,
-          rgba(201,165,90,0.08),
-          rgba(70,200,216,0.035),
-          rgba(255,255,255,0.02)
+          145deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.006)
         );
     }
 
-    .automation-box h2 {
-      max-width: 850px;
+    .digital-panel h3 {
+      font-size: 29px;
 
-      font-size:
-        clamp(40px, 6vw, 70px);
-
-      line-height: 1;
-
-      letter-spacing: -3px;
-
-      margin-bottom: 25px;
+      margin-bottom: 17px;
     }
 
-    .automation-box p {
-      max-width: 680px;
-
+    .digital-panel p {
       color: var(--muted);
 
       line-height: 1.75;
-
-      margin-bottom: 30px;
     }
 
-    /* =========================
-       ABOUT
-    ========================== */
+    .digital-points {
+      margin-top: 25px;
 
-    .about-grid {
       display: grid;
-      grid-template-columns:
-        0.8fr 1.2fr;
 
-      gap: 80px;
-
-      align-items: start;
+      gap: 11px;
     }
 
-    .about-copy p {
-      color: var(--muted);
+    .digital-point {
+      padding: 12px 14px;
 
-      line-height: 1.8;
+      border-radius: 8px;
 
-      margin-bottom: 18px;
+      border: 1px solid var(--border);
+
+      color: var(--silver);
+
+      font-size: 13px;
     }
 
-    /* =========================
+    /* ===========================
        CONTACT
-    ========================== */
+    ============================ */
 
-    .contact {
+    .contact-section {
+      border-top: 1px solid var(--border);
+
+      background:
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(11,114,90,.11),
+          transparent 35%
+        );
+    }
+
+    .contact-center {
       text-align: center;
 
-      border-top: 1px solid var(--border);
+      max-width: 900px;
+
+      margin: auto;
     }
 
-    .contact .section-title,
-    .contact .section-description {
+    .contact-center .section-title,
+    .contact-center .section-description {
       margin-left: auto;
       margin-right: auto;
     }
 
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .contact-grid {
+      max-width: 850px;
 
-      gap: 12px;
+      margin: 48px auto 0;
 
-      margin-top: 35px;
+      display: grid;
+
+      grid-template-columns:
+        1.15fr .85fr;
+
+      gap: 16px;
     }
 
-    /* =========================
+    .contact-card {
+      padding: 32px;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--border);
+
+      text-align: left;
+
+      background: rgba(255,255,255,.018);
+    }
+
+    .contact-card.recommended {
+      border-color:
+        rgba(186,255,69,.24);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(186,255,69,.045),
+          rgba(255,255,255,.012)
+        );
+    }
+
+    .recommended-label {
+      color: var(--lime);
+
+      font-size: 10px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+      font-size: 23px;
+
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+
+      line-height: 1.65;
+
+      font-size: 14px;
+
+      margin-bottom: 22px;
+    }
+
+    .contact-value {
+      display: block;
+
+      color: var(--white);
+
+      font-weight: 700;
+
+      margin-bottom: 20px;
+
+      word-break: break-word;
+    }
+
+    /* ===========================
        FOOTER
-    ========================== */
+    ============================ */
 
     footer {
       border-top: 1px solid var(--border);
 
-      padding: 32px 28px;
-
-      color: #696d74;
-
-      font-size: 13px;
+      padding: 34px 28px;
     }
 
     .footer-inner {
@@ -998,104 +1481,209 @@
       justify-content: space-between;
       align-items: center;
 
-      gap: 25px;
+      gap: 30px;
     }
 
-    /* =========================
+    .footer-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 11px;
+    }
+
+    .footer-brand img {
+      width: 48px;
+      height: 40px;
+
+      object-fit: contain;
+
+      background: white;
+
+      border-radius: 8px;
+
+      padding: 2px;
+    }
+
+    .footer-copy {
+      color: #696f76;
+
+      font-size: 12px;
+
+      text-align: right;
+    }
+
+    /* ===========================
+       SCROLL REVEAL
+    ============================ */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(22px);
+
+      transition:
+        opacity .65s ease,
+        transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* ===========================
        MOBILE
-    ========================== */
+    ============================ */
 
-    @media (max-width: 960px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
+    @media(max-width:1050px) {
 
-        gap: 25px;
+      .reality-grid {
+        grid-template-columns:
+          repeat(2,1fr);
       }
 
-      .hero-visual {
-        min-height: 420px;
-      }
-
-      .pain-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .services-grid {
+      .capacity-grid {
         grid-template-columns: 1fr;
       }
 
-      .process {
-        grid-template-columns: repeat(2,1fr);
+      .solutions-grid {
+        grid-template-columns:
+          repeat(2,1fr);
       }
 
-      .demo-grid {
+      .value-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .nav-links a:not(.nav-contact) {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: 12px;
-        letter-spacing: 1px;
-      }
-
-      .hero {
-        padding-top: 125px;
-      }
-
-      h1 {
-        letter-spacing: -3px;
-      }
-
-      .hero-visual {
-        min-height: 330px;
-      }
-
-      .core {
-        width: 270px;
-      }
-
-      .core-inner {
-        width: 125px;
-        height: 125px;
-      }
-
-      .core-letter {
-        font-size: 52px;
-      }
-
-      .floating-chip {
-        font-size: 10px;
-      }
-
-      section {
-        padding: 80px 20px;
-      }
-
-      .pain-grid {
+      .industry-levels,
+      .trust-grid {
         grid-template-columns: 1fr;
       }
 
-      .process {
+      .language-box,
+      .promise-box,
+      .digital-first {
         grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns:
+          repeat(2,1fr);
       }
 
       .process-step {
         border-right: none !important;
       }
 
-      .automation-box {
-        padding: 45px 25px;
+    }
+
+    @media(max-width:760px) {
+
+      section {
+        padding: 82px 20px;
+      }
+
+      .nav-inner {
+        padding:
+          11px 17px;
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 15px;
+        right: 15px;
+
+        padding: 20px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        background: #0c0f12;
+
+        border: 1px solid var(--border);
+
+        border-radius: 13px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-menu-button {
+        display: block;
+      }
+
+      .hero {
+        min-height: 94vh;
+
+        padding:
+          130px 20px
+          90px;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(5,7,9,.94),
+            rgba(5,7,9,.72)
+          ),
+          linear-gradient(
+            0deg,
+            rgba(5,7,9,.96),
+            transparent
+          );
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .video-progress {
+        right: 20px;
+      }
+
+      .reality-grid,
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .capacity-box {
+        padding: 38px 23px;
+      }
+
+      .team-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .language-box,
+      .promise-box {
+        padding: 38px 24px;
+      }
+
+      .language-big {
+        letter-spacing: -3px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
 
       .footer-inner {
@@ -1103,614 +1691,1542 @@
 
         text-align: center;
       }
+
+      .footer-copy {
+        text-align: center;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+<!-- ===========================
+     NAVIGATION
+=========================== -->
 
-  <nav>
-    <div class="nav-inner">
+<nav>
+  <div class="nav-inner">
 
-      <a href="#" class="brand">
-        <div class="brand-mark">I</div>
+    <a href="#home" class="brand">
 
-        <div class="brand-name">
-          INVENIO AI SOLUTIONS
-        </div>
+      <img
+        class="brand-logo"
+        src="ChatGPT Image Aug 21, 2026, 06_50_59 AM.png"
+        alt="INVENIO AI Solutions handshake logo"
+      >
+
+      <div class="brand-copy">
+        <strong>INVENIO AI SOLUTIONS</strong>
+        <span>POWERING YOUR BUSINESS THROUGH INTELLIGENCE</span>
+      </div>
+
+    </a>
+
+    <div class="nav-links" id="navLinks">
+
+      <a href="#why">Why INVENIO</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#industries">Industries</a>
+      <a href="#process">Process</a>
+
+      <a
+        href="https://wa.me/27604868989?text=Hi%20INVENIO%20AI%20SOLUTIONS%2C%20I%27d%20like%20to%20discuss%20how%20AI%20could%20improve%20my%20business."
+        class="nav-whatsapp"
+        target="_blank"
+      >
+        WhatsApp Us
       </a>
 
-      <div class="nav-links">
-        <a href="#solutions">Solutions</a>
-        <a href="#process">How It Works</a>
-        <a href="#demos">Demos</a>
-        <a href="#about">About</a>
+    </div>
 
-        <a href="#contact" class="nav-contact">
-          Contact
+    <button
+      class="mobile-menu-button"
+      onclick="toggleMenu()"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
+  </div>
+</nav>
+
+
+<!-- ===========================
+     HERO
+=========================== -->
+
+<header class="hero" id="home">
+
+  <div class="hero-video-wrap">
+
+    <video
+      id="heroVideo"
+      autoplay
+      muted
+      playsinline
+    >
+    </video>
+
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner">
+
+    <div class="hero-content reveal">
+
+      <div class="hero-eyebrow">
+
+        <span class="hero-dot"></span>
+
+        AI Automation • Strategy • Business Growth
+
+      </div>
+
+
+      <h1>
+        Powering Your Business Through
+        <span>Intelligence.</span>
+      </h1>
+
+
+      <div class="hero-subtitle">
+        Work smarter. Spend smarter. Grow stronger.
+      </div>
+
+
+      <p class="hero-description">
+        INVENIO AI SOLUTIONS helps businesses reduce repetitive
+        workload, improve customer experience, protect revenue
+        opportunities and build intelligent systems that scale
+        with the business.
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="https://wa.me/27604868989?text=Hi%20INVENIO%20AI%20SOLUTIONS%2C%20I%27d%20like%20to%20discuss%20how%20AI%20could%20improve%20my%20business."
+          target="_blank"
+          class="btn btn-main"
+        >
+          Talk to Our Team →
         </a>
+
+        <a
+          href="#solutions"
+          class="btn btn-secondary"
+        >
+          Explore Solutions
+        </a>
+
+      </div>
+
+
+      <div class="hero-stats">
+
+        <div class="hero-stat">
+          <strong>24/7</strong> intelligent operations
+        </div>
+
+        <div class="hero-stat">
+          <strong>Multilingual</strong> AI capability
+        </div>
+
+        <div class="hero-stat">
+          <strong>Revenue</strong> focused automation
+        </div>
+
+        <div class="hero-stat">
+          <strong>Digital-first</strong> delivery
+        </div>
+
       </div>
 
     </div>
-  </nav>
+
+  </div>
 
 
-  <!-- HERO -->
+  <div class="video-progress">
 
-  <header class="hero">
+    <span class="video-dot active"></span>
+    <span class="video-dot"></span>
+    <span class="video-dot"></span>
+    <span class="video-dot"></span>
 
-    <div class="hero-grid"></div>
+  </div>
 
-    <div class="orb orb-gold"></div>
-    <div class="orb orb-cyan"></div>
+</header>
 
-    <div class="hero-inner">
 
-      <div class="hero-copy">
+<!-- ===========================
+     2026 REALITY
+=========================== -->
 
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Intelligent Business Automation
+<section class="reality">
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      The 2026 Reality
+    </div>
+
+    <h2 class="section-title">
+      Why is your business still
+      <span class="lime">operating manually?</span>
+    </h2>
+
+    <p class="section-description">
+      Technology has changed what a business can expect from its
+      operations. Yet many companies are still paying people to
+      repeat tasks, move information between systems, chase leads
+      manually and answer the same questions every day.
+    </p>
+
+
+    <div class="reality-grid">
+
+      <div class="pain-card">
+        <div class="pain-icon">01</div>
+
+        <h3>Slow Customer Response</h3>
+
+        <p>
+          Potential customers disappear while waiting
+          for someone to become available.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">02</div>
+
+        <h3>Repetitive Staff Work</h3>
+
+        <p>
+          Skilled people spend valuable time on work
+          software could handle automatically.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">03</div>
+
+        <h3>Leads Going Cold</h3>
+
+        <p>
+          Opportunities are lost because follow-up depends
+          on someone remembering to do it.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">04</div>
+
+        <h3>After-Hours Silence</h3>
+
+        <p>
+          Your business may close for the day.
+          Your customers do not stop searching.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">05</div>
+
+        <h3>Manual Administration</h3>
+
+        <p>
+          Data entry, documents, emails, forms and records
+          consume hours that create little strategic value.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">06</div>
+
+        <h3>Disconnected Systems</h3>
+
+        <p>
+          Staff manually copy information between CRM,
+          email, calendars, documents and spreadsheets.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">07</div>
+
+        <h3>Constant Hiring Pressure</h3>
+
+        <p>
+          Growing workload often triggers another hire before
+          the business asks whether the workload itself can
+          be automated.
+        </p>
+      </div>
+
+
+      <div class="pain-card">
+        <div class="pain-icon">08</div>
+
+        <h3>Missed Revenue</h3>
+
+        <p>
+          Slow enquiries, poor follow-up and forgotten customers
+          quietly cost businesses opportunities every day.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===========================
+     TEAM CAPACITY
+=========================== -->
+
+<section class="capacity-section">
+
+  <div class="container">
+
+    <div class="capacity-box reveal">
+
+      <div class="capacity-grid">
+
+        <div class="capacity-copy">
+
+          <div class="section-label">
+            Intelligent Capacity
+          </div>
+
+          <h2>
+            One intelligent system.
+            <span class="lime">
+              The capacity of an entire team.
+            </span>
+          </h2>
+
+          <p>
+            In the right operation, a single connected INVENIO AI
+            system can automate repetitive workload that would
+            otherwise be distributed across
+            <strong>10, 20 or even more staff roles</strong>.
+          </p>
+
+          <p>
+            Customer enquiries, administration, CRM updates,
+            follow-ups, scheduling, document processing,
+            internal information, customer support and more
+            can operate through one connected intelligent layer.
+          </p>
+
+          <div class="capacity-highlight">
+            More capacity.
+            <span>Lower operational pressure.</span>
+            Without scaling payroll at the same rate.
+          </div>
+
         </div>
 
-        <h1>
-          INVENIO
-        </h1>
 
-        <div class="hero-slogan">
-          Powering Business Through
-          <span class="gold-text">Intelligence.</span>
+        <div class="team-visual">
+
+          <div class="traditional">
+
+            <div class="team-label">
+              Traditional repetitive workload
+            </div>
+
+            <div class="people">
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+              <div class="person">●</div>
+            </div>
+
+          </div>
+
+
+          <div class="arrow">
+            →
+          </div>
+
+
+          <div class="invenio-system">
+
+            <div class="team-label">
+              INVENIO-powered operation
+            </div>
+
+            <div class="system-core">
+
+              <div class="system-number">
+                1
+              </div>
+
+              <p>
+                connected intelligent system working
+                across multiple business functions
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <p class="hero-description">
-          We design intelligent systems that automate repetitive
-          business operations, improve customer communication and
-          help organisations operate more efficiently.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===========================
+     MONEY / VALUE
+=========================== -->
+
+<section id="why">
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      The Business Case
+    </div>
+
+    <h2 class="section-title">
+      AI should not be impressive.
+      <span class="lime">
+        It should be valuable.
+      </span>
+    </h2>
+
+    <p class="section-description">
+      INVENIO looks at artificial intelligence through the
+      language businesses understand: cost, revenue,
+      capacity, customers and growth.
+    </p>
+
+
+    <div class="value-grid">
+
+      <div class="value-card">
+
+        <div class="value-kicker">
+          Spend Smarter
+        </div>
+
+        <h3>
+          Reduce avoidable operating cost.
+        </h3>
+
+        <p>
+          Automate repetitive work before continuously increasing
+          headcount. Let people focus on judgement, relationships,
+          creativity and decisions that genuinely require them.
         </p>
 
-        <div class="hero-buttons">
+      </div>
 
-          <a href="#solutions" class="btn btn-primary">
-            Explore Our Solutions
-          </a>
 
-          <a href="#demos" class="btn btn-secondary">
-            See AI in Action
-          </a>
+      <div class="value-card">
 
+        <div class="value-kicker">
+          Make More
         </div>
+
+        <h3>
+          Protect and create revenue opportunities.
+        </h3>
+
+        <p>
+          Faster responses, stronger follow-up, better lead
+          handling, customer reactivation and intelligent sales
+          support can turn opportunities that were previously
+          lost into real business.
+        </p>
 
       </div>
 
 
-      <div class="hero-visual">
+      <div class="value-card">
 
-        <div class="core">
-
-          <div class="core-ring"></div>
-
-          <div class="core-inner">
-            <div class="core-letter">I</div>
-          </div>
-
+        <div class="value-kicker">
+          Scale Smarter
         </div>
 
-        <div class="floating-chip chip-1">
-          Customer AI
-        </div>
+        <h3>
+          Grow workload without growing overhead equally.
+        </h3>
 
-        <div class="floating-chip chip-2">
-          Business Automation
-        </div>
-
-        <div class="floating-chip chip-3">
-          Intelligent Workflows
-        </div>
-
-        <div class="floating-chip chip-4">
-          AI Integration
-        </div>
+        <p>
+          Intelligent systems can absorb increasing enquiry,
+          administrative and operational volume without forcing
+          the business to expand payroll at the same pace.
+        </p>
 
       </div>
 
     </div>
 
-  </header>
+  </div>
+
+</section>
 
 
-  <!-- BUSINESS PAIN -->
+<!-- ===========================
+     SOLUTIONS
+=========================== -->
 
-  <section class="pain-section">
+<section class="solutions-section" id="solutions">
 
-    <div class="container">
+  <div class="container reveal">
 
-      <div class="section-label">
-        The Opportunity
-      </div>
+    <div class="section-label">
+      INVENIO Solutions
+    </div>
 
-      <h2 class="section-title">
-        Your business should not depend on repetitive manual work.
-      </h2>
+    <h2 class="section-title">
+      Complete AI and digital improvement
+      <span class="lime">
+        for your business.
+      </span>
+    </h2>
 
-      <p class="section-description">
-        Many teams still spend valuable time moving information,
-        answering repetitive enquiries, processing documents,
-        updating systems and following up manually.
-        Intelligent automation can change that.
-      </p>
+    <p class="section-description">
+      You do not need to know the name of the technology you need.
+      Tell us where the business is losing time, money,
+      customers or opportunities. We help identify the solution.
+    </p>
 
 
-      <div class="pain-grid">
+    <div class="solutions-grid">
 
-        <div class="pain-item">
-          <div class="pain-number">01</div>
 
-          <h3>Repetitive Enquiries</h3>
+      <!-- 01 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">01</div>
+
+        <h3>AI Receptionists</h3>
+
+        <p class="solution-summary">
+          Intelligent front-desk systems that answer enquiries,
+          qualify customers, capture leads, schedule appointments
+          and assist people around the clock.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
 
           <p>
-            Customers repeatedly asking the same questions
-            across phone, web, email and messaging channels.
+            Reduces repetitive reception and enquiry workload.
           </p>
         </div>
 
-
-        <div class="pain-item">
-          <div class="pain-number">02</div>
-
-          <h3>Manual Administration</h3>
+        <div class="outcome">
+          <strong>Makes money</strong>
 
           <p>
-            Staff copying information, processing forms,
-            organising documents and updating records.
+            Captures customers that may otherwise leave,
+            call competitors or disappear after hours.
           </p>
         </div>
 
+        <div class="best-for">
+          <b>Best for:</b>
+          clinics, dental practices, law firms, property,
+          education, hotels, automotive, service businesses,
+          healthcare and appointment-heavy companies.
+        </div>
 
-        <div class="pain-item">
-          <div class="pain-number">03</div>
+      </article>
 
-          <h3>Missed Opportunities</h3>
+
+      <!-- 02 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">02</div>
+
+        <h3>AI Chatbots</h3>
+
+        <p class="solution-summary">
+          Website and messaging assistants designed to answer,
+          guide, recommend, qualify, capture information and
+          move visitors toward useful action.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
 
           <p>
-            Leads going cold because follow-up is slow,
-            inconsistent or dependent on staff availability.
+            Reduces repetitive support and enquiry handling.
           </p>
         </div>
 
-
-        <div class="pain-item">
-          <div class="pain-number">04</div>
-
-          <h3>Disconnected Systems</h3>
+        <div class="outcome">
+          <strong>Makes money</strong>
 
           <p>
-            Teams manually moving information between CRM,
-            email, spreadsheets, calendars and other tools.
+            Turns more website traffic into conversations,
+            leads, bookings and customer opportunities.
           </p>
         </div>
 
-      </div>
+        <div class="best-for">
+          <b>Best for:</b>
+          almost any business receiving online traffic,
+          enquiries or repetitive customer questions.
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">03</div>
+
+        <h3>AI Voice & Call Centre</h3>
+
+        <p class="solution-summary">
+          Intelligent voice systems for selected inbound calls,
+          follow-ups, reminders, missed-call recovery,
+          customer assistance and communication workflows.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Reduces repetitive call volume requiring human agents.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Recovers missed opportunities and keeps enquiries
+            moving when staff are unavailable.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          call centres, insurers, clinics, automotive,
+          sales teams, property, telecoms and high-call-volume
+          businesses.
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">04</div>
+
+        <h3>Clerical & Admin Automation</h3>
+
+        <p class="solution-summary">
+          Automate data entry, document processing, email routing,
+          filing, information capture, form handling and repetitive
+          office administration.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Removes hours of repetitive administrative workload.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Gives staff more time for customers, sales and
+            productive work instead of moving information.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          accounting, legal, healthcare, finance,
+          logistics, education, property, construction,
+          manufacturing and corporate offices.
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">05</div>
+
+        <h3>HR Automation</h3>
+
+        <p class="solution-summary">
+          Streamline CV processing, candidate administration,
+          interview coordination, employee onboarding and
+          repetitive HR workflows with human oversight where needed.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Reduces recruitment and HR administration workload.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Helps organisations move suitable candidates through
+            recruitment faster and frees HR capacity for higher-value work.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          recruitment, retail groups, call centres,
+          hospitality, security, healthcare, universities
+          and companies hiring at scale.
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">06</div>
+
+        <h3>CRM & Lead Automation</h3>
+
+        <p class="solution-summary">
+          Capture, organise, update, qualify, assign and follow
+          up business opportunities across CRM, forms,
+          email and communication channels.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Reduces manual CRM updates and sales administration.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Stops valuable leads from being forgotten,
+            delayed or left without follow-up.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          property, automotive, insurance, finance,
+          education, construction, agencies, B2B and sales-driven
+          businesses.
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">07</div>
+
+        <h3>Sales Automation</h3>
+
+        <p class="solution-summary">
+          Automate qualification, follow-up, customer reactivation,
+          sales administration, reminders and intelligent
+          handoff to salespeople.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Reduces repetitive prospect and follow-up work.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Gives more opportunities consistent attention
+            and helps sales teams concentrate on closing.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          almost any company with leads,
+          quotations, salespeople or customer pipelines.
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">08</div>
+
+        <h3>Internal AI Systems</h3>
+
+        <p class="solution-summary">
+          Give employees intelligent access to company documents,
+          policies, processes, knowledge and internal operational
+          information.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Reduces time spent searching, repeating information
+            and answering recurring internal questions.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Helps teams operate faster and spend more time
+            delivering valuable work.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          growing SMEs, large organisations,
+          multi-branch businesses, education,
+          healthcare and complex operations.
+        </div>
+
+      </article>
+
+
+      <!-- 09 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">09</div>
+
+        <h3>Website & Digital Experience</h3>
+
+        <p class="solution-summary">
+          Build or upgrade professional websites, improve customer
+          journeys, add AI functionality and connect websites to
+          business systems.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Combines digital improvement and automation
+            rather than leaving the website disconnected from operations.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Stronger credibility, easier enquiries and better
+            customer journeys can turn more traffic into business.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          small businesses, SMEs and larger companies
+          with outdated, weak or disconnected websites.
+        </div>
+
+      </article>
+
+
+      <!-- 10 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">10</div>
+
+        <h3>AI Marketing & Growth</h3>
+
+        <p class="solution-summary">
+          Improve marketing operations through intelligent content
+          support, lead journeys, follow-up, re-engagement,
+          campaign workflows and customer communication.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Reduces repetitive marketing administration.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Helps convert attention into enquiries,
+            re-engage existing customers and keep prospects moving.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          retail, professional services, education,
+          property, automotive, e-commerce and growth-focused
+          companies.
+        </div>
+
+      </article>
+
+
+      <!-- 11 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">11</div>
+
+        <h3>AI Strategy & Guidance</h3>
+
+        <p class="solution-summary">
+          You do not have to understand AI before using it.
+          INVENIO can help identify where AI fits into your
+          business and guide you through practical opportunities.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Helps avoid spending on AI tools that solve
+            the wrong problem.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Identifies opportunities where AI could improve
+            sales, customer experience or business capacity.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          business owners, leadership teams and organisations
+          unsure where to begin with AI.
+        </div>
+
+      </article>
+
+
+      <!-- 12 -->
+
+      <article class="solution-card">
+
+        <div class="solution-number">12</div>
+
+        <h3>Custom Business Automation</h3>
+
+        <p class="solution-summary">
+          Tell us the repetitive process, bottleneck or operational
+          problem. We assess whether intelligent automation can
+          improve it.
+        </p>
+
+        <div class="outcome">
+          <strong>Saves money</strong>
+
+          <p>
+            Targets the specific repetitive work consuming
+            your business resources.
+          </p>
+        </div>
+
+        <div class="outcome">
+          <strong>Makes money</strong>
+
+          <p>
+            Can turn slow manual processes into faster,
+            connected revenue-supporting workflows.
+          </p>
+        </div>
+
+        <div class="best-for">
+          <b>Best for:</b>
+          businesses with unique workflows,
+          legacy processes or problems that do not fit
+          neatly into a standard category.
+        </div>
+
+      </article>
+
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- SERVICES -->
+<!-- ===========================
+     MULTILINGUAL
+=========================== -->
 
-  <section id="solutions">
+<section>
 
-    <div class="container">
+  <div class="container">
 
-      <div class="section-label">
-        Solutions
+    <div class="language-box reveal">
+
+      <div class="language-big">
+        AI<br>×<br>WORLD
       </div>
 
-      <h2 class="section-title">
-        Intelligent systems built around real business operations.
-      </h2>
-
-      <p class="section-description">
-        INVENIO combines AI, automation and business integrations
-        to reduce repetitive workload and improve how information,
-        customers and processes move through your organisation.
-      </p>
-
-
-      <div class="services-grid">
-
-        <div class="service-card">
-
-          <div class="service-number">01</div>
-
-          <h3>AI Receptionists & Assistants</h3>
-
-          <p>
-            Intelligent customer-facing assistants that answer
-            questions, capture enquiries, qualify opportunities,
-            assist customers and perform useful actions.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">02</div>
-
-          <h3>AI Voice & Call Automation</h3>
-
-          <p>
-            Automate selected inbound and outbound communication,
-            including enquiry handling, reminders, follow-ups,
-            missed-call recovery and customer assistance.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">03</div>
-
-          <h3>Administrative & Clerical Automation</h3>
-
-          <p>
-            Reduce repetitive data entry, document processing,
-            email routing, record updates, filing and internal
-            administrative workload.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">04</div>
-
-          <h3>HR Automation</h3>
-
-          <p>
-            Streamline CV processing, candidate administration,
-            interview coordination, employee onboarding and
-            repetitive HR workflows while retaining human oversight.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">05</div>
-
-          <h3>CRM & Lead Automation</h3>
-
-          <p>
-            Automatically capture, organise, update, route and
-            follow up customer opportunities across your existing
-            systems.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">06</div>
-
-          <h3>Sales Automation</h3>
-
-          <p>
-            Improve lead follow-up, qualification, reactivation,
-            sales administration and handover between automation
-            and your sales team.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">07</div>
-
-          <h3>Internal AI Assistants</h3>
-
-          <p>
-            Give employees intelligent access to company
-            information, internal documentation and frequently
-            used operational knowledge.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-
-        <div class="service-card">
-
-          <div class="service-number">08</div>
-
-          <h3>Custom Business Automation</h3>
-
-          <p>
-            Have a repetitive process consuming your team's time?
-            We analyse the workflow and determine where AI and
-            automation can create measurable operational value.
-          </p>
-
-          <div class="service-glow"></div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROCESS -->
-
-  <section id="process">
-
-    <div class="container">
-
-      <div class="section-label">
-        Our Approach
-      </div>
-
-      <h2 class="section-title">
-        From business problem to intelligent system.
-      </h2>
-
-      <div class="process">
-
-        <div class="process-step">
-
-          <span>01</span>
-
-          <h3>Analyse</h3>
-
-          <p>
-            We identify repetitive work, bottlenecks,
-            customer friction and automation opportunities.
-          </p>
-
-        </div>
-
-
-        <div class="process-step">
-
-          <span>02</span>
-
-          <h3>Design</h3>
-
-          <p>
-            We design an automation around your actual
-            process rather than forcing your business
-            into a generic solution.
-          </p>
-
-        </div>
-
-
-        <div class="process-step">
-
-          <span>03</span>
-
-          <h3>Integrate</h3>
-
-          <p>
-            The system can connect with relevant tools such as
-            CRM platforms, email, calendars, forms,
-            databases and communication channels.
-          </p>
-
-        </div>
-
-
-        <div class="process-step">
-
-          <span>04</span>
-
-          <h3>Deploy & Improve</h3>
-
-          <p>
-            We test, deploy, monitor and improve the
-            automation as business requirements evolve.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- DEMOS -->
-
-  <section class="demo-section" id="demos">
-
-    <div class="container">
-
-      <div class="section-label">
-        Demonstrations
-      </div>
-
-      <h2 class="section-title">
-        See what intelligent automation can look like.
-      </h2>
-
-      <p class="section-description">
-        These demonstration systems illustrate how AI automation
-        can be applied to common business processes.
-      </p>
-
-
-      <div class="demo-grid">
-
-
-        <div class="demo-card">
-
-          <div class="demo-screen">
-            <div class="demo-play">▶</div>
-          </div>
-
-          <div class="demo-content">
-
-            <div class="demo-type">
-              Example Implementation
-            </div>
-
-            <h3>AI Receptionist</h3>
-
-            <p>
-              Customer questions, lead capture,
-              qualification and automated assistance.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="demo-card">
-
-          <div class="demo-screen">
-            <div class="demo-play">▶</div>
-          </div>
-
-          <div class="demo-content">
-
-            <div class="demo-type">
-              Example Implementation
-            </div>
-
-            <h3>HR Processing System</h3>
-
-            <p>
-              CV information extraction, organisation,
-              workflow routing and human review.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="demo-card">
-
-          <div class="demo-screen">
-            <div class="demo-play">▶</div>
-          </div>
-
-          <div class="demo-content">
-
-            <div class="demo-type">
-              Example Implementation
-            </div>
-
-            <h3>Business Workflow Automation</h3>
-
-            <p>
-              Information automatically moving between
-              enquiries, business systems and staff.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- BIG CTA -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="automation-box">
+      <div class="language-copy">
 
         <div class="section-label">
-          Custom Automation
+          Multilingual Intelligence
         </div>
 
         <h2>
-          What is your team still doing manually?
+          Your customers do not all have to speak
+          the same language.
         </h2>
 
         <p>
-          Tell us about the repetitive process consuming your
-          team's time. INVENIO can assess where AI and automation
-          may improve the workflow.
+          INVENIO AI systems can be designed to communicate
+          across multiple languages, helping businesses serve
+          broader customer bases, support international markets
+          and reduce dependence on separate language-specific
+          support processes.
         </p>
 
-        <a href="#contact" class="btn btn-primary">
-          Discuss Your Workflow
-        </a>
+        <p style="margin-top:16px;">
+          For businesses with customers across countries,
+          cultures or language groups, multilingual AI can turn
+          accessibility into a growth advantage.
+        </p>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- ABOUT -->
+<!-- ===========================
+     INDUSTRIES
+=========================== -->
 
-  <section id="about">
+<section id="industries">
 
-    <div class="container">
+  <div class="container reveal">
 
-      <div class="about-grid">
+    <div class="section-label">
+      Industries
+    </div>
 
-        <div>
+    <h2 class="section-title">
+      Built for businesses
+      <span class="lime">
+        small, growing and large.
+      </span>
+    </h2>
 
-          <div class="section-label">
-            About INVENIO
+    <p class="section-description">
+      Automation is not only for giant corporations.
+      Repetitive work exists in a five-person company
+      just as it exists in a five-thousand-person organisation.
+    </p>
+
+
+    <div class="industry-levels">
+
+
+      <div class="industry-column">
+
+        <h3>Small Businesses</h3>
+
+        <p>
+          Automate repetitive work without needing
+          a large technology team.
+        </p>
+
+        <div class="industry-tags">
+
+          <span class="industry-tag">Dental</span>
+          <span class="industry-tag">Clinics</span>
+          <span class="industry-tag">Trades</span>
+          <span class="industry-tag">Salons</span>
+          <span class="industry-tag">Restaurants</span>
+          <span class="industry-tag">Local Services</span>
+          <span class="industry-tag">Consultants</span>
+          <span class="industry-tag">Property Agents</span>
+          <span class="industry-tag">Small Retail</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="industry-column">
+
+        <h3>Growing SMEs</h3>
+
+        <p>
+          Build greater operational capacity without
+          increasing overhead at the same pace.
+        </p>
+
+        <div class="industry-tags">
+
+          <span class="industry-tag">Law Firms</span>
+          <span class="industry-tag">Accounting</span>
+          <span class="industry-tag">Recruitment</span>
+          <span class="industry-tag">Automotive</span>
+          <span class="industry-tag">Education</span>
+          <span class="industry-tag">Logistics</span>
+          <span class="industry-tag">Construction</span>
+          <span class="industry-tag">Insurance</span>
+          <span class="industry-tag">Hospitality</span>
+          <span class="industry-tag">B2B Services</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="industry-column">
+
+        <h3>Larger Organisations</h3>
+
+        <p>
+          Connect high-volume work across departments,
+          locations and customer channels.
+        </p>
+
+        <div class="industry-tags">
+
+          <span class="industry-tag">Hospitals</span>
+          <span class="industry-tag">Universities</span>
+          <span class="industry-tag">Call Centres</span>
+          <span class="industry-tag">Retail Groups</span>
+          <span class="industry-tag">Manufacturing</span>
+          <span class="industry-tag">Financial Services</span>
+          <span class="industry-tag">Insurance Groups</span>
+          <span class="industry-tag">Telecommunications</span>
+          <span class="industry-tag">Multi-Branch Companies</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="industry-question">
+
+      Whether your business has
+      <span class="gold">5 employees or 5,000</span>,
+      the question is the same:
+
+      <strong>
+        what work is still being done manually that could be
+        handled faster, smarter, more consistently and at a scale
+        traditional manual processes struggle to match?
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===========================
+     TRUST
+=========================== -->
+
+<section>
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      Why Trust INVENIO?
+    </div>
+
+    <h2 class="section-title">
+      Business results first.
+      <span class="lime">
+        Technology second.
+      </span>
+    </h2>
+
+    <p class="section-description">
+      AI only matters when it improves something that matters
+      to the business.
+    </p>
+
+
+    <div class="trust-grid">
+
+
+      <div class="trust-card">
+        <div class="trust-number">01</div>
+
+        <h3>We start with your problem.</h3>
+
+        <p>
+          We do not force a generic AI product into your business.
+          We first understand where time, money or opportunities
+          are being lost.
+        </p>
+      </div>
+
+
+      <div class="trust-card">
+        <div class="trust-number">02</div>
+
+        <h3>Revenue and cost matter.</h3>
+
+        <p>
+          Every useful automation should have a business reason:
+          save time, reduce operating pressure, protect revenue
+          or create new opportunity.
+        </p>
+      </div>
+
+
+      <div class="trust-card">
+        <div class="trust-number">03</div>
+
+        <h3>We guide you through AI.</h3>
+
+        <p>
+          Your team does not need to understand every AI tool.
+          We help you understand what matters, where it fits
+          and what should remain human.
+        </p>
+      </div>
+
+
+      <div class="trust-card">
+        <div class="trust-number">04</div>
+
+        <h3>Practical, not hype.</h3>
+
+        <p>
+          The goal is not to make your business look futuristic.
+          The goal is to make it operate better.
+        </p>
+      </div>
+
+
+      <div class="trust-card">
+        <div class="trust-number">05</div>
+
+        <h3>Built around your operation.</h3>
+
+        <p>
+          Customer communication, administration,
+          sales, HR and internal systems can be connected
+          into solutions designed around how you work.
+        </p>
+      </div>
+
+
+      <div class="trust-card">
+        <div class="trust-number">06</div>
+
+        <h3>Support beyond delivery.</h3>
+
+        <p>
+          Business requirements change.
+          Intelligent systems should be able to improve
+          with them.
+        </p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===========================
+     DELIVERY PROMISE
+=========================== -->
+
+<section class="promise-section">
+
+  <div class="container">
+
+    <div class="promise-box reveal">
+
+      <div class="promise-big">
+        No paying for promises.
+      </div>
+
+      <div class="promise-copy">
+
+        <p>
+          We believe businesses should pay for
+          <strong>solutions, not unfinished promises.</strong>
+        </p>
+
+        <p style="margin-top:15px;">
+          We first agree on what the solution is expected to deliver.
+          If INVENIO has not delivered the agreed solution,
+          you do not pay for that undelivered delivery.
+        </p>
+
+        <p style="margin-top:15px;">
+          Clear expectations first.
+          Delivery second.
+          Long-term value after that.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===========================
+     PROCESS
+=========================== -->
+
+<section id="process">
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      How We Work
+    </div>
+
+    <h2 class="section-title">
+      You bring the business problem.
+      <span class="lime">
+        We help build the intelligent answer.
+      </span>
+    </h2>
+
+
+    <div class="process-grid">
+
+
+      <div class="process-step">
+
+        <span>01</span>
+
+        <h3>Understand</h3>
+
+        <p>
+          We learn how your business currently works and
+          where the real pain exists.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <span>02</span>
+
+        <h3>Identify</h3>
+
+        <p>
+          We determine which work should be automated,
+          improved or redesigned.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <span>03</span>
+
+        <h3>Design</h3>
+
+        <p>
+          We map an intelligent solution around your
+          business requirements.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <span>04</span>
+
+        <h3>Build & Verify</h3>
+
+        <p>
+          The solution is developed, tested and checked
+          against the agreed business outcome.
+        </p>
+
+      </div>
+
+
+      <div class="process-step">
+
+        <span>05</span>
+
+        <h3>Deliver & Improve</h3>
+
+        <p>
+          We deploy the system and help it evolve
+          as your business needs change.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===========================
+     DIGITAL FIRST
+=========================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="digital-first reveal">
+
+
+      <div>
+
+        <div class="section-label">
+          Digital-First Company
+        </div>
+
+        <h2 class="section-title">
+          Built for a business world
+          without unnecessary borders.
+        </h2>
+
+        <p class="section-description">
+          INVENIO AI SOLUTIONS operates as a digital-first
+          AI solutions company, allowing us to work efficiently
+          with businesses regardless of location.
+        </p>
+
+      </div>
+
+
+      <div class="digital-panel">
+
+        <h3>
+          Virtual by design.
+          Personal where it matters.
+        </h3>
+
+        <p>
+          Strategy, demonstrations, visual reviews,
+          implementation discussions and support can all
+          happen remotely — giving clients direct access
+          without unnecessary physical-office overhead.
+        </p>
+
+        <div class="digital-points">
+
+          <div class="digital-point">
+            Remote implementation and support
           </div>
 
-          <h2 class="section-title">
-            Intelligence designed to work for business.
-          </h2>
+          <div class="digital-point">
+            Visual demonstrations through WhatsApp
+          </div>
 
-        </div>
+          <div class="digital-point">
+            Able to work across locations and markets
+          </div>
 
-
-        <div class="about-copy">
-
-          <p>
-            INVENIO AI SOLUTIONS focuses on practical artificial
-            intelligence and automation systems designed around
-            real operational problems.
-          </p>
-
-          <p>
-            Our approach is not simply to add AI for the sake of
-            technology. We identify where repetitive work,
-            communication delays and disconnected processes are
-            costing a business time and efficiency.
-          </p>
-
-          <p>
-            From customer communication to administration,
-            HR, CRM, sales and internal operations, INVENIO
-            develops intelligent systems that integrate into
-            the way businesses work.
-          </p>
+          <div class="digital-point">
+            Multilingual AI possibilities
+          </div>
 
         </div>
 
@@ -1718,62 +3234,306 @@
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- CONTACT -->
+<!-- ===========================
+     CONTACT
+=========================== -->
 
-  <section class="contact" id="contact">
+<section class="contact-section" id="contact">
 
-    <div class="container">
+  <div class="container">
+
+    <div class="contact-center reveal">
 
       <div class="section-label">
-        Start a Conversation
+        Start Here
       </div>
 
       <h2 class="section-title">
-        Find out what your business could automate.
+        Ready to save time,
+        <span class="lime">
+          reduce cost and grow smarter?
+        </span>
       </h2>
 
       <p class="section-description">
-        Tell us about your business, the process you want to improve,
-        or the repetitive work consuming your team's time.
+        You do not need to know which automation you need.
+        Tell us about your business and what is currently
+        consuming time, money or opportunities.
       </p>
 
-      <div class="contact-buttons">
 
-        <a href="#" class="btn btn-primary">
-          Request an Automation Assessment
-        </a>
+      <div class="contact-grid">
 
-        <a href="#" class="btn btn-secondary">
-          Contact INVENIO
-        </a>
+
+        <div class="contact-card recommended">
+
+          <div class="recommended-label">
+            Recommended
+          </div>
+
+          <h3>WhatsApp Our Team</h3>
+
+          <p>
+            We recommend starting on WhatsApp.
+            It is fast, convenient and allows us to share
+            visuals, screenshots, examples and solution ideas
+            while discussing your business.
+          </p>
+
+          <span class="contact-value">
+            +27 60 486 8989
+          </span>
+
+          <a
+            href="https://wa.me/27604868989?text=Hi%20INVENIO%20AI%20SOLUTIONS%2C%20I%27d%20like%20to%20discuss%20how%20AI%20could%20improve%20my%20business."
+            target="_blank"
+            class="btn btn-main"
+          >
+            Start on WhatsApp →
+          </a>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <div class="recommended-label">
+            Email
+          </div>
+
+          <h3>Email INVENIO</h3>
+
+          <p>
+            Prefer email?
+            Send us your business challenge and we can
+            continue the conversation there.
+          </p>
+
+          <span class="contact-value">
+            invenio.ai.solutions@gmail.com
+          </span>
+
+          <a
+            href="mailto:invenio.ai.solutions@gmail.com?subject=Business%20AI%20Automation%20Enquiry"
+            class="btn btn-secondary"
+          >
+            Send Email →
+          </a>
+
+        </div>
+
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- FOOTER -->
+<!-- ===========================
+     FOOTER
+=========================== -->
 
-  <footer>
+<footer>
 
-    <div class="footer-inner">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      <img
+        src="ChatGPT Image Aug 21, 2026, 06_50_59 AM.png"
+        alt="INVENIO AI Solutions"
+      >
 
       <div>
-        © 2026 INVENIO AI SOLUTIONS
-      </div>
+        <strong>INVENIO AI SOLUTIONS</strong>
 
-      <div>
-        Powering Business Through Intelligence.
+        <div
+          style="
+            color:#747b82;
+            font-size:11px;
+            margin-top:4px;
+          "
+        >
+          Powering Your Business Through Intelligence.
+        </div>
       </div>
 
     </div>
 
-  </footer>
+
+    <div class="footer-copy">
+
+      © 2026 INVENIO AI SOLUTIONS.
+      All rights reserved.
+
+      <br>
+
+      Automate • Improve • Grow
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* ==================================
+     HERO VIDEO ROTATION
+  ================================== */
+
+  const heroVideos = [
+
+    "grok-video-3142dd80-9a58-4cf4-85b4-d15d3a07774c.mp4",
+
+    "grok-video-b34bfe40-d091-40e3-80cf-8c75943d838a.mp4",
+
+    "grok-video-7fdc8fef-112f-47ae-8cf4-c5b11698c66c (1).mp4",
+
+    "grok-video-5076f65a-6488-4faf-b9d8-a8a330602652 (1).mp4"
+
+  ];
+
+
+  const heroVideo =
+    document.getElementById("heroVideo");
+
+  const dots =
+    document.querySelectorAll(".video-dot");
+
+  let currentVideo = 0;
+
+
+  function playHeroVideo(index) {
+
+    currentVideo = index;
+
+    heroVideo.src =
+      heroVideos[currentVideo];
+
+    heroVideo.load();
+
+    heroVideo.play()
+      .catch(() => {});
+
+
+    dots.forEach(
+      (dot, i) => {
+
+        dot.classList.toggle(
+          "active",
+          i === currentVideo
+        );
+
+      }
+    );
+
+  }
+
+
+  heroVideo.addEventListener(
+    "ended",
+    () => {
+
+      const next =
+        (currentVideo + 1)
+        % heroVideos.length;
+
+      playHeroVideo(next);
+
+    }
+  );
+
+
+  playHeroVideo(0);
+
+
+
+  /* ==================================
+     MOBILE MENU
+  ================================== */
+
+  function toggleMenu() {
+
+    document
+      .getElementById("navLinks")
+      .classList.toggle("open");
+
+  }
+
+
+  document
+    .querySelectorAll("#navLinks a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          document
+            .getElementById("navLinks")
+            .classList.remove("open");
+
+        }
+      );
+
+    });
+
+
+
+  /* ==================================
+     SCROLL REVEALS
+  ================================== */
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting) {
+
+            entry.target
+              .classList
+              .add("visible");
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.10
+      }
+
+    );
+
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+</script>
+
 
 </body>
 </html>
