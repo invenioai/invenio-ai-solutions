@@ -11,7 +11,7 @@
     content="INVENIO AI SOLUTIONS helps businesses reduce repetitive workload, improve customer experience, automate operations, modernise digitally and create more opportunities through practical AI."
   />
 
-  <meta name="theme-color" content="#07090b" />
+  <meta name="theme-color" content="#070a10" />
 
   <!-- Start loading the first hero video immediately -->
   <link
@@ -24,28 +24,35 @@
   <style>
 
     :root {
-      --black: #07090b;
-      --black-2: #0a0d10;
-      --charcoal: #11151a;
-      --charcoal-2: #171c21;
+      --black: #070a10;
+      --black-2: #0b1018;
+      --charcoal: #121923;
+      --charcoal-2: #192231;
 
-      --white: #f5f6f3;
-      --silver: #c7cdd2;
-      --muted: #8f979f;
+      --white: #f5f7fb;
+      --silver: #bec7d4;
+      --muted: #8995a5;
 
-      --emerald: #0d6d56;
-      --emerald-deep: #074536;
+      /* Existing variable names are retained so every current component
+         inherits the new premium neutral system without breaking the page. */
+      --emerald: #273141;
+      --emerald-deep: #111826;
 
-      --lime: #baff45;
-      --lime-soft: #d4ff8a;
+      /* Existing accent names now resolve to premium neutrals.
+         Blue is reserved for small luxury details only. */
+      --lime: #dde3eb;
+      --lime-soft: #ffffff;
 
-      --gold: #bfa369;
-      --gold-soft: #dac78f;
+      --blue: #5667d8;
+      --blue-soft: #a4b1f2;
 
-      --cyan: #6ac7cf;
+      --gold: #8e9bac;
+      --gold-soft: #c3cbd6;
 
-      --border: rgba(255,255,255,.085);
-      --border-strong: rgba(255,255,255,.14);
+      --cyan: #78c4d6;
+
+      --border: rgba(190,199,212,.11);
+      --border-strong: rgba(190,199,212,.20);
 
       --max: 1240px;
       --radius: 20px;
@@ -68,12 +75,12 @@
       background:
         radial-gradient(
           circle at 15% 0%,
-          rgba(191,163,105,.055),
+          rgba(148,163,184,.055),
           transparent 27%
         ),
         radial-gradient(
           circle at 92% 30%,
-          rgba(13,109,86,.06),
+          rgba(86,103,216,.035),
           transparent 28%
         ),
         var(--black);
@@ -146,7 +153,7 @@
       width: 20px;
       height: 1px;
 
-      background: var(--lime);
+      background: var(--blue);
     }
 
 
@@ -173,7 +180,7 @@
 
 
     .lime {
-      color: var(--lime);
+      color: var(--white);
     }
 
 
@@ -196,7 +203,7 @@
 
       z-index: 1000;
 
-      background: rgba(7,9,11,.86);
+      background: rgba(7,10,16,.89);
       backdrop-filter: blur(18px);
 
       border-bottom: 1px solid rgba(255,255,255,.055);
@@ -253,7 +260,7 @@
 
       margin-top: 4px;
 
-      color: #737a81;
+      color: #909bab;
 
       font-size: 8px;
 
@@ -265,36 +272,54 @@
       display: flex;
       align-items: center;
 
-      gap: 25px;
+      gap: 8px;
+
+      padding: 6px;
+
+      border: 1px solid rgba(190,199,212,.085);
+      border-radius: 12px;
+
+      background: rgba(255,255,255,.022);
     }
 
 
     .nav-links a {
+      padding: 9px 12px;
+
       color: var(--silver);
 
       font-size: 13px;
 
       text-decoration: none;
 
-      transition: .2s ease;
+      border-radius: 8px;
+
+      transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
     }
 
 
     .nav-links a:hover {
       color: white;
+      background: rgba(255,255,255,.065);
+      transform: translateY(-1px);
     }
 
 
     .nav-whatsapp {
       padding: 10px 16px;
 
-      border: 1px solid rgba(186,255,69,.30);
+      margin-left: 3px;
+
+      border: 1px solid rgba(86,103,216,.42);
 
       border-radius: 9px;
 
-      color: var(--lime-soft) !important;
+      color: #eef1ff !important;
 
-      background: rgba(186,255,69,.055);
+      background: linear-gradient(135deg, rgba(86,103,216,.13), rgba(120,196,214,.035));
     }
 
 
@@ -354,17 +379,19 @@
 
 
     .btn-primary {
-      color: #071006;
+      color: #07111f;
 
       background:
         linear-gradient(
           135deg,
-          var(--lime-soft),
-          var(--lime)
+          #ffffff,
+          #cfd6df
         );
 
+      border: 1px solid rgba(164,177,242,.38);
+
       box-shadow:
-        0 14px 45px rgba(186,255,69,.08);
+        0 14px 45px rgba(86,103,216,.10);
     }
 
 
@@ -396,7 +423,7 @@
       background:
         radial-gradient(
           circle at 70% 40%,
-          rgba(13,109,86,.10),
+          rgba(148,163,184,.075),
           transparent 35%
         ),
         #080a0c;
@@ -414,7 +441,7 @@
           135deg,
           #0b0e11,
           #10161a 50%,
-          #08110d
+          #08101d
         );
     }
 
@@ -519,10 +546,10 @@
 
       border-radius: 50%;
 
-      background: var(--lime);
+      background: var(--blue);
 
       box-shadow:
-        0 0 17px rgba(186,255,69,.62);
+        0 0 17px rgba(86,103,216,.62);
     }
 
 
@@ -540,7 +567,19 @@
 
 
     .hero h1 span {
-      color: var(--lime-soft);
+      color: transparent;
+
+      background:
+        linear-gradient(
+          92deg,
+          #ffffff 0%,
+          #d9defa 48%,
+          var(--blue-soft) 78%,
+          var(--cyan) 118%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
 
@@ -610,7 +649,7 @@
 
 
     .hero-proof-item strong {
-      color: var(--lime-soft);
+      color: #f5f7fb;
     }
 
 
@@ -643,7 +682,7 @@
     .hero-video-dot.active {
       width: 40px;
 
-      background: var(--lime);
+      background: var(--blue);
     }
 
 
@@ -785,7 +824,7 @@
 
 
     .video-card-overlay span {
-      color: var(--lime-soft);
+      color: var(--blue-soft);
 
       font-size: 10px;
 
@@ -813,16 +852,16 @@
 
       overflow: hidden;
 
-      border: 1px solid rgba(186,255,69,.15);
+      border: 1px solid rgba(190,199,212,.16);
 
       border-radius: 24px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(186,255,69,.035),
+          rgba(255,255,255,.025),
           rgba(255,255,255,.015) 45%,
-          rgba(191,163,105,.035)
+          rgba(148,163,184,.045)
         );
     }
 
@@ -840,7 +879,7 @@
 
       border-radius: 50%;
 
-      background: rgba(13,109,86,.15);
+      background: rgba(86,103,216,.055);
 
       filter: blur(75px);
     }
@@ -898,7 +937,7 @@
 
 
     .capacity-line span {
-      color: var(--lime);
+      color: var(--white);
     }
 
 
@@ -970,7 +1009,7 @@
 
 
     .capacity-arrow {
-      color: var(--lime);
+      color: var(--blue-soft);
 
       text-align: center;
 
@@ -990,19 +1029,19 @@
 
       border-radius: 14px;
 
-      border: 1px solid rgba(186,255,69,.22);
+      border: 1px solid rgba(86,103,216,.28);
 
       background:
         radial-gradient(
           circle,
-          rgba(186,255,69,.075),
+          rgba(86,103,216,.095),
           transparent 57%
         );
     }
 
 
     .core-number {
-      color: var(--lime);
+      color: var(--blue);
 
       font-size: 48px;
       font-weight: 850;
@@ -1093,7 +1132,7 @@
         linear-gradient(
           180deg,
           transparent,
-          rgba(13,109,86,.02),
+          rgba(86,103,216,.025),
           transparent
         );
     }
@@ -1164,7 +1203,7 @@
     .solution-card:hover {
       transform: translateY(-4px);
 
-      border-color: rgba(186,255,69,.20);
+      border-color: rgba(86,103,216,.28);
     }
 
 
@@ -1207,7 +1246,7 @@
 
       margin-bottom: 5px;
 
-      color: var(--lime-soft);
+      color: var(--blue-soft);
 
       font-size: 9px;
 
@@ -1341,14 +1380,14 @@
 
       align-items: center;
 
-      border: 1px solid rgba(106,199,207,.16);
+      border: 1px solid rgba(190,199,212,.16);
 
       border-radius: 22px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(106,199,207,.035),
+          rgba(255,255,255,.025),
           rgba(255,255,255,.01)
         );
     }
@@ -1458,12 +1497,12 @@
 
       padding: 30px 33px;
 
-      border-left: 2px solid var(--lime);
+      border-left: 2px solid var(--blue);
 
       background:
         linear-gradient(
           90deg,
-          rgba(186,255,69,.03),
+          rgba(86,103,216,.025),
           transparent
         );
 
@@ -1504,7 +1543,7 @@
     .trust-number {
       margin-bottom: 21px;
 
-      color: var(--lime);
+      color: var(--blue-soft);
 
       font-size: 10px;
     }
@@ -1558,7 +1597,7 @@
 
       margin-bottom: 23px;
 
-      color: var(--lime);
+      color: var(--blue-soft);
 
       font-size: 10px;
     }
@@ -1610,7 +1649,7 @@
 
 
     .promise-card.gold-card {
-      border-color: rgba(191,163,105,.20);
+      border-color: rgba(148,163,184,.24);
     }
 
 
@@ -1639,7 +1678,7 @@
       background:
         radial-gradient(
           circle at 50% 100%,
-          rgba(13,109,86,.10),
+          rgba(86,103,216,.04),
           transparent 33%
         );
     }
@@ -1683,12 +1722,12 @@
 
 
     .contact-card.recommended {
-      border-color: rgba(186,255,69,.23);
+      border-color: rgba(86,103,216,.30);
 
       background:
         linear-gradient(
           145deg,
-          rgba(186,255,69,.035),
+          rgba(86,103,216,.055),
           rgba(255,255,255,.01)
         );
     }
@@ -1697,7 +1736,7 @@
     .contact-kicker {
       margin-bottom: 12px;
 
-      color: var(--lime-soft);
+      color: var(--blue-soft);
 
       font-size: 9px;
 
@@ -1836,7 +1875,7 @@
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: rgba(186,255,69,.45);
+      border-color: rgba(86,103,216,.52);
     }
 
 
@@ -1898,11 +1937,11 @@
     .form-status.success {
       display: block;
 
-      color: #dbff9a;
+      color: #cbd4ff;
 
-      border: 1px solid rgba(186,255,69,.22);
+      border: 1px solid rgba(86,103,216,.28);
 
-      background: rgba(186,255,69,.05);
+      background: rgba(86,103,216,.075);
     }
 
 
@@ -2460,12 +2499,12 @@
         Why INVENIO
       </a>
 
-      <a href="#solutions">
-        Solutions
-      </a>
-
       <a href="#industries">
         Industries
+      </a>
+
+      <a href="#solutions">
+        Solutions
       </a>
 
       <a href="#process">
@@ -2479,6 +2518,7 @@
       <a
         class="nav-whatsapp"
         target="_blank"
+        rel="noopener noreferrer"
         href="https://wa.me/27604868989?text=Hi%20INVENIO%20AI%20SOLUTIONS%2C%20I%27d%20like%20to%20discuss%20how%20AI%20could%20improve%20my%20business."
       >
         WhatsApp Us
@@ -2489,7 +2529,10 @@
 
     <button
       class="menu-button"
+      id="menuButton"
       aria-label="Open website menu"
+      aria-controls="navLinks"
+      aria-expanded="false"
       onclick="toggleMenu()"
     >
       ☰
@@ -5067,10 +5110,26 @@
 
   function toggleMenu() {
 
-    document
-      .getElementById("navLinks")
-      .classList
-      .toggle("open");
+    const navLinks =
+      document.getElementById("navLinks");
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const isOpen =
+      navLinks.classList.toggle("open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    menuButton.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close website menu"
+        : "Open website menu"
+    );
 
   }
 
@@ -5087,6 +5146,13 @@
             .getElementById("navLinks")
             .classList
             .remove("open");
+
+          document
+            .getElementById("menuButton")
+            .setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
         }
       );
