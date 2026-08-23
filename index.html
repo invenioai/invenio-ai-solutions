@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INVENIO AI SOLUTIONS | AI Systems for Business Operations</title>
   <meta name="description" content="INVENIO automates enquiries, bookings, follow-up, documents, CRM updates and routine administration.">
-  <meta name="theme-color" content="#030507">
+  <meta name="theme-color" content="#020302">
   <link rel="canonical" href="https://invenio-ai-solutions.pages.dev/">
   <link rel="icon" type="image/png" href="invenio-logo.png">
   <link rel="apple-touch-icon" href="invenio-logo.png">
@@ -40,20 +40,22 @@
 
   <style>
     :root {
-      --ink: #030507;
-      --ink-2: #06090d;
-      --graphite: #0b1117;
-      --steel: #9aa5b3;
-      --silver: #c8cfd8;
-      --mist: #11171e;
-      --porcelain: #040609;
-      --paper: #080c11;
-      --cobalt: #236fc7;
-      --cobalt-deep: #0d447f;
-      --ice: #5ad7f4;
-      --champagne: #236fc7;
-      --brass: #236fc7;
-      --brass-light: #5ad7f4;
+      --ink: #020302;
+      --ink-2: #050605;
+      --graphite: #0a0b09;
+      --steel: #b8ad99;
+      --silver: #d7cdbb;
+      --mist: #11110e;
+      --porcelain: #040504;
+      --paper: #080906;
+      --cobalt: #169d9a;
+      --cobalt-deep: #0d6f78;
+      --ice: #43d4c4;
+      --champagne: #169d9a;
+      --brass: #169d9a;
+      --brass-light: #43d4c4;
+      --cream: #eee6d6;
+      --cream-muted: #c5baa6;
       --success: #2f9f78;
       --danger: #b55757;
       --line-dark: rgba(255,255,255,.12);
@@ -435,6 +437,118 @@
     .privacy p { color: #a6b0ba; }
     footer { background: #020305; border-top: 1px solid rgba(90,215,244,.1); }
     .footer-brand img { border: 1px solid rgba(90,215,244,.62); border-radius: 50%; background: #f4f6f7; box-shadow: 0 0 16px rgba(35,111,199,.16); }
+
+    /* Deep black, warm cream and restrained cyan-green palette */
+    body { color: var(--cream); background: #020302; }
+    .site-header { background: rgba(2,3,2,.92); border-bottom-color: rgba(67,212,196,.11); }
+    .why, .solutions, .process, .enquire { color: var(--cream); background: #050605; }
+    .industries, .pricing, .trust, .privacy { color: var(--cream); background: #020302; }
+    .pain-bar, footer { color: var(--cream); background: #010201; }
+
+    .brand-copy strong, .primary-nav a:hover, .primary-nav a:focus-visible,
+    .market-select, .lang-toggle, .menu-toggle, .hero, .btn-light,
+    .conversion-band, .pricing, .trust, .contact-panel, footer { color: var(--cream); }
+    .brand-copy small, .primary-nav a, .hero-lead, .hero-proof p,
+    .pain-item span, .dark .section-head p, .dark .muted,
+    .industry-pain, .synergy-card p, .price-main > p, .offer-card p,
+    .trust p, .trust-item span, .contact-panel p, .contact-links small,
+    .footer-links, .footer-bottom { color: var(--cream-muted); }
+    .skip-link { color: #020302; background: var(--cream); }
+    .hero-kicker { color: var(--cream-muted); }
+    .market-select option { color: #020302; background: var(--cream); }
+
+    .hero h1 span {
+      background: linear-gradient(90deg,#f2eadb,#d8cdb8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .accent, .dark .accent {
+      color: var(--cream);
+      background: none;
+      -webkit-background-clip: initial;
+      background-clip: initial;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    .brand img, .footer-brand img {
+      border-color: rgba(67,212,196,.58);
+      background: #eee6d6;
+      box-shadow: 0 0 15px rgba(22,157,154,.14);
+    }
+    .hero-kicker i { background: #43d4c4; box-shadow: 0 0 12px rgba(67,212,196,.28); }
+    .eyebrow, .dark .eyebrow { color: var(--cream-muted); }
+    .eyebrow::before, .dark .eyebrow::before {
+      background: linear-gradient(90deg,#43d4c4,#218fa8);
+      box-shadow: 0 0 7px rgba(67,212,196,.16);
+    }
+    main > section:not(.hero)::before {
+      background: linear-gradient(90deg,transparent,rgba(67,212,196,.24),rgba(33,143,168,.16),transparent);
+      filter: drop-shadow(0 0 5px rgba(67,212,196,.13));
+    }
+    .hero::after, .industries::after, .pricing::after, .trust::after {
+      background-image:
+        linear-gradient(rgba(67,212,196,.028) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(33,143,168,.022) 1px,transparent 1px);
+    }
+
+    .nav-cta, .btn-primary, .btn-dark, .conversion-inner .btn {
+      color: #02100e;
+      border-color: rgba(67,212,196,.3);
+      background: linear-gradient(135deg,#168f91,#43c9bc);
+      box-shadow: 0 0 21px rgba(22,157,154,.14);
+    }
+    .btn-primary:hover, .btn-dark:hover, .nav-cta:hover, .conversion-inner .btn:hover {
+      box-shadow: 0 0 26px rgba(67,212,196,.19);
+    }
+    .btn-light { border-color: rgba(238,230,214,.17); background: rgba(238,230,214,.055); }
+
+    .value-card, .solution-card, .process-step, .form-card {
+      color: var(--cream);
+      border-color: rgba(197,186,166,.13);
+      background: linear-gradient(145deg,#0d0d09,#080906);
+      box-shadow: 0 18px 50px rgba(0,0,0,.26);
+    }
+    .value-card:hover, .solution-card:hover, .process-step:hover { border-color: rgba(67,212,196,.22); }
+    .value-card p, .form-card .consent, .section-head p, .principle p,
+    .choice-strip p, .story-row p, .process-step p, .privacy p { color: var(--cream-muted); }
+    .value-number, .solution-index, .solution-link, .price-label { color: #d6cbb8; }
+    .choice-strip { border-color: rgba(67,212,196,.15); background: linear-gradient(110deg,rgba(67,212,196,.045),rgba(238,230,214,.018)); }
+    .choice-path span { color: var(--cream); background: #0b0c09; border-color: rgba(197,186,166,.14); }
+    .story-row, .story-row:first-of-type { border-color: rgba(197,186,166,.12); }
+    .story-row b, .story-row.pain b { color: var(--cream-muted); }
+    .story-row.impact b, .pricing-points li::before { color: #43d4c4; }
+    .solution-media { background: linear-gradient(135deg,#030403,#090b08); }
+    .solution-media::before { background: radial-gradient(circle at 75% 24%,rgba(67,212,196,.075),transparent 27%),linear-gradient(115deg,transparent,rgba(33,143,168,.04)); }
+    .industry-icon, .synergy-plus { color: #43d4c4; }
+    .industry-icon { background: rgba(238,230,214,.035); }
+    .industry-card:hover { border-color: rgba(67,212,196,.22); }
+    .industry-card a { color: var(--cream-muted); }
+    .demo-label { color: var(--cream); border-color: rgba(238,230,214,.16); }
+
+    .synergy { color: var(--cream); background: linear-gradient(120deg,#050605,#0b0c09); border-color: rgba(67,212,196,.11); }
+    .synergy-card { background: rgba(238,230,214,.018); border-color: rgba(197,186,166,.12); }
+    .conversion-band { background: linear-gradient(105deg,#030403,#07100e 62%,#05110f); border-block-color: rgba(67,212,196,.11); }
+    .conversion-inner p, .billing-options span, .pricing-points li { color: var(--cream-muted); }
+    .offer-badge { color: #02100e; background: linear-gradient(90deg,#168f91,#43c9bc); }
+    .offer-card strong, .contact-links a { color: var(--cream); }
+    .contact-panel { background: #040504; border-color: rgba(67,212,196,.13); }
+
+    .field label { color: var(--cream); }
+    .field input, .field select, .field textarea {
+      color: var(--cream);
+      background: #0a0b08;
+      border-color: #24231d;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: #2db7ae;
+      box-shadow: 0 0 0 3px rgba(22,157,154,.1);
+    }
+    .consent a { color: #63d2c7; }
+    .success-note { color: #dff4ec; background: #0b211d; border-color: rgba(67,212,196,.24); }
+    .privacy details { color: var(--cream); background: #090a07; border-color: rgba(197,186,166,.13); }
+    .market-links a { color: var(--cream-muted); border-color: rgba(197,186,166,.13); }
+    footer { border-top-color: rgba(67,212,196,.09); }
   </style>
 </head>
 
