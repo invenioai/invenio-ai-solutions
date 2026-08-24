@@ -1,1264 +1,914 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INVENIO AI SOLUTIONS | AI Systems for Business Operations</title>
-  <meta name="description" content="INVENIO automates enquiries, bookings, follow-up, documents, CRM updates and routine administration.">
-  <meta name="theme-color" content="#07090b">
-  <link rel="canonical" href="https://invenio-ai-solutions.pages.dev/">
-  <link rel="icon" type="image/png" href="invenio-logo.png">
-  <link rel="apple-touch-icon" href="invenio-logo.png">
-  <link rel="preload" as="image" href="AISelect_20260820_185414_Gallery.jpg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f5132" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="INVENIO AI SOLUTIONS">
-  <meta property="og:title" content="INVENIO AI SOLUTIONS | Powering Business Through Intelligence">
-  <meta property="og:description" content="Add operating capacity without adding equivalent headcount.">
-  <meta property="og:url" content="https://invenio-ai-solutions.pages.dev/">
-  <meta property="og:image" content="https://invenio-ai-solutions.pages.dev/AISelect_20260820_185414_Gallery.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INVENIO AI SOLUTIONS">
-  <meta name="twitter:description" content="AI systems for customer service, operations, sales and administration.">
-  <meta name="twitter:image" content="https://invenio-ai-solutions.pages.dev/AISelect_20260820_185414_Gallery.jpg">
+  <title>INVENIO | AI Receptionist, Sales, HR & Business Automation</title>
+  <meta name="description" content="INVENIO automates online enquiries, reception, sales follow-up, HR operations and repetitive administration across the systems your business already uses." />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "INVENIO AI SOLUTIONS",
-    "url": "https://invenio-ai-solutions.pages.dev/",
-    "logo": "https://invenio-ai-solutions.pages.dev/invenio-logo.png",
-    "image": "https://invenio-ai-solutions.pages.dev/AISelect_20260820_185414_Gallery.jpg",
-    "description": "AI automation for customer service, operations, sales and administration in South Africa, Kuwait, Oman and Guyana.",
-    "email": "invenio.ai.solutions@gmail.com",
-    "telephone": "+27604868989",
-    "areaServed": ["South Africa", "Kuwait", "Oman", "Guyana"],
-    "sameAs": []
-  }
-  </script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="INVENIO | AI Systems for Business Operations" />
+  <meta property="og:description" content="Turn online enquiries into action. Automate reception, sales, HR operations and repetitive business work." />
+  <meta property="og:image" content="invenio-logo.png" />
+
+  <link rel="icon" type="image/png" href="invenio-logo.png" />
+  <link rel="apple-touch-icon" href="invenio-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --ink: #07090b;
-      --ink-2: #0a0d10;
-      --graphite: #11151a;
-      --steel: #8f979f;
-      --silver: #c7cdd2;
-      --mist: #11151a;
-      --porcelain: #07090b;
-      --paper: #0a0d10;
-      --cobalt: #0d6d56;
-      --cobalt-deep: #074536;
-      --ice: #baff45;
-      --champagne: #0d6d56;
-      --brass: #0d6d56;
-      --brass-light: #baff45;
-      --cream: #f5f6f3;
-      --cream-muted: #c7cdd2;
-      --success: #32f45a;
-      --danger: #c5baa6;
-      --line-dark: rgba(238,230,214,.12);
-      --line-light: rgba(238,230,214,.12);
-      --shadow: 0 24px 70px rgba(11,15,23,.14);
-      --radius: 22px;
-      --radius-sm: 16px;
-      --max: 1180px;
+    :root{
+      --bg:#f6f8f4;
+      --surface:#ffffff;
+      --surface-2:#eef3ee;
+      --text:#111713;
+      --muted:#5f6c64;
+      --line:#dfe7df;
+      --green:#0f5132;
+      --green-2:#147847;
+      --bright:#32c77a;
+      --deep:#0b1811;
+      --shadow:0 18px 60px rgba(20, 52, 33, .10);
+      --shadow-sm:0 8px 28px rgba(20, 52, 33, .08);
+      --radius:22px;
+      --radius-sm:14px;
+      --max:1180px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--porcelain);
-      font-family: Inter, "Avenir Next", "Segoe UI", Arial, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    body.menu-open { overflow: hidden; }
-    img, video { display: block; max-width: 100%; }
-    button, input, select, textarea { font: inherit; }
-    a { color: inherit; text-decoration: none; }
-    p, h1, h2, h3, h4 { margin-top: 0; }
-    section { position: relative; }
-    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 20px; color: var(--cobalt);
-      font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
-    }
-    .eyebrow::before { content: ""; width: 24px; height: 2px; background: linear-gradient(90deg,var(--cobalt),var(--ice)); }
-    .section-head { max-width: 760px; margin-bottom: 42px; }
-    .section-head h2 { font-size: clamp(2rem, 5vw, 4.1rem); line-height: 1.02; letter-spacing: -.055em; margin-bottom: 18px; }
-    .section-head p { color: var(--steel); font-size: clamp(1rem, 1.5vw, 1.16rem); max-width: 680px; }
-    .dark .section-head p, .dark .muted { color: #b7c1cf; }
-    .dark .eyebrow { color: var(--ice); }
-    .dark .eyebrow::before { background: linear-gradient(90deg,var(--champagne),var(--ice)); }
-    .accent, .dark .accent { color: var(--brass-light); }
-    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 999; padding: 10px 14px; background: white; color: black; transform: translateY(-140%); }
-    .skip-link:focus { transform: none; }
-
-    .site-header {
-      position: fixed; inset: 0 0 auto; z-index: 100;
-      background: rgba(9,13,20,.88); border-bottom: 1px solid var(--line-dark);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    }
-    .nav-wrap { min-height: 82px; display: flex; align-items: center; gap: 22px; }
-    .brand { display: inline-flex; align-items: center; gap: 13px; min-width: 245px; }
-    .brand img { width: 58px; height: 58px; object-fit: contain; border: 1px solid rgba(90,215,244,.62); border-radius: 50%; background: #f4f6f7; padding: 4px; box-shadow: 0 0 16px rgba(35,111,199,.16); }
-    .brand-copy strong { display: block; color: white; font-size: .9rem; letter-spacing: .12em; }
-    .brand-copy small { display: block; color: #8f9aaa; font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
-    .primary-nav { margin-left: auto; display: flex; align-items: center; gap: 4px; padding: 6px; border: 1px solid var(--line-dark); border-radius: 999px; background: rgba(255,255,255,.035); }
-    .primary-nav a { color: #d9dee7; padding: 10px 13px; border-radius: 999px; font-size: .85rem; font-weight: 650; white-space: nowrap; transition: .25s ease; }
-    .primary-nav a:hover, .primary-nav a:focus-visible { color: white; background: rgba(255,255,255,.08); outline: none; }
-    .nav-tools { display: flex; align-items: center; gap: 8px; }
-    .market-select { color: white; background: #141c28; border: 1px solid var(--line-dark); border-radius: 999px; padding: 10px 32px 10px 12px; font-size: .78rem; cursor: pointer; }
-    .market-select option { color: var(--ink); background: white; }
-    .lang-toggle { display: none; color: white; background: transparent; border: 1px solid var(--line-dark); padding: 9px 11px; border-radius: 999px; cursor: pointer; }
-    .nav-cta { display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; color: white; font-size: .8rem; font-weight: 850; border: 1px solid rgba(90,215,244,.34); border-radius: 999px; background: linear-gradient(135deg,#0d4f91,#1c7fc4); box-shadow: 0 0 22px rgba(35,111,199,.16); }
-    .menu-toggle { display: none; width: 44px; height: 44px; color: white; background: transparent; border: 1px solid var(--line-dark); border-radius: 12px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 2px; margin: 4px auto; background: currentColor; transition: .25s; }
-
-    .hero {
-      min-height: 820px; display: grid; align-items: end; overflow: hidden;
-      color: white; background: var(--ink);
-    }
-    .hero-media, .hero-media::before, .hero-media::after { position: absolute; inset: 0; }
-    .hero-media { background: var(--ink) url("AISelect_20260820_185414_Gallery.jpg") center 38% / cover no-repeat; }
-    .hero-media video { width: 100%; height: 100%; object-fit: cover; object-position: 60% 42%; opacity: 0; transition: opacity 1s ease; }
-    .hero-media video.ready { opacity: .68; }
-    .hero-media::before { content: ""; z-index: 1; background: linear-gradient(90deg,rgba(7,10,16,.97) 0%,rgba(7,10,16,.78) 48%,rgba(7,10,16,.32) 78%,rgba(7,10,16,.58) 100%); }
-    .hero-media::after { content: ""; z-index: 2; background: linear-gradient(180deg,rgba(3,5,7,.5),transparent 30%,rgba(3,5,7,.38) 72%,#030507 100%); }
-    .hero-grid { position: relative; z-index: 3; padding: 178px 0 90px; display: grid; grid-template-columns: minmax(0,780px) 1fr; gap: 40px; align-items: end; }
-    .hero-kicker { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; color: #dce3ef; padding: 9px 14px; border: 1px solid var(--line-dark); border-radius: 999px; background: rgba(13,19,29,.54); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-    .hero-kicker i { width: 7px; height: 7px; border-radius: 50%; background: var(--ice); box-shadow: 0 0 18px var(--ice); }
-    .hero h1 { max-width: 820px; margin-bottom: 24px; font-size: clamp(2.7rem,5vw,5.1rem); line-height: .98; letter-spacing: -.055em; text-wrap: balance; }
-    .hero h1 span { display: block; background: linear-gradient(90deg,#ffffff 0%,#d9dfe5 64%,#74cde7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-lead { max-width: 700px; margin-bottom: 30px; color: #c1c9d5; font-size: clamp(1.08rem,1.7vw,1.35rem); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 20px; border: 1px solid transparent; border-radius: 999px; font-weight: 800; transition: transform .2s, box-shadow .2s, background .2s; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { color: white; background: linear-gradient(135deg,#0d4f91,#1d83ca); box-shadow: 0 0 24px rgba(35,111,199,.18); }
-    .btn-light { color: white; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.08); backdrop-filter: blur(8px); }
-    .btn-dark { color: white; background: var(--ink); }
-    .btn-outline { color: var(--ink); border-color: var(--line-light); background: transparent; }
-    .hero-proof { align-self: end; justify-self: end; width: min(100%,280px); padding: 24px; border: 1px solid var(--line-dark); border-radius: 22px; background: rgba(13,19,29,.62); backdrop-filter: blur(16px); }
-    .hero-proof strong { display: block; margin-bottom: 7px; font-size: 1.15rem; }
-    .hero-proof p { margin: 0; color: #aeb9c8; font-size: .88rem; }
-    .market-status { margin-top: 16px; color: var(--ice); font-size: .78rem; font-weight: 750; }
-
-    .pain-bar { color: white; background: var(--ink); border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
-    .pain-grid { display: grid; grid-template-columns: repeat(3,1fr); }
-    .pain-item { padding: 30px 28px; border-right: 1px solid var(--line-dark); }
-    .pain-item:last-child { border-right: 0; }
-    .pain-item strong { display: block; margin-bottom: 6px; font-size: 1rem; }
-    .pain-item span { color: #aeb8c6; font-size: .88rem; }
-
-    .why { padding: 120px 0; background: var(--paper); overflow: hidden; }
-    .why::after { content: ""; position: absolute; right: -190px; top: 70px; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle,rgba(49,87,213,.13),transparent 68%); }
-    .why-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
-    .principle { position: sticky; top: 120px; }
-    .principle blockquote { margin: 0; font-size: clamp(1.8rem,3.3vw,3.25rem); line-height: 1.08; letter-spacing: -.045em; font-weight: 780; }
-    .principle p { margin-top: 24px; color: var(--steel); }
-    .value-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-    .value-card { min-height: 235px; padding: 28px; border: 1px solid var(--line-light); border-radius: var(--radius); background: linear-gradient(145deg,#fff,#f3f5f8); box-shadow: 0 18px 50px rgba(11,15,23,.06); }
-    .value-number { color: var(--cobalt); font-size: .75rem; font-weight: 850; letter-spacing: .16em; }
-    .value-card h3 { margin: 36px 0 10px; font-size: 1.35rem; letter-spacing: -.025em; }
-    .value-card p { margin: 0; color: var(--steel); font-size: .94rem; }
-
-    .industries { padding: 120px 0; color: white; background: var(--ink-2); }
-    .industry-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    .industry-card { padding: 28px; border: 1px solid var(--line-dark); border-radius: var(--radius); background: linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); transition: transform .25s,border-color .25s; }
-    .industry-card:hover { transform: translateY(-5px); border-color: rgba(192,201,211,.28); }
-    .industry-icon { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 24px; border-radius: 12px; color: var(--ice); background: rgba(255,255,255,.055); font-weight: 900; }
-    .industry-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
-    .industry-pain { color: #bac3d0; font-size: .92rem; }
-    .industry-card a { display: inline-flex; margin-top: 18px; color: var(--ice); font-size: .86rem; font-weight: 800; }
-
-    .conversion-band { padding: 34px 0; background: linear-gradient(105deg,#203c9e,#3157d5 58%,#39768c); color: white; }
-    .conversion-inner { display: flex; align-items: center; justify-content: space-between; gap: 26px; }
-    .conversion-inner h3 { margin: 0 0 5px; font-size: clamp(1.4rem,2.5vw,2rem); }
-    .conversion-inner p { margin: 0; color: #dce5f6; }
-    .conversion-inner .btn { flex: 0 0 auto; background: white; color: var(--ink); }
-
-    .solutions { padding: 120px 0; background: var(--porcelain); }
-    .choice-strip { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px; margin-bottom: 38px; padding: 24px 28px; border: 1px solid rgba(35,111,199,.18); border-radius: 22px; background: linear-gradient(110deg,rgba(35,111,199,.08),rgba(90,215,244,.025)); }
-    .choice-strip strong { font-size: 1.3rem; }
-    .choice-strip p { margin: 0; color: var(--steel); }
-    .choice-path { display: flex; gap: 7px; }
-    .choice-path span { padding: 7px 11px; border-radius: 999px; background: white; border: 1px solid var(--line-light); font-size: .75rem; font-weight: 800; }
-    .solution-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
-    .solution-card { overflow: hidden; border: 1px solid var(--line-light); border-radius: var(--radius); background: white; box-shadow: 0 18px 55px rgba(11,15,23,.07); }
-    .solution-media { position: relative; aspect-ratio: 16 / 7; overflow: hidden; background: linear-gradient(135deg,#0c121c,#162238); }
-    .solution-media::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 75% 24%,rgba(114,211,233,.3),transparent 25%),linear-gradient(115deg,transparent,rgba(49,87,213,.22)); }
-    .solution-media video { width: 100%; height: 100%; object-fit: cover; opacity: .72; }
-    .demo-label { position: absolute; left: 18px; bottom: 16px; z-index: 2; padding: 7px 10px; color: white; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(7,10,16,.65); font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .solution-body { padding: 30px; }
-    .solution-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-    .solution-index { color: var(--cobalt); font-size: .76rem; font-weight: 900; letter-spacing: .13em; }
-    .solution-body h3 { margin: 9px 0 22px; font-size: clamp(1.45rem,2vw,1.85rem); letter-spacing: -.035em; }
-    .story-row { padding: 15px 0; border-top: 1px solid var(--line-light); }
-    .story-row:first-of-type { padding-top: 0; border-top: 0; }
-    .story-row b { display: block; margin-bottom: 5px; color: var(--ink); font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; }
-    .story-row p { margin: 0; color: var(--steel); font-size: .93rem; }
-    .story-row.pain b { color: var(--danger); }
-    .story-row.impact b { color: var(--success); }
-    .solution-link { display: inline-flex; margin-top: 18px; color: var(--cobalt); font-weight: 850; font-size: .88rem; }
-    .synergy { margin-top: 24px; padding: 34px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; color: white; border-radius: var(--radius); background: linear-gradient(120deg,#0d141e,#172438); box-shadow: var(--shadow); }
-    .synergy-card { padding: 22px; border: 1px solid var(--line-dark); border-radius: 18px; background: rgba(255,255,255,.04); }
-    .synergy-card h3 { margin-bottom: 8px; }
-    .synergy-card p { margin: 0; color: #bac4d1; font-size: .92rem; }
-    .synergy-plus { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; color: var(--ice); border: 1px solid rgba(192,201,211,.3); font-size: 1.5rem; }
-
-    .pricing { padding: 120px 0; color: white; background: #0b0f17; }
-    .pricing-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 22px; }
-    .price-main, .price-side { border: 1px solid var(--line-dark); border-radius: var(--radius); background: linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); }
-    .price-main { padding: 40px; }
-    .price-label { color: var(--ice); font-size: .75rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
-    .price { margin: 14px 0 5px; font-size: clamp(3.4rem,7vw,6.4rem); line-height: .92; letter-spacing: -.07em; }
-    .price small { font-size: 1rem; color: #aeb8c7; letter-spacing: 0; }
-    .price-main > p { color: #bcc6d3; max-width: 620px; }
-    .billing-options { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
-    .billing-options span { padding: 8px 12px; border: 1px solid var(--line-dark); border-radius: 999px; color: #d8dfe9; font-size: .78rem; }
-    .pricing-points { display: grid; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
-    .pricing-points li { display: flex; gap: 10px; color: #d5dce6; }
-    .pricing-points li::before { content: "✓"; color: var(--ice); font-weight: 900; }
-    .price-side { display: grid; }
-    .offer-card { padding: 32px; border-bottom: 1px solid var(--line-dark); }
-    .offer-card:last-child { border-bottom: 0; }
-    .offer-card h3 { margin-bottom: 10px; font-size: 1.35rem; }
-    .offer-card p { margin: 0; color: #b9c3d0; }
-    .offer-card strong { color: white; }
-    .offer-badge { display: inline-flex; margin-bottom: 14px; padding: 7px 10px; border-radius: 999px; color: #0b0f17; background: var(--champagne); font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
-
-    .process { padding: 120px 0; background: white; }
-    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; counter-reset: process; }
-    .process-step { counter-increment: process; min-height: 270px; padding: 28px; border: 1px solid var(--line-light); border-radius: var(--radius); background: linear-gradient(145deg,#fff,#f3f5f8); }
-    .process-step::before { content: "0" counter(process); display: block; margin-bottom: 58px; color: var(--cobalt); font-size: .8rem; font-weight: 900; letter-spacing: .15em; }
-    .process-step h3 { margin-bottom: 9px; }
-    .process-step p { margin: 0; color: var(--steel); font-size: .91rem; }
-
-    .trust { padding: 100px 0; color: white; background: linear-gradient(120deg,#101722,#172438); }
-    .trust-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
-    .trust h2 { font-size: clamp(2rem,4vw,3.5rem); letter-spacing: -.05em; line-height: 1.05; }
-    .trust p { color: #bdc6d2; }
-    .trust-list { display: grid; gap: 13px; }
-    .trust-item { padding: 18px 20px; border: 1px solid var(--line-dark); border-radius: 16px; background: rgba(255,255,255,.035); }
-    .trust-item strong { display: block; margin-bottom: 4px; }
-    .trust-item span { color: #aeb9c7; font-size: .88rem; }
-
-    .enquire { padding: 120px 0; background: var(--porcelain); }
-    .enquire-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 55px; align-items: start; }
-    .contact-panel { padding: 34px; color: white; border-radius: var(--radius); background: var(--ink); box-shadow: var(--shadow); }
-    .contact-panel h2 { font-size: clamp(2rem,4vw,3.5rem); line-height: 1.05; letter-spacing: -.05em; }
-    .contact-panel p { color: #b9c3d1; }
-    .contact-links { display: grid; gap: 12px; margin-top: 28px; }
-    .contact-links a { padding: 15px 17px; border: 1px solid var(--line-dark); border-radius: 14px; color: white; background: rgba(255,255,255,.04); }
-    .contact-links small { display: block; color: #8f9cad; }
-    .form-card { padding: 34px; border: 1px solid var(--line-light); border-radius: var(--radius); background: white; box-shadow: 0 18px 55px rgba(11,15,23,.07); }
-    .form-card h3 { font-size: 1.7rem; letter-spacing: -.03em; }
-    .form-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-    .field { display: grid; gap: 7px; }
-    .field.full { grid-column: 1 / -1; }
-    .field label { font-size: .78rem; font-weight: 800; }
-    .field input, .field select, .field textarea { width: 100%; padding: 13px 14px; color: var(--ink); background: #f8f9fb; border: 1px solid #d7dce4; border-radius: 12px; outline: none; }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--cobalt); box-shadow: 0 0 0 3px rgba(49,87,213,.11); }
-    .field textarea { min-height: 140px; resize: vertical; }
-    .consent { grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; color: var(--steel); font-size: .82rem; }
-    .consent input { margin-top: 4px; }
-    .consent a { color: var(--cobalt); text-decoration: underline; }
-    .form-card .btn { width: 100%; margin-top: 18px; border: 0; cursor: pointer; }
-    .success-note { display: none; margin-bottom: 16px; padding: 14px; border-radius: 12px; color: #0d5f47; background: #e5f6ef; border: 1px solid #b9e4d5; }
-    .success-note.show { display: block; }
-
-    .privacy { padding: 70px 0; background: #e9ecf1; }
-    .privacy details { max-width: 900px; margin: auto; padding: 24px 28px; border: 1px solid var(--line-light); border-radius: 18px; background: rgba(255,255,255,.72); }
-    .privacy summary { cursor: pointer; font-weight: 850; }
-    .privacy p { margin: 16px 0 0; color: var(--steel); font-size: .9rem; }
-
-    footer { padding: 52px 0 28px; color: white; background: #070a10; }
-    .footer-top { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 40px; padding-bottom: 34px; border-bottom: 1px solid var(--line-dark); }
-    .footer-brand { display: flex; gap: 14px; align-items: center; }
-    .footer-brand img { width: 60px; height: 60px; object-fit: contain; border-radius: 13px; background: white; padding: 4px; }
-    footer h4 { margin-bottom: 12px; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
-    .footer-links { display: grid; gap: 7px; color: #aeb8c5; font-size: .88rem; }
-    .market-links { display: flex; flex-wrap: wrap; gap: 8px; }
-    .market-links a { padding: 6px 9px; border: 1px solid var(--line-dark); border-radius: 999px; font-size: .75rem; color: #c9d1dd; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 24px; color: #7f8b9b; font-size: .78rem; }
-
-    [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s ease,transform .7s ease; }
-    [data-reveal].revealed { opacity: 1; transform: none; }
-
-    @media (max-width: 1080px) {
-      .brand { min-width: 0; }
-      .brand-copy { display: none; }
-      .primary-nav a { padding-inline: 10px; font-size: .79rem; }
-      .nav-cta { display: none; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-proof { justify-self: start; }
-      .why-layout { grid-template-columns: 1fr; }
-      .principle { position: static; }
-      .industry-grid { grid-template-columns: repeat(2,1fr); }
-      .process-grid { grid-template-columns: repeat(2,1fr); }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Manrope",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
     }
 
-    @media (max-width: 780px) {
-      html { scroll-padding-top: 80px; }
-      .shell { width: min(calc(100% - 28px),var(--max)); }
-      .nav-wrap { min-height: 72px; }
-      .brand img { width: 50px; height: 50px; }
-      .menu-toggle { display: block; margin-left: auto; }
-      .primary-nav { position: fixed; left: 14px; right: 14px; top: 78px; display: none; margin: 0; padding: 12px; border-radius: 18px; background: rgba(8,12,18,.98); box-shadow: 0 26px 70px rgba(0,0,0,.4); }
-      .primary-nav.open { display: grid; }
-      .primary-nav a { padding: 13px 14px; border-radius: 11px; font-size: .95rem; }
-      .nav-tools { gap: 6px; }
-      .market-select { width: 94px; padding: 8px 25px 8px 9px; }
-      .lang-toggle { padding: 7px 9px; }
-      .hero { min-height: 760px; align-items: end; }
-      .hero-media { background-position: 61% center; }
-      .hero-media video { object-fit: cover; object-position: 64% center; }
-      .hero-media::before { background: linear-gradient(180deg,rgba(3,5,7,.6),rgba(3,5,7,.66) 32%,rgba(3,5,7,.94) 78%,#030507 100%); }
-      .hero-grid { padding: 132px 0 54px; gap: 24px; }
-      .hero h1 { font-size: clamp(2.4rem,11vw,3.7rem); }
-      .hero-lead { font-size: 1rem; }
-      .hero-proof { width: 100%; }
-      .pain-grid { grid-template-columns: 1fr; }
-      .pain-item { border-right: 0; border-bottom: 1px solid var(--line-dark); padding-inline: 14px; }
-      .why, .industries, .solutions, .pricing, .process, .enquire { padding: 82px 0; }
-      .value-grid, .industry-grid, .solution-grid, .pricing-grid, .trust-grid, .enquire-grid, .footer-top { grid-template-columns: 1fr; }
-      .choice-strip { grid-template-columns: 1fr; }
-      .choice-path { flex-wrap: wrap; }
-      .synergy { grid-template-columns: 1fr; }
-      .synergy-plus { margin: auto; }
-      .conversion-inner { display: grid; }
-      .conversion-inner .btn { justify-self: start; }
-      .process-grid { grid-template-columns: 1fr; }
-      .process-step { min-height: 0; }
-      .process-step::before { margin-bottom: 28px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field { grid-column: 1 / -1; }
-      .footer-bottom { display: grid; }
-    }
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    img{max-width:100%}
+    section{scroll-margin-top:92px}
+    .wrap{width:min(calc(100% - 36px),var(--max));margin:0 auto}
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-      [data-reveal] { opacity: 1; transform: none; }
-      .hero-media video { display: none; }
+    .nav-wrap{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(246,248,244,.88);
+      border-bottom:1px solid rgba(223,231,223,.85);
     }
+    .nav{
+      height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px;
+    }
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.04em}
+    .brand img{width:34px;height:34px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:30px;color:#39443d;font-size:14px;font-weight:650}
+    .nav-links a:hover{color:var(--green)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn{
+      border:0;border-radius:999px;padding:12px 18px;font-weight:750;cursor:pointer;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s ease;
+    }
+    .btn-primary{background:var(--green);color:white;box-shadow:0 8px 20px rgba(15,81,50,.18)}
+    .btn-primary:hover{background:#0a4429;transform:translateY(-1px)}
+    .btn-secondary{background:#fff;border:1px solid var(--line);color:#243128}
+    .btn-secondary:hover{border-color:#b9c9bc;transform:translateY(-1px)}
+    .menu-btn{display:none;background:#fff;border:1px solid var(--line);width:42px;height:42px;border-radius:12px}
 
-    html[dir="rtl"] body { font-family: Tahoma, Arial, sans-serif; }
-    html[dir="rtl"] .primary-nav { margin-left: 0; margin-right: auto; }
-    html[dir="rtl"] .eyebrow::before { order: 2; }
-    html[dir="rtl"] .hero-media::before { background: linear-gradient(270deg,rgba(7,10,16,.97),rgba(7,10,16,.78) 48%,rgba(7,10,16,.35) 80%); }
-    html[dir="rtl"] .industry-card, html[dir="rtl"] .solution-card, html[dir="rtl"] .contact-panel, html[dir="rtl"] .form-card { text-align: right; }
-
-    /* Near-black technology system with one restrained cyan-to-blue accent */
-    body { color: #f1f4f7; background: #030507; }
-    .site-header { background: rgba(3,5,7,.9); border-bottom-color: rgba(90,215,244,.12); }
-    .primary-nav { background: rgba(255,255,255,.022); border-color: rgba(145,165,184,.13); }
-    .market-select { background: #080d12; border-color: rgba(145,165,184,.15); }
-    .why, .solutions, .process, .enquire { color: #f1f4f7; background: #06090d; }
-    .industries, .pricing, .trust { background: #030507; }
-    .why::after { background: radial-gradient(circle,rgba(35,111,199,.08),transparent 70%); }
-
-    main > section:not(.hero)::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: min(calc(100% - 40px),var(--max));
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg,transparent,rgba(90,215,244,.26),rgba(35,111,199,.2),transparent);
-      filter: drop-shadow(0 0 5px rgba(90,215,244,.16));
-      pointer-events: none;
-      z-index: 3;
-    }
-
-    .hero::after, .industries::after, .pricing::after, .trust::after {
-      content: "";
-      position: absolute;
-      inset: -160px 0 0;
-      background-image:
-        linear-gradient(rgba(90,215,244,.035) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(35,111,199,.028) 1px,transparent 1px);
-      background-size: 190px 190px;
-      mask-image: linear-gradient(180deg,transparent,black 24%,black 76%,transparent);
-      opacity: .42;
-      pointer-events: none;
-      animation: ambientGrid 34s linear infinite;
-      z-index: 2;
-    }
-    .industries .shell, .pricing .shell, .trust .shell { position: relative; z-index: 3; }
-    @keyframes ambientGrid { to { transform: translate3d(0,190px,0); } }
-
-    .section-head { padding-inline-start: 20px; border-inline-start: 1px solid rgba(90,215,244,.2); }
-    .section-head h2 { max-width: 780px; }
-    .section-head p, .principle p, .choice-strip p, .story-row p, .process-step p { color: #a6b0ba; }
-    .eyebrow, .dark .eyebrow { color: #73d8ee; }
-    .eyebrow::before, .dark .eyebrow::before { background: linear-gradient(90deg,#56d7f4,#236fc7); box-shadow: 0 0 7px rgba(90,215,244,.2); }
-    .accent, .dark .accent { color: transparent; background: linear-gradient(90deg,#79dff3,#4a93df); -webkit-background-clip: text; background-clip: text; }
-
-    .value-card, .solution-card, .process-step, .form-card {
-      color: #f1f4f7;
-      border-color: rgba(145,165,184,.13);
-      background: linear-gradient(145deg,#0b1016,#070b0f);
-      box-shadow: 0 18px 50px rgba(0,0,0,.24);
-    }
-    .value-card:hover, .solution-card:hover, .process-step:hover { border-color: rgba(90,215,244,.25); }
-    .value-card p, .form-card .consent { color: #a6b0ba; }
-    .value-number, .solution-index { color: #72cce5; }
-    .choice-strip { border-color: rgba(90,215,244,.18); background: linear-gradient(110deg,rgba(35,111,199,.08),rgba(90,215,244,.025)); }
-    .choice-path span { color: #d7dde3; background: #0a1016; border-color: rgba(145,165,184,.15); }
-    .story-row, .story-row:first-of-type { border-color: rgba(145,165,184,.13); }
-    .story-row b { color: #e3e8ed; }
-    .solution-link { color: #8bd7ea; }
-    .solution-media { background: linear-gradient(135deg,#04070a,#0a1219); }
-    .solution-media::before { background: radial-gradient(circle at 75% 24%,rgba(90,215,244,.1),transparent 27%),linear-gradient(115deg,transparent,rgba(35,111,199,.06)); }
-    .synergy { background: linear-gradient(120deg,#05080c,#0a1016); border: 1px solid rgba(90,215,244,.12); }
-    .synergy-card { background: rgba(255,255,255,.022); border-color: rgba(145,165,184,.13); }
-
-    .conversion-band { background: linear-gradient(105deg,#04070a,#07101a 62%,#06131b); border-block: 1px solid rgba(90,215,244,.13); }
-    .conversion-inner .btn { color: white; border: 1px solid rgba(90,215,244,.3); background: linear-gradient(135deg,#0d4f91,#1d83ca); box-shadow: 0 0 22px rgba(35,111,199,.15); }
-    .btn-primary, .nav-cta { box-shadow: 0 0 22px rgba(35,111,199,.16); }
-    .btn-primary:hover, .nav-cta:hover { box-shadow: 0 0 28px rgba(90,215,244,.21); }
-    .price-label, .pricing-points li::before { color: #67d5ef; }
-    .offer-badge { color: white; background: linear-gradient(90deg,#0d4f91,#1d83ca); }
-    .trust { background: #040609; }
-    .contact-panel { border: 1px solid rgba(90,215,244,.16); background: #05080c; }
-    .field label { color: #e9edf1; }
-    .field input, .field select, .field textarea { color: #f0f3f6; background: #0a1016; border-color: #202a34; }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: #3199d4; box-shadow: 0 0 0 3px rgba(35,111,199,.12); }
-    .consent a { color: #75d7ee; }
-    .privacy { color: #eef2f5; background: #030507; }
-    .privacy details { border-color: rgba(145,165,184,.13); background: #080d12; }
-    .privacy p { color: #a6b0ba; }
-    footer { background: #020305; border-top: 1px solid rgba(90,215,244,.1); }
-    .footer-brand img { border: 1px solid rgba(90,215,244,.62); border-radius: 50%; background: #f4f6f7; box-shadow: 0 0 16px rgba(35,111,199,.16); }
-
-    /* Deep black, warm cream and restrained pure-green palette */
-    body { color: var(--cream); background: #020302; }
-    .site-header { background: rgba(2,3,2,.92); border-bottom-color: rgba(50,244,90,.09); }
-    .primary-nav { background: rgba(238,230,214,.018); border-color: rgba(197,186,166,.12); }
-    .market-select { background: #080906; border-color: rgba(197,186,166,.13); }
-    .why, .solutions, .process, .enquire { color: var(--cream); background: #050605; }
-    .industries, .pricing, .trust, .privacy { color: var(--cream); background: #020302; }
-    .pain-bar, footer { color: var(--cream); background: #010201; }
-
-    .brand-copy strong, .primary-nav a:hover, .primary-nav a:focus-visible,
-    .market-select, .lang-toggle, .menu-toggle, .hero, .btn-light,
-    .conversion-band, .pricing, .trust, .contact-panel, footer { color: var(--cream); }
-    .brand-copy small, .primary-nav a, .hero-lead, .hero-proof p,
-    .pain-item span, .dark .section-head p, .dark .muted,
-    .industry-pain, .synergy-card p, .price-main > p, .offer-card p,
-    .trust p, .trust-item span, .contact-panel p, .contact-links small,
-    .footer-links, .footer-bottom { color: var(--cream-muted); }
-    .skip-link { color: #020302; background: var(--cream); }
-    .hero-kicker { color: var(--cream-muted); }
-    .market-select option { color: #020302; background: var(--cream); }
-
-    .hero h1 span {
-      background: linear-gradient(90deg,#f2eadb,#d8cdb8);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-kicker { background: rgba(238,230,214,.035); border-color: rgba(197,186,166,.14); }
-    .hero-proof { background: rgba(4,5,4,.72); border-color: rgba(197,186,166,.13); }
-    .accent, .dark .accent {
-      color: var(--cream);
-      background: none;
-      -webkit-background-clip: initial;
-      background-clip: initial;
-      -webkit-text-fill-color: currentColor;
-    }
-
-    .brand img, .footer-brand img {
-      border-color: rgba(50,244,90,.5);
-      background: #eee6d6;
-      box-shadow: 0 0 15px rgba(50,244,90,.12);
-    }
-    .hero-kicker i { background: #32f45a; box-shadow: 0 0 12px rgba(50,244,90,.23); }
-    .eyebrow, .dark .eyebrow { color: var(--cream-muted); }
-    .eyebrow::before, .dark .eyebrow::before {
-      background: linear-gradient(90deg,#32f45a,#16a83e);
-      box-shadow: 0 0 7px rgba(50,244,90,.14);
-    }
-    .section-head { border-inline-start-color: rgba(50,244,90,.17); }
-    .why::after { background: radial-gradient(circle,rgba(50,244,90,.055),transparent 70%); }
-    main > section:not(.hero)::before {
-      background: linear-gradient(90deg,transparent,rgba(50,244,90,.21),rgba(22,168,62,.14),transparent);
-      filter: drop-shadow(0 0 5px rgba(50,244,90,.11));
-    }
-    .hero::after, .industries::after, .pricing::after, .trust::after {
-      background-image:
-        linear-gradient(rgba(50,244,90,.022) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(22,168,62,.018) 1px,transparent 1px);
-    }
-
-    .nav-cta, .btn-primary, .btn-dark, .conversion-inner .btn {
-      color: var(--cream);
-      border: 1px solid rgba(50,244,90,.4);
-      background: #070906;
-      box-shadow: 0 0 19px rgba(50,244,90,.11);
-    }
-    .btn-primary:hover, .btn-dark:hover, .nav-cta:hover, .conversion-inner .btn:hover {
-      border-color: rgba(50,244,90,.62);
-      background: rgba(50,244,90,.035);
-      box-shadow: 0 0 24px rgba(50,244,90,.16);
-    }
-    .btn-light { border-color: rgba(238,230,214,.17); background: rgba(238,230,214,.055); }
-
-    .value-card, .solution-card, .process-step, .form-card {
-      color: var(--cream);
-      border-color: rgba(197,186,166,.13);
-      background: linear-gradient(145deg,#0d0d09,#080906);
-      box-shadow: 0 18px 50px rgba(0,0,0,.26);
-    }
-    .value-card:hover, .solution-card:hover, .process-step:hover { border-color: rgba(50,244,90,.19); }
-    .value-card p, .form-card .consent, .section-head p, .principle p,
-    .choice-strip p, .story-row p, .process-step p, .privacy p { color: var(--cream-muted); }
-    .value-number, .solution-index, .solution-link, .price-label { color: #d6cbb8; }
-    .choice-strip { border-color: rgba(50,244,90,.13); background: linear-gradient(110deg,rgba(50,244,90,.03),rgba(238,230,214,.018)); }
-    .choice-path span { color: var(--cream); background: #0b0c09; border-color: rgba(197,186,166,.14); }
-    .story-row, .story-row:first-of-type { border-color: rgba(197,186,166,.12); }
-    .story-row b, .story-row.pain b { color: var(--cream-muted); }
-    .story-row.impact b, .pricing-points li::before { color: #32f45a; }
-    .solution-media { background: linear-gradient(135deg,#030403,#090b08); }
-    .solution-media::before { background: radial-gradient(circle at 75% 24%,rgba(50,244,90,.055),transparent 27%),linear-gradient(115deg,transparent,rgba(22,168,62,.03)); }
-    .industry-icon, .synergy-plus { color: #32f45a; }
-    .industry-icon { background: rgba(238,230,214,.035); }
-    .industry-card:hover { border-color: rgba(50,244,90,.19); }
-    .industry-card a { color: var(--cream-muted); }
-    .demo-label { color: var(--cream); border-color: rgba(238,230,214,.16); }
-
-    .synergy { color: var(--cream); background: linear-gradient(120deg,#050605,#0b0c09); border-color: rgba(50,244,90,.1); }
-    .synergy-card { background: rgba(238,230,214,.018); border-color: rgba(197,186,166,.12); }
-    .conversion-band { background: linear-gradient(105deg,#030403,#071008 62%,#051006); border-block-color: rgba(50,244,90,.1); }
-    .conversion-inner p, .billing-options span, .pricing-points li { color: var(--cream-muted); }
-    .offer-badge { color: var(--cream); border: 1px solid rgba(197,186,166,.18); background: #11110e; }
-    .offer-card strong, .contact-links a { color: var(--cream); }
-    .contact-panel { background: #040504; border-color: rgba(50,244,90,.11); }
-    .contact-links a { background: rgba(238,230,214,.025); border-color: rgba(197,186,166,.12); }
-
-    .field label { color: var(--cream); }
-    .field input, .field select, .field textarea {
-      color: var(--cream);
-      background: #0a0b08;
-      border-color: #24231d;
-    }
-    .field input:focus, .field select:focus, .field textarea:focus {
-      border-color: #20c94b;
-      box-shadow: 0 0 0 3px rgba(50,244,90,.08);
-    }
-    .consent a { color: #61e878; }
-    .success-note { color: #e5efd8; background: #0b1b0d; border-color: rgba(50,244,90,.2); }
-    .privacy details { color: var(--cream); background: #090a07; border-color: rgba(197,186,166,.13); }
-    .market-links a { color: var(--cream-muted); border-color: rgba(197,186,166,.13); }
-    footer { border-top-color: rgba(50,244,90,.08); }
-
-    /* Final theme: cinematic black, crisp white and the original INVENIO lime */
-    body {
-      color: #f5f6f3;
-      background: #07090b;
-    }
-    .site-header {
-      background: rgba(5,7,8,.94);
-      border-bottom-color: rgba(186,255,69,.1);
-      box-shadow: 0 12px 36px rgba(0,0,0,.24);
-    }
-    .primary-nav {
-      border-color: transparent;
-      border-radius: 12px;
-      background: transparent;
-    }
-    .primary-nav a {
-      color: #c7cdd2;
-      border-radius: 8px;
-    }
-    .primary-nav a:hover,
-    .primary-nav a:focus-visible {
-      color: #f5f6f3;
-      background: rgba(186,255,69,.065);
-    }
-    .market-select,
-    .lang-toggle,
-    .menu-toggle {
-      color: #f5f6f3;
-      background: #0a0d10;
-      border-color: rgba(186,255,69,.16);
-      border-radius: 9px;
-    }
-    .market-select option { color: #07090b; background: #f5f6f3; }
-
-    .brand img,
-    .footer-brand img {
-      width: 68px;
-      height: 58px;
-      padding: 4px;
-      object-fit: contain;
-      border: 1px solid rgba(255,255,255,.5);
-      border-radius: 9px;
-      background: #f5f6f3;
-      box-shadow: 0 0 18px rgba(186,255,69,.08);
-    }
-    .brand-copy strong { color: #f5f6f3; }
-    .brand-copy small { color: #8f979f; }
-
-    .hero { color: #f5f6f3; background: #07090b; }
-    .hero-media { background-color: #07090b; }
-    .hero-media video.ready { opacity: .62; }
-    .hero-media::before {
-      background: linear-gradient(90deg,rgba(4,7,7,.98) 0%,rgba(4,8,7,.84) 46%,rgba(3,10,7,.35) 76%,rgba(3,6,6,.64) 100%);
-    }
-    .hero-media::after {
+    .hero{
+      padding:92px 0 54px;
       background:
-        radial-gradient(circle at 78% 42%,rgba(13,109,86,.14),transparent 30%),
-        linear-gradient(180deg,rgba(3,5,5,.48),transparent 29%,rgba(3,7,5,.34) 70%,#050807 100%);
+        radial-gradient(circle at 74% 28%, rgba(50,199,122,.11), transparent 28%),
+        radial-gradient(circle at 16% 7%, rgba(15,81,50,.07), transparent 24%);
     }
-    .hero-kicker {
-      color: #c7cdd2;
-      background: rgba(7,12,10,.64);
-      border-color: rgba(186,255,69,.18);
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:62px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;border:1px solid #cfe0d2;background:#fafffb;border-radius:999px;
+      color:var(--green);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
     }
-    .hero-kicker i {
-      background: #baff45;
-      box-shadow: 0 0 14px rgba(186,255,69,.48);
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--bright);box-shadow:0 0 0 5px rgba(50,199,122,.12)}
+    h1{
+      margin:20px 0 20px;
+      font-size:clamp(44px,6vw,76px);line-height:1.02;letter-spacing:-.055em;
+      max-width:780px;
     }
-    .hero h1 { color: #f5f6f3; }
-    .hero h1 span {
-      color: #baff45;
-      background: none;
-      -webkit-background-clip: initial;
-      background-clip: initial;
-      -webkit-text-fill-color: currentColor;
-      text-shadow: 0 0 26px rgba(186,255,69,.08);
+    .hero p{
+      font-size:19px;line-height:1.72;color:var(--muted);max-width:690px;margin:0 0 28px;
     }
-    .hero-lead { color: #c7cdd2; }
-    .hero-proof {
-      color: #f5f6f3;
-      background: rgba(7,11,9,.74);
-      border-color: rgba(186,255,69,.14);
-    }
-    .hero-proof p { color: #aeb7bb; }
-    .market-status { color: #d4ff8a; }
+    .hero strong{color:#26362b}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 18px}
+    .hero-note{font-size:13px;color:#6c786f;display:flex;align-items:center;gap:8px}
+    .hero-note svg{color:var(--green)}
 
-    .btn { border-radius: 9px; }
-    .btn-primary,
-    .btn-dark,
-    .conversion-inner .btn {
-      color: #071008;
-      border-color: #baff45;
-      background: #baff45;
-      box-shadow: 0 0 20px rgba(186,255,69,.17);
+    .ops-card{
+      background:var(--deep);border-radius:28px;padding:18px;box-shadow:0 28px 80px rgba(8,31,18,.22);
+      color:white;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)
     }
-    .btn-primary:hover,
-    .btn-dark:hover,
-    .conversion-inner .btn:hover {
-      color: #071008;
-      border-color: #d4ff8a;
-      background: #d4ff8a;
-      box-shadow: 0 0 27px rgba(186,255,69,.25);
+    .ops-card::after{
+      content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle,rgba(50,199,122,.22),transparent 65%);
     }
-    .btn-light {
-      color: #f5f6f3;
-      border-color: rgba(255,255,255,.18);
-      background: rgba(5,8,7,.48);
+    .ops-top{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 16px}
+    .ops-title{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#a9b7ad}
+    .live-pill{font-size:11px;color:#b8f4d2;display:flex;align-items:center;gap:6px}
+    .live-pill i{width:7px;height:7px;background:var(--bright);border-radius:50%;box-shadow:0 0 12px var(--bright)}
+    .message{
+      background:#12241a;border:1px solid #22382a;border-radius:16px;padding:15px;margin-bottom:10px;position:relative;z-index:1
     }
-    .btn-light:hover { border-color: rgba(186,255,69,.28); background: rgba(186,255,69,.055); }
-    .nav-cta {
-      color: #d4ff8a;
-      border: 1px solid rgba(186,255,69,.4);
-      border-radius: 9px;
-      background: rgba(186,255,69,.035);
-      box-shadow: 0 0 18px rgba(186,255,69,.08);
+    .message small{display:block;color:#8da094;font-size:11px;margin-bottom:6px}
+    .message.user{margin-left:34px;background:#182a20}
+    .message.ai{margin-right:22px}
+    .message b{font-size:14px}
+    .flow{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:12px;position:relative;z-index:1}
+    .flow-item{
+      padding:12px;border-radius:14px;border:1px solid #22382a;background:#0f1d15;
+      display:flex;align-items:center;gap:10px;font-size:12px;color:#c7d4ca
     }
-    .nav-cta:hover { color: #071008; background: #baff45; box-shadow: 0 0 24px rgba(186,255,69,.18); }
+    .flow-item span{width:25px;height:25px;border-radius:8px;background:#173c27;color:#72e6a5;display:grid;place-items:center;font-weight:800}
+    .preview-label{font-size:10px;color:#74877a;text-align:right;margin-top:10px;position:relative;z-index:1}
 
-    .pain-bar,
-    footer { color: #f5f6f3; background: #050706; }
-    .why,
-    .solutions,
-    .process,
-    .enquire { color: #f5f6f3; background: #090c0d; }
-    .industries,
-    .pricing,
-    .trust,
-    .privacy { color: #f5f6f3; background: #050708; }
-    .why::after { background: radial-gradient(circle,rgba(13,109,86,.11),transparent 70%); }
+    .proof-strip{padding:22px 0 14px}
+    .strip{
+      display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
+      background:#fff;border:1px solid var(--line);padding:10px;border-radius:18px;box-shadow:var(--shadow-sm)
+    }
+    .strip div{padding:12px 10px;text-align:center;font-size:12px;font-weight:750;color:#455248;border-right:1px solid var(--line)}
+    .strip div:last-child{border-right:0}
 
-    main > section:not(.hero)::before {
-      background: linear-gradient(90deg,transparent,rgba(13,109,86,.22),rgba(186,255,69,.28),rgba(13,109,86,.22),transparent);
-      filter: drop-shadow(0 0 5px rgba(186,255,69,.12));
-    }
-    .hero::after,
-    .industries::after,
-    .pricing::after,
-    .trust::after {
-      background-image:
-        linear-gradient(rgba(186,255,69,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(13,109,86,.024) 1px,transparent 1px);
-      opacity: .34;
-    }
-    .section-head { border-inline-start-color: rgba(186,255,69,.18); }
-    .eyebrow,
-    .dark .eyebrow { color: #c7cdd2; }
-    .eyebrow::before,
-    .dark .eyebrow::before {
-      background: linear-gradient(90deg,#0d6d56,#baff45);
-      box-shadow: 0 0 8px rgba(186,255,69,.16);
-    }
-    .accent,
-    .dark .accent {
-      color: #baff45;
-      background: none;
-      -webkit-background-clip: initial;
-      background-clip: initial;
-      -webkit-text-fill-color: currentColor;
-    }
-    .section-head p,
-    .principle p,
-    .choice-strip p,
-    .story-row p,
-    .process-step p,
-    .privacy p,
-    .dark .section-head p,
-    .dark .muted { color: #aeb7bb; }
+    .section{padding:92px 0}
+    .section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .section-head{max-width:790px;margin-bottom:42px}
+    .kicker{color:var(--green);font-size:12px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+    h2{font-size:clamp(34px,4.4vw,54px);line-height:1.08;letter-spacing:-.04em;margin:0 0 16px}
+    .section-head p{font-size:18px;color:var(--muted);margin:0}
 
-    .value-card,
-    .solution-card,
-    .process-step,
-    .form-card {
-      color: #f5f6f3;
-      border-color: rgba(199,205,210,.12);
-      background: linear-gradient(145deg,#101416,#0a0d0e);
-      box-shadow: 0 18px 50px rgba(0,0,0,.26);
+    .channel-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px}
+    .channel-card,.workflow-card,.solution-card,.industry-card,.trust-card,.vacancy-card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)
     }
-    .value-card:hover,
-    .solution-card:hover,
-    .process-step:hover {
-      border-color: rgba(186,255,69,.22);
-      box-shadow: 0 20px 54px rgba(0,0,0,.3),0 0 22px rgba(13,109,86,.07);
+    .channel-card{padding:28px}
+    .channel-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .chip{padding:10px 13px;border-radius:999px;background:var(--surface-2);font-size:13px;font-weight:750;color:#354139}
+    .chip.optional{background:#f7f8f6;color:#7b877f;border:1px dashed #cbd5cd}
+    .workflow-card{padding:28px;background:linear-gradient(180deg,#fff,#f7faf7)}
+    .workflow-steps{display:grid;gap:10px}
+    .step{
+      display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:14px;
+      padding:14px;border-radius:15px;background:#fff;border:1px solid var(--line)
     }
-    .value-card p,
-    .form-card .consent { color: #aeb7bb; }
-    .value-number,
-    .solution-index,
-    .solution-link,
-    .price-label { color: #d4ff8a; }
+    .step-num{width:38px;height:38px;border-radius:12px;background:#e9f5ed;color:var(--green);display:grid;place-items:center;font-weight:850}
+    .step small{color:var(--muted)}
+    .step-status{font-size:11px;font-weight:800;color:var(--green);background:#eef9f1;padding:6px 9px;border-radius:999px}
 
-    .industry-card {
-      border-color: rgba(199,205,210,.12);
-      background: linear-gradient(145deg,rgba(255,255,255,.045),rgba(13,109,86,.025));
-    }
-    .industry-card:hover { border-color: rgba(186,255,69,.24); }
-    .industry-icon,
-    .synergy-plus { color: #baff45; }
-    .industry-icon { background: rgba(186,255,69,.055); }
-    .industry-pain { color: #b7c0c3; }
-    .industry-card a { color: #d4ff8a; }
+    .solutions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .solution-card{padding:28px;transition:.2s ease;position:relative;overflow:hidden}
+    .solution-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .solution-card:target{outline:3px solid rgba(50,199,122,.22);box-shadow:0 20px 60px rgba(15,81,50,.15)}
+    .solution-card.featured{grid-column:span 2;background:linear-gradient(135deg,#0d1b13,#10281a);color:white;border-color:#1b3926}
+    .solution-card.featured p,.solution-card.featured li{color:#b8c9bd}
+    .solution-card.featured .solution-tag{background:#183c27;color:#8ef0b9}
+    .solution-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+    .solution-tag{display:inline-block;background:#edf5ef;color:var(--green);padding:6px 9px;border-radius:999px;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+    .solution-card h3{font-size:25px;letter-spacing:-.025em;margin:16px 0 8px}
+    .solution-card p{color:var(--muted);margin:0 0 18px}
+    .solution-card ul{padding:0;margin:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+    .solution-card li{color:#48564d;font-size:13px;position:relative;padding-left:18px}
+    .solution-card li::before{content:"✓";position:absolute;left:0;color:var(--green-2);font-weight:900}
+    .solution-card.featured li::before{color:var(--bright)}
 
-    .choice-strip {
-      border-color: rgba(186,255,69,.15);
-      background: linear-gradient(110deg,rgba(13,109,86,.11),rgba(186,255,69,.018));
-    }
-    .choice-path span {
-      color: #f5f6f3;
-      background: #0b100e;
-      border-color: rgba(186,255,69,.13);
-    }
-    .solution-media { background: linear-gradient(135deg,#030706,#0a1511); }
-    .solution-media::before {
-      background: radial-gradient(circle at 75% 24%,rgba(186,255,69,.08),transparent 27%),linear-gradient(115deg,transparent,rgba(13,109,86,.09));
-    }
-    .demo-label { color: #f5f6f3; border-color: rgba(186,255,69,.16); background: rgba(4,8,6,.7); }
-    .story-row,
-    .story-row:first-of-type { border-color: rgba(199,205,210,.11); }
-    .story-row b,
-    .story-row.pain b { color: #c7cdd2; }
-    .story-row.impact b { color: #baff45; }
-    .synergy {
-      color: #f5f6f3;
-      border-color: rgba(186,255,69,.13);
-      background: linear-gradient(120deg,#070b09,#0b1511);
-    }
-    .synergy-card { background: rgba(255,255,255,.025); border-color: rgba(199,205,210,.12); }
-    .synergy-card p { color: #aeb7bb; }
+    .compare{margin-top:26px;background:#0d1711;border-radius:26px;padding:28px;color:white}
+    .compare-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:20px}
+    .compare-head h3{font-size:29px;letter-spacing:-.03em;margin:0}
+    .compare-head p{margin:0;color:#9fb0a4;max-width:540px}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .compare-col{background:#121f17;border:1px solid #233229;border-radius:18px;padding:22px}
+    .compare-col h4{margin:0 0 4px;font-size:18px}
+    .compare-col > p{font-size:13px;color:#8fa295;margin:0 0 18px}
+    .compare-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid #223128;font-size:13px}
+    .compare-row span:last-child{color:#bfe7cc;font-weight:700;text-align:right}
 
-    .conversion-band {
-      color: #f5f6f3;
-      background: linear-gradient(105deg,#07100c,#0a1d15 58%,#07110d);
-      border-block-color: rgba(186,255,69,.12);
+    .permission{
+      display:grid;grid-template-columns:1fr .95fr;gap:24px;align-items:stretch
     }
-    .conversion-inner p { color: #c7cdd2; }
-    .price-main,
-    .price-side,
-    .trust-item {
-      border-color: rgba(199,205,210,.12);
-      background: linear-gradient(145deg,rgba(255,255,255,.045),rgba(13,109,86,.02));
+    .permission-main{background:var(--green);color:#fff;border-radius:26px;padding:36px}
+    .permission-main p{color:#cce2d3;font-size:17px}
+    .permission-main h3{font-size:36px;line-height:1.12;letter-spacing:-.035em;margin:0 0 14px}
+    .permission-list{display:grid;gap:12px}
+    .permission-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+    .permission-item b{display:block;margin-bottom:4px}
+    .permission-item span{color:var(--muted);font-size:14px}
+
+    .industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .industry-card{padding:22px}
+    .industry-card h3{margin:0 0 8px;font-size:19px}
+    .industry-card p{margin:0;color:var(--muted);font-size:14px}
+    .industry-card .mini{display:inline-flex;margin-bottom:12px;width:36px;height:36px;border-radius:11px;background:#edf5ef;color:var(--green);align-items:center;justify-content:center;font-weight:900}
+
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .trust-card{padding:24px}
+    .trust-card h3{margin:12px 0 8px;font-size:19px}
+    .trust-card p{margin:0;color:var(--muted);font-size:14px}
+    .trust-icon{width:39px;height:39px;border-radius:12px;background:#edf5ef;color:var(--green);display:grid;place-items:center;font-weight:900}
+
+    .vacancy-card{
+      padding:36px;background:linear-gradient(135deg,#fff,#eef5ef);
+      display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center
     }
-    .price-main > p,
-    .offer-card p,
-    .pricing-points li,
-    .billing-options span,
-    .trust p,
-    .trust-item span { color: #b7c0c3; }
-    .billing-options span { border-color: rgba(186,255,69,.13); }
-    .pricing-points li::before { color: #baff45; }
-    .offer-card { border-color: rgba(199,205,210,.11); }
-    .offer-card strong { color: #f5f6f3; }
-    .offer-badge {
-      color: #071008;
-      border-color: #baff45;
-      background: #baff45;
+    .vacancy-card h3{margin:0 0 10px;font-size:34px;line-height:1.15;letter-spacing:-.035em}
+    .vacancy-card p{margin:0;color:var(--muted);max-width:760px}
+    .role-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .role-chips a{font-size:12px;font-weight:750;background:#fff;border:1px solid var(--line);padding:8px 11px;border-radius:999px}
+
+    #live-demo{display:none}
+    .chat-shell{
+      display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;
+      background:#0d1811;border-radius:28px;padding:18px;color:white;box-shadow:0 30px 80px rgba(8,31,18,.18)
+    }
+    .chat-copy{padding:26px}
+    .chat-copy h3{font-size:34px;line-height:1.14;letter-spacing:-.03em;margin:8px 0 12px}
+    .chat-copy p{color:#a9b8ae}
+    .chat-copy .prompt-list{display:grid;gap:8px;margin-top:22px}
+    .prompt-btn{
+      text-align:left;border:1px solid #2a3b30;background:#122218;color:#d7e4da;border-radius:13px;
+      padding:12px 13px;cursor:pointer
+    }
+    .prompt-btn:hover{border-color:#4d6b58}
+    .chat-box{background:#f9fbf9;color:var(--text);border-radius:20px;min-height:510px;display:flex;flex-direction:column;overflow:hidden}
+    .chat-header{padding:15px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+    .chat-header b{display:flex;align-items:center;gap:8px}
+    .chat-header b i{width:8px;height:8px;background:var(--bright);border-radius:50%}
+    .chat-messages{flex:1;padding:18px;overflow:auto;display:flex;flex-direction:column;gap:10px}
+    .bubble{max-width:82%;padding:11px 13px;border-radius:15px;font-size:14px}
+    .bubble.bot{background:#eef3ee;align-self:flex-start}
+    .bubble.user{background:var(--green);color:#fff;align-self:flex-end}
+    .chat-input{display:flex;gap:8px;padding:13px;border-top:1px solid var(--line);background:#fff}
+    .chat-input input{flex:1;border:1px solid var(--line);border-radius:12px;padding:11px 12px;outline:none}
+    .chat-input input:focus{border-color:#8fb49c}
+    .chat-input button{width:44px;border:0;border-radius:12px;background:var(--green);color:#fff;cursor:pointer}
+
+    .cta{
+      background:var(--deep);color:white;border-radius:30px;padding:48px;
+      display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+      position:relative;overflow:hidden
+    }
+    .cta::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-70px;top:-130px;background:radial-gradient(circle,rgba(50,199,122,.18),transparent 68%)}
+    .cta h2{font-size:clamp(34px,4vw,50px);max-width:790px;margin:0 0 12px}
+    .cta p{color:#aebdb3;margin:0;max-width:760px}
+    .cta .btn{position:relative;z-index:2;background:#fff;color:#183021}
+
+    footer{padding:44px 0 34px}
+    .footer{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;border-top:1px solid var(--line);padding-top:28px}
+    .footer p{margin:8px 0 0;color:#718078;font-size:12px;max-width:520px}
+    .footer-links{display:flex;gap:20px;color:#56645b;font-size:13px}
+
+    .chat-fab{
+      position:fixed;right:22px;bottom:22px;z-index:60;border:0;border-radius:999px;background:var(--green);color:white;
+      padding:14px 18px;font-weight:800;box-shadow:0 15px 40px rgba(15,81,50,.28);cursor:pointer;display:none
     }
 
-    .contact-panel {
-      color: #f5f6f3;
-      border-color: rgba(186,255,69,.14);
-      background: linear-gradient(145deg,#07100c,#080b0a);
+    @media (max-width:980px){
+      .nav-links{display:none}
+      .menu-btn{display:grid;place-items:center}
+      .hero{padding-top:66px}
+      .hero-grid,.channel-grid,.permission,.chat-shell{grid-template-columns:1fr}
+      .hero-grid{gap:36px}
+      .ops-card{max-width:720px}
+      .solutions-grid{grid-template-columns:1fr}
+      .solution-card.featured{grid-column:span 1}
+      .industry-grid,.trust-grid{grid-template-columns:repeat(2,1fr)}
+      .vacancy-card,.cta{grid-template-columns:1fr}
+      .strip{grid-template-columns:repeat(2,1fr)}
+      .strip div{border-right:0}
     }
-    .contact-panel p,
-    .contact-links small { color: #aeb7bb; }
-    .contact-links a {
-      color: #f5f6f3;
-      background: rgba(255,255,255,.025);
-      border-color: rgba(199,205,210,.12);
-    }
-    .contact-links a:hover { border-color: rgba(186,255,69,.26); }
-    .field label { color: #f5f6f3; }
-    .field input,
-    .field select,
-    .field textarea {
-      color: #f5f6f3;
-      background: #070b0a;
-      border-color: #252b29;
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: #8fcf36;
-      box-shadow: 0 0 0 3px rgba(186,255,69,.08);
-    }
-    .consent a { color: #d4ff8a; }
-    .success-note { color: #eaffc6; background: #0b1b11; border-color: rgba(186,255,69,.2); }
-    .privacy details { color: #f5f6f3; background: #0a0d0c; border-color: rgba(199,205,210,.12); }
-    footer { border-top-color: rgba(186,255,69,.09); }
-    .footer-links,
-    .footer-bottom,
-    .market-links a { color: #aeb7bb; }
-    .market-links a { border-color: rgba(186,255,69,.12); }
-
-    @media (max-width: 780px) {
-      .brand img { width: 58px; height: 50px; }
-      .primary-nav { background: rgba(5,8,7,.985); border-color: rgba(186,255,69,.13); }
-      .hero-media::before {
-        background: linear-gradient(180deg,rgba(3,6,5,.57),rgba(3,7,5,.67) 32%,rgba(4,8,6,.94) 78%,#050807 100%);
-      }
+    @media (max-width:640px){
+      .wrap{width:min(calc(100% - 24px),var(--max))}
+      .nav{height:68px}
+      .brand span{font-size:14px}
+      .nav-actions .btn{display:none}
+      .hero{padding:54px 0 34px}
+      h1{font-size:45px}
+      .hero p{font-size:17px}
+      .hero-actions{display:grid}
+      .hero-actions .btn{width:100%}
+      .strip{grid-template-columns:1fr}
+      .section{padding:68px 0}
+      .solution-card ul{grid-template-columns:1fr}
+      .compare-grid{grid-template-columns:1fr}
+      .compare-head{display:block}
+      .industry-grid,.trust-grid{grid-template-columns:1fr}
+      .vacancy-card,.cta{padding:28px}
+      .flow{grid-template-columns:1fr}
+      .footer{display:block}
+      .footer-links{margin-top:18px;flex-wrap:wrap}
+      .chat-fab{right:12px;bottom:12px}
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="site-header">
-    <div class="shell nav-wrap">
-      <a class="brand" href="#top" aria-label="INVENIO AI SOLUTIONS home">
-        <img src="invenio-logo.png" alt="INVENIO human and AI handshake logo" width="58" height="58">
-        <span class="brand-copy"><strong>INVENIO AI SOLUTIONS</strong><small>Powering Business Through Intelligence</small></span>
+  <header class="nav-wrap">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="INVENIO home">
+        <img src="invenio-logo.png" alt="" onerror="this.style.display='none'">
+        <span>INVENIO</span>
       </a>
 
-      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
-        <a href="#why" data-i18n="navWhy">Why INVENIO</a>
-        <a href="#industries" data-i18n="navIndustries">Industries</a>
-        <a href="#solutions" data-i18n="navSolutions">Solutions</a>
-        <a href="#process" data-i18n="navProcess">Process</a>
-        <a href="#enquire" data-i18n="navEnquire">Enquire</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#solutions">Solutions</a>
+        <a href="#industries">Industries</a>
+        <a href="#how">How It Works</a>
+        <a href="#why">Why Invenio</a>
       </nav>
 
-      <div class="nav-tools">
-        <label class="sr-only" for="marketSelect" hidden>Select market</label>
-        <select class="market-select" id="marketSelect" aria-label="Choose your market">
-          <option value="za">South Africa</option>
-          <option value="kw">Kuwait</option>
-          <option value="om">Oman</option>
-          <option value="gy">Guyana</option>
-        </select>
-        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">العربية</button>
-        <a class="nav-cta" href="#enquire" data-i18n="navAssessment">Request an assessment</a>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
+      <div class="nav-actions">
+        <button class="btn btn-primary live-cta" type="button">Explore Invenio</button>
+        <button class="menu-btn" type="button" aria-label="Open menu" id="menuBtn">☰</button>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="heroTitle">
-      <div class="hero-media" aria-hidden="true">
-        <video id="heroVideo" muted autoplay loop playsinline preload="metadata" poster="AISelect_20260820_185414_Gallery.jpg">
-          <source src="grok-video-3142dd80-9a58-4cf4-85b4-d15d3a07774c.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="shell hero-grid">
-        <div class="hero-copy" data-reveal>
-          <div class="hero-kicker"><i></i><span data-i18n="heroKicker">INVENIO AI SOLUTIONS</span></div>
-          <h1 id="heroTitle" data-i18n="heroTitle">Add the capacity of a whole team.<span>Without hiring a whole team.</span></h1>
-          <p class="hero-lead" data-i18n="heroLead">INVENIO handles enquiries, bookings, follow-ups, documents, CRM updates and routine administration through one connected system.</p>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> AI operations for modern business</div>
+
+          <h1>Automate the work your business keeps hiring people to handle.</h1>
+
+          <p>
+            Most enquiries already arrive through <strong>websites, WhatsApp, email and online forms.</strong>
+            Invenio can respond, qualify, book, follow up and move information through your business systems automatically.
+          </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#enquire" data-i18n="heroCta">Assess one workflow →</a>
-            <a class="btn btn-light" href="#solutions" data-i18n="heroSecondary">View solutions</a>
+            <button class="btn btn-primary live-cta" type="button">See Invenio in action</button>
+            <a class="btn btn-secondary" href="#solutions">Explore solutions</a>
+          </div>
+
+          <div class="hero-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Run the process automatically, or require approval at any step you choose.
           </div>
         </div>
-        <aside class="hero-proof" data-reveal>
-          <strong data-i18n="heroProofTitle">Start with one workflow.</strong>
-          <p data-i18n="heroProofCopy">Add more only when the operating case is clear.</p>
-          <div class="market-status"><span data-market-name>South Africa</span> · <span data-price>R219</span> <span data-i18n="fromMonthly">starting monthly</span></div>
-        </aside>
-      </div>
-    </section>
 
-    <section class="pain-bar" aria-label="Common business costs">
-      <div class="shell pain-grid">
-        <div class="pain-item"><strong data-i18n="pain1Title">Slow replies lose ready buyers.</strong><span data-i18n="pain1Copy">Respond before the opportunity moves elsewhere.</span></div>
-        <div class="pain-item"><strong data-i18n="pain2Title">Routine admin consumes skilled hours.</strong><span data-i18n="pain2Copy">Move repeatable work out of staff queues.</span></div>
-        <div class="pain-item"><strong data-i18n="pain3Title">Demand continues after hours.</strong><span data-i18n="pain3Copy">Keep approved customer journeys active 24/7.</span></div>
-      </div>
-    </section>
+        <div class="ops-card" aria-label="INVENIO workflow preview">
+          <div class="ops-top">
+            <div class="ops-title">Online enquiry workflow</div>
+            <div class="live-pill"><i></i> PRODUCT PREVIEW</div>
+          </div>
 
-    <section class="why" id="why">
-      <div class="shell why-layout">
-        <div class="principle" data-reveal>
-          <span class="eyebrow" data-i18n="whyEyebrow">Why INVENIO</span>
-          <blockquote data-i18n="whyQuote">Your business sets the rules. <span class="accent">INVENIO executes the repeatable work.</span></blockquote>
-          <p data-i18n="whyIntro">We map one costly workflow, define controls and implement against a measurable target.</p>
-        </div>
-        <div class="value-grid">
-          <article class="value-card" data-reveal><span class="value-number">01</span><h3 data-i18n="value1Title">Configured to your rules</h3><p data-i18n="value1Copy">Services, policies, approvals, hours and current tools define the system.</p></article>
-          <article class="value-card" data-reveal><span class="value-number">02</span><h3 data-i18n="value2Title">Measured against outcomes</h3><p data-i18n="value2Copy">Track response time, workload, conversion, service and cost.</p></article>
-          <article class="value-card" data-reveal><span class="value-number">03</span><h3 data-i18n="value3Title">Controlled by your team</h3><p data-i18n="value3Copy">AI handles approved tasks; people retain decisions and exceptions.</p></article>
-          <article class="value-card" data-reveal><span class="value-number">04</span><h3 data-i18n="value4Title">Expanded on evidence</h3><p data-i18n="value4Copy">Deploy one workflow, verify the result, then connect the next.</p></article>
+          <div class="message user">
+            <small>Website visitor</small>
+            <b>“Hi, I need pricing and I’d like the earliest available appointment.”</b>
+          </div>
+
+          <div class="message ai">
+            <small>INVENIO</small>
+            <b>“I can help with both. I’ll confirm what you need, show the relevant option and check availability.”</b>
+          </div>
+
+          <div class="flow">
+            <div class="flow-item"><span>1</span> Enquiry understood</div>
+            <div class="flow-item"><span>2</span> Lead qualified</div>
+            <div class="flow-item"><span>3</span> Booking workflow</div>
+            <div class="flow-item"><span>4</span> CRM / team updated</div>
+          </div>
+
+          <div class="preview-label">Example workflow — no fake client data</div>
         </div>
       </div>
     </section>
 
-    <section class="industries dark" id="industries">
-      <div class="shell">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow" data-i18n="industriesEyebrow">Industry pressure points</span>
-          <h2 data-i18n="industriesTitle">Where operating pressure becomes <span class="accent">measurable loss.</span></h2>
-          <p data-i18n="industriesIntro">Each system follows the sector’s rules, language and handover requirements.</p>
+    <div class="proof-strip">
+      <div class="wrap strip">
+        <div>AI Chatbot</div>
+        <div>AI Receptionist</div>
+        <div>AI Sales Agent</div>
+        <div>AI HR Automation</div>
+        <div>Business Automation</div>
+      </div>
+    </div>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">The front door moved online</div>
+          <h2>Turn digital enquiries into completed actions.</h2>
+          <p>
+            For many businesses, the first contact is no longer a walk-in. It is a website message, WhatsApp chat,
+            email, form or call. Invenio is designed around that reality.
+          </p>
         </div>
+
+        <div class="channel-grid">
+          <div class="channel-card">
+            <div class="kicker">Where Invenio can operate</div>
+            <h3 style="font-size:28px;line-height:1.2;margin:0 0 10px;letter-spacing:-.03em">Meet customers where the enquiry actually starts.</h3>
+            <p style="color:var(--muted);margin:0">Connect the channels your business uses, then decide what Invenio is allowed to do on each one.</p>
+
+            <div class="channel-list">
+              <span class="chip">Website</span>
+              <span class="chip">WhatsApp</span>
+              <span class="chip">Email</span>
+              <span class="chip">Online Forms</span>
+              <span class="chip">Calendar</span>
+              <span class="chip">CRM</span>
+              <span class="chip optional">Voice / Phone when connected</span>
+            </div>
+          </div>
+
+          <div class="workflow-card">
+            <div class="kicker">What happens next</div>
+            <div class="workflow-steps">
+              <div class="step">
+                <div class="step-num">01</div>
+                <div><b>Receive</b><br><small>A customer, lead, candidate or employee request arrives.</small></div>
+                <div class="step-status">INPUT</div>
+              </div>
+              <div class="step">
+                <div class="step-num">02</div>
+                <div><b>Understand</b><br><small>Invenio identifies intent, context and the next required step.</small></div>
+                <div class="step-status">AI</div>
+              </div>
+              <div class="step">
+                <div class="step-num">03</div>
+                <div><b>Act</b><br><small>Answer, qualify, book, update, send, route or trigger the workflow.</small></div>
+                <div class="step-status">ACTION</div>
+              </div>
+              <div class="step">
+                <div class="step-num">04</div>
+                <div><b>Continue</b><br><small>Follow-ups, reminders and next steps can happen automatically.</small></div>
+                <div class="step-status">FLOW</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="solutions">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Five different jobs. Five clear solutions.</div>
+          <h2>Not the same chatbot with a different name.</h2>
+          <p>
+            Each Invenio solution is defined by where it works, what actions it can take and which business outcome it is built to improve.
+          </p>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="solution-card" id="chatbot">
+            <span class="solution-tag">Website intelligence</span>
+            <h3>AI Chatbot</h3>
+            <p>An intelligent assistant inside your website. It answers, recommends, captures and guides visitors toward the right next step.</p>
+            <ul>
+              <li>Answers approved questions</li>
+              <li>Explains services and options</li>
+              <li>Captures lead details</li>
+              <li>Recommends next steps</li>
+              <li>Handles common enquiries</li>
+              <li>Can start a booking flow</li>
+            </ul>
+          </article>
+
+          <article class="solution-card" id="receptionist">
+            <span class="solution-tag">Front-office automation</span>
+            <h3>AI Receptionist</h3>
+            <p>A receptionist across your customer channels — not just your website. It can manage enquiries and take actions across connected systems.</p>
+            <ul>
+              <li>Website, WhatsApp & email</li>
+              <li>Voice when connected</li>
+              <li>Bookings and rescheduling</li>
+              <li>Messages and routing</li>
+              <li>Reminders and follow-ups</li>
+              <li>CRM and team updates</li>
+            </ul>
+          </article>
+
+          <article class="solution-card" id="sales">
+            <span class="solution-tag">Revenue workflow</span>
+            <h3>AI Sales Agent</h3>
+            <p>Respond while interest is still high, qualify the opportunity and keep the next step moving without leads being forgotten.</p>
+            <ul>
+              <li>Fast lead response</li>
+              <li>Qualification questions</li>
+              <li>Product/service guidance</li>
+              <li>Persistent follow-up</li>
+              <li>Quote or booking workflows</li>
+              <li>Pipeline / CRM updates</li>
+            </ul>
+          </article>
+
+          <article class="solution-card" id="hr">
+            <span class="solution-tag">People operations</span>
+            <h3>AI HR Automation</h3>
+            <p>Automate the repetitive movement of information around candidates, employees, interviews, documents and onboarding.</p>
+            <ul>
+              <li>Candidate enquiries</li>
+              <li>Rule-based pre-screening</li>
+              <li>Document collection</li>
+              <li>Interview coordination</li>
+              <li>Onboarding workflows</li>
+              <li>Routine HR requests</li>
+              <li>Records and reminders</li>
+              <li>Approval anywhere you want</li>
+            </ul>
+          </article>
+
+          <article class="solution-card featured" id="automation">
+            <span class="solution-tag">Back-office automation</span>
+            <h3>Business Automation</h3>
+            <p>
+              What normally requires someone to monitor inboxes, copy details, update systems, prepare documents and chase next steps can simply happen in the background.
+            </p>
+            <ul>
+              <li>Email processing and routing</li>
+              <li>Data extraction and entry</li>
+              <li>CRM / spreadsheet updates</li>
+              <li>Document generation</li>
+              <li>Forms and internal workflows</li>
+              <li>Reminders and follow-ups</li>
+              <li>Reports and notifications</li>
+              <li>Cross-system automation</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="compare">
+          <div class="compare-head">
+            <div>
+              <div class="kicker" style="color:#78e7a8">The important difference</div>
+              <h3>AI Chatbot vs AI Receptionist</h3>
+            </div>
+            <p>If a visitor can understand this in five seconds, your offer becomes much easier to buy.</p>
+          </div>
+
+          <div class="compare-grid">
+            <div class="compare-col">
+              <h4>AI Chatbot</h4>
+              <p>Intelligent website assistance.</p>
+              <div class="compare-row"><span>Where it works</span><span>Website</span></div>
+              <div class="compare-row"><span>Main job</span><span>Answer & guide</span></div>
+              <div class="compare-row"><span>Lead capture</span><span>Yes</span></div>
+              <div class="compare-row"><span>Booking</span><span>Basic / connected</span></div>
+              <div class="compare-row"><span>Multi-channel</span><span>No</span></div>
+            </div>
+
+            <div class="compare-col">
+              <h4>AI Receptionist</h4>
+              <p>Connected front-office operations.</p>
+              <div class="compare-row"><span>Where it works</span><span>Web + WhatsApp + Email + Voice*</span></div>
+              <div class="compare-row"><span>Main job</span><span>Manage the enquiry</span></div>
+              <div class="compare-row"><span>Lead qualification</span><span>Yes</span></div>
+              <div class="compare-row"><span>Booking changes</span><span>Yes</span></div>
+              <div class="compare-row"><span>CRM / routing / reminders</span><span>Yes</span></div>
+            </div>
+          </div>
+          <div style="color:#74897b;font-size:11px;margin-top:10px">*Voice/phone depends on the channels connected for the business.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap permission">
+        <div class="permission-main">
+          <div class="kicker" style="color:#a7efc4">Your business. Your permissions.</div>
+          <h3>Let Invenio go as far as you want it to.</h3>
+          <p>
+            Run a workflow end-to-end automatically, require approval at selected steps, or keep specific actions with your team.
+            The automation follows the permissions you choose.
+          </p>
+        </div>
+
+        <div class="permission-list">
+          <div class="permission-item">
+            <b>Fully automatic</b>
+            <span>Approved workflows can run from enquiry to completed action without manual handling.</span>
+          </div>
+          <div class="permission-item">
+            <b>Approval checkpoints</b>
+            <span>Pause before selected actions and continue only after your team approves.</span>
+          </div>
+          <div class="permission-item">
+            <b>Human handoff</b>
+            <span>Route specific situations to the right person whenever you want a person involved.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="industries">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Where this becomes especially useful</div>
+          <h2>Built around enquiry-heavy and process-heavy businesses.</h2>
+          <p>Start with the repetitive work that already consumes time, then expand from there.</p>
+        </div>
+
         <div class="industry-grid">
-          <article class="industry-card" data-reveal><div class="industry-icon">LF</div><h3 data-i18n="ind1Title">Logistics & Freight</h3><p class="industry-pain" data-i18n="ind1Copy">Delayed quotes, repeated status requests and document backlogs.</p><a href="#solutions" data-i18n="seeSystems">View systems →</a></article>
-          <article class="industry-card" data-reveal><div class="industry-icon">HD</div><h3 data-i18n="ind2Title">Healthcare & Dental</h3><p class="industry-pain" data-i18n="ind2Copy">Front-desk overload from bookings, intake and routine patient questions.</p><a href="#solutions" data-i18n="seeSystems">View systems →</a></article>
-          <article class="industry-card" data-reveal><div class="industry-icon">LP</div><h3 data-i18n="ind3Title">Legal & Professional Services</h3><p class="industry-pain" data-i18n="ind3Copy">Incomplete intake and missing documents consume billable time.</p><a href="#solutions" data-i18n="seeSystems">View systems →</a></article>
-          <article class="industry-card" data-reveal><div class="industry-icon">PR</div><h3 data-i18n="ind4Title">Property & Real Estate</h3><p class="industry-pain" data-i18n="ind4Copy">Slow lead response, viewing coordination and inconsistent follow-up.</p><a href="#solutions" data-i18n="seeSystems">View systems →</a></article>
-          <article class="industry-card" data-reveal><div class="industry-icon">ED</div><h3 data-i18n="ind5Title">Education & Training</h3><p class="industry-pain" data-i18n="ind5Copy">Repeated admissions questions and fragmented applicant follow-up.</p><a href="#solutions" data-i18n="seeSystems">View systems →</a></article>
-          <article class="industry-card" data-reveal><div class="industry-icon">BS</div><h3 data-i18n="ind6Title">Retail & Business Services</h3><p class="industry-pain" data-i18n="ind6Copy">Multi-channel enquiries, delayed quotes and unowned next actions.</p><a href="#solutions" data-i18n="seeSystems">View systems →</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="conversion-band" aria-label="Business assessment call to action">
-      <div class="shell conversion-inner">
-        <div><h3 data-i18n="midCtaTitle">Which workflow costs you most?</h3><p data-i18n="midCtaCopy">Define the loss. Assess the automation case.</p></div>
-        <a class="btn" href="#enquire" data-i18n="midCtaButton">Assess the workflow →</a>
-      </div>
-    </section>
-
-    <section class="solutions" id="solutions">
-      <div class="shell">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow" data-i18n="solutionsEyebrow">Eight systems</span>
-          <h2 data-i18n="solutionsTitle">Deploy one system. <span class="accent">Connect more when required.</span></h2>
-          <p data-i18n="solutionsIntro">Each solution has a distinct role and defined outcome.</p>
-        </div>
-
-        <div class="choice-strip" data-reveal>
-          <strong data-i18n="choiceTitle">One, several or fully connected.</strong>
-          <p data-i18n="choiceCopy">Buy only the operating capacity required.</p>
-          <div class="choice-path" aria-label="Solution purchase choices"><span data-i18n="choiceOne">1 solution</span><span data-i18n="choiceSeveral">Several</span><span data-i18n="choiceAll">All connected</span></div>
-        </div>
-
-        <div class="solution-grid">
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><video class="lazy-video" muted loop playsinline preload="none" data-src="grok-video-b34bfe40-d091-40e3-80cf-8c75943d838a.mp4"></video><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">01 / FRONT DESK</span></div><h3 data-i18n="sol1Title">AI Receptionist</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol1Pain">Enquiries wait when staff are occupied or offline.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol1Response">Captures intent, qualifies requests, books appointments, records details and routes the next action.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol1Impact">Fewer missed enquiries, lower front-desk load and more completed bookings.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><video class="lazy-video" muted loop playsinline preload="none" data-src="grok-video-7fdc8fef-112f-47ae-8cf4-c5b11698c66c (1).mp4"></video><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">02 / DIGITAL SERVICE</span></div><h3 data-i18n="sol2Title">AI Chatbot</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol2Pain">Visitors leave when answers and next steps are unclear.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol2Response">Answers approved questions and directs visitors to the correct service, page, form or person.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol2Impact">Lower support volume and more visitors reaching a defined next step.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><video class="lazy-video" muted loop playsinline preload="none" data-src="grok-video-5076f65a-6488-4faf-b9d8-a8a330602652 (1).mp4"></video><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">03 / VOICE</span></div><h3 data-i18n="sol3Title">AI Voice & Call Centre</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol3Pain">Routine calls create queues and unanswered demand.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol3Response">Handles approved calls, captures intent, qualifies requests and transfers cases with context.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol3Impact">Higher call capacity and more agent time for complex cases.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">04 / OPERATIONS</span></div><h3 data-i18n="sol4Title">Admin, HR & Document Automation</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol4Pain">Staff time is lost to files, forms, data entry and reminders.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol4Response">Extracts data, routes documents, prepares drafts, updates records and flags exceptions.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol4Impact">Less administration, fewer handling errors and more productive staff time.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">05 / REVENUE</span></div><h3 data-i18n="sol5Title">CRM, Leads & Sales Automation</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol5Pain">Leads go cold when records and follow-ups depend on memory.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol5Response">Updates the CRM, routes leads, schedules follow-up and alerts the responsible person.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol5Impact">Consistent follow-up and stronger conversion from existing demand.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">06 / DIGITAL</span></div><h3 data-i18n="sol6Title">Website & Digital Experience</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol6Pain">A weak digital journey reduces trust and action.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol6Response">Clarifies the offer, improves mobile use and connects forms, chat, booking and lead capture.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol6Impact">Higher credibility and a shorter path from visit to enquiry.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">07 / GROWTH</span></div><h3 data-i18n="sol7Title">AI Marketing & Customer Growth</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol7Pain">Campaign response is lost through weak segmentation and delayed follow-up.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol7Response">Organises audience data and connects approved follow-up to sales actions and reporting.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol7Impact">Clearer campaign performance and more response entering the sales process.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-
-          <article class="solution-card" data-reveal>
-            <div class="solution-media"><span class="demo-label" data-i18n="demoLabel">6-second solution demonstration</span></div>
-            <div class="solution-body"><div class="solution-top"><span class="solution-index">08 / CUSTOM</span></div><h3 data-i18n="sol8Title">AI Strategy & Custom Business Systems</h3><div class="story-row pain"><b data-i18n="painLabel">Pressure</b><p data-i18n="sol8Pain">Critical work stalls between teams and disconnected software.</p></div><div class="story-row"><b data-i18n="responseLabel">System action</b><p data-i18n="sol8Response">Connects people, data, approvals and current platforms around one defined process.</p></div><div class="story-row impact"><b data-i18n="impactLabel">Outcome</b><p data-i18n="sol8Impact">A controlled workflow with clear ownership, oversight and measurement.</p></div><a class="solution-link" href="#enquire" data-i18n="discussSolution">Assess this solution →</a></div>
-          </article>
-        </div>
-
-        <div class="synergy" data-reveal>
-          <div class="synergy-card"><h3 data-i18n="chatbotTitle">AI Chatbot: answers and directs</h3><p data-i18n="chatbotCopy">Handles approved questions inside the customer conversation.</p></div>
-          <div class="synergy-plus" aria-hidden="true">+</div>
-          <div class="synergy-card"><h3 data-i18n="receptionistTitle">AI Receptionist: executes the next step</h3><p data-i18n="receptionistCopy">Captures, qualifies, books, records and routes. Together, the chatbot handles dialogue while the receptionist executes workflow.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing dark" id="pricing">
-      <div class="shell">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow" data-i18n="pricingEyebrow">Commercial terms</span>
-          <h2 data-i18n="pricingTitle">Clear entry price. <span class="accent">Scope-based final fee.</span></h2>
-          <p data-i18n="pricingIntro">Final pricing reflects complexity, integrations, usage and support.</p>
-        </div>
-        <div class="pricing-grid">
-          <div class="price-main" data-reveal>
-            <span class="price-label"><span data-market-name>South Africa</span> <span data-i18n="startingPrice">starting price</span></span>
-            <div class="price"><span data-price>R219</span><small data-i18n="perMonth">/ month</small></div>
-            <p><span data-i18n="priceScope">Solutions start here; the final fee follows the agreed scope.</span> <strong data-i18n="flexPayment">Flexible payment structures are available.</strong></p>
-            <div class="billing-options" aria-label="Available billing periods"><span data-i18n="weekly">Weekly</span><span data-i18n="monthly">Monthly</span><span data-i18n="quarterly">Quarterly</span><span data-i18n="halfYearly">Half-yearly</span><span data-i18n="yearly">Yearly</span><span data-i18n="onceOff">Once-off</span></div>
-            <a class="btn btn-primary" href="#enquire" data-i18n="pricingCta">Request pricing →</a>
-            <ul class="pricing-points"><li data-i18n="pricingPoint1">Buy one solution, several or the connected suite.</li><li data-i18n="pricingPoint2">Cancel anytime; service runs to the end of the paid period.</li><li data-i18n="pricingPoint3">Subscription billing starts when the system goes live.</li></ul>
+          <div class="industry-card">
+            <span class="mini">H</span>
+            <h3>Hotels & Accommodation</h3>
+            <p>Guest questions, booking enquiries, changes, after-hours assistance, follow-ups and internal notifications.</p>
           </div>
-          <div class="price-side" data-reveal>
-            <article class="offer-card"><span class="offer-badge" data-i18n="newClient">New-client offer</span><h3 data-i18n="offerTitle">Pay 40% in month one.</h3><p data-i18n="offerCopy"><strong>R1,000</strong> standard price = <strong>R400</strong> for the first month. Standard billing begins in month two.</p></article>
-            <article class="offer-card"><h3 data-i18n="onceTitle">Once-off projects</h3><p data-i18n="onceCopy"><strong>50% before setup.</strong> The remaining <strong>50% is due after delivery and approval.</strong></p></article>
-            <article class="offer-card"><h3 data-i18n="noLockTitle">Controlled commitment</h3><p data-i18n="noLockCopy">Start with one workflow. Add capacity when required.</p></article>
+          <div class="industry-card">
+            <span class="mini">R</span>
+            <h3>Restaurants</h3>
+            <p>Reservations, event enquiries, opening information, customer questions, confirmations and reminders.</p>
+          </div>
+          <div class="industry-card">
+            <span class="mini">C</span>
+            <h3>Clinics & Practices</h3>
+            <p>Non-clinical enquiries, appointments, reminders, document collection and administrative follow-up.</p>
+          </div>
+          <div class="industry-card">
+            <span class="mini">P</span>
+            <h3>Property & Real Estate</h3>
+            <p>Buyer or tenant enquiries, qualification, viewing requests, follow-up and CRM updates.</p>
+          </div>
+          <div class="industry-card">
+            <span class="mini">B</span>
+            <h3>Professional Services</h3>
+            <p>Consultation enquiries, lead capture, scheduling, information collection and recurring admin workflows.</p>
+          </div>
+          <div class="industry-card">
+            <span class="mini">HR</span>
+            <h3>Recruitment & HR Teams</h3>
+            <p>Candidate communication, screening workflows, interview coordination, onboarding and repetitive HR administration.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="process" id="process">
-      <div class="shell">
-        <div class="section-head" data-reveal><span class="eyebrow" data-i18n="processEyebrow">Process</span><h2 data-i18n="processTitle">Four steps from constraint to <span class="accent">live system.</span></h2><p data-i18n="processIntro">Defined scope, ownership and acceptance criteria.</p></div>
-        <div class="process-grid">
-          <article class="process-step" data-reveal><h3 data-i18n="step1Title">Diagnose</h3><p data-i18n="step1Copy">Quantify the delay, workload, cost or lost opportunity.</p></article>
-          <article class="process-step" data-reveal><h3 data-i18n="step2Title">Design</h3><p data-i18n="step2Copy">Define workflow, data, controls and human handovers.</p></article>
-          <article class="process-step" data-reveal><h3 data-i18n="step3Title">Implement</h3><p data-i18n="step3Copy">Configure, connect and test against operating scenarios.</p></article>
-          <article class="process-step" data-reveal><h3 data-i18n="step4Title">Improve</h3><p data-i18n="step4Copy">Measure performance and refine against results.</p></article>
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Why Invenio</div>
+          <h2>Designed to feel like part of the business, not another disconnected tool.</h2>
+          <p>Trust comes from clarity: what it can do, where it acts and what permissions it has.</p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon">01</div>
+            <h3>Works with your process</h3>
+            <p>Invenio is configured around the way your business already receives enquiries and moves work forward.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">02</div>
+            <h3>Connects to existing systems</h3>
+            <p>Calendars, CRM, email, forms, spreadsheets and other tools can become part of one automated flow.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">03</div>
+            <h3>You control the authority</h3>
+            <p>Choose what happens automatically, what requires approval and when a person should be brought in.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">04</div>
+            <h3>Handles digital demand</h3>
+            <p>Online enquiries do not need to wait for someone to notice an inbox, return to a desk or finish another conversation.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">05</div>
+            <h3>Built around actions</h3>
+            <p>The value is not just in generating text. Invenio is designed to move the business process to its next step.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">06</div>
+            <h3>No invented proof</h3>
+            <p>We would rather let you test the system and understand the workflow than fill the website with claims you cannot verify.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="trust dark" id="compliance">
-      <div class="shell trust-grid">
-        <div data-reveal><span class="eyebrow" data-i18n="trustEyebrow">Privacy, security and control</span><h2 data-i18n="trustTitle">Governance is part of the system.</h2><p data-i18n="trustCopy">Each implementation defines applicable data requirements, permissions, escalation rules and client responsibilities. Legal compliance remains specific to the client and use case.</p></div>
-        <div class="trust-list">
-          <div class="trust-item" data-reveal><strong data-i18n="trust1Title">Applicable data requirements</strong><span data-i18n="trust1Copy">Project scope accounts for POPIA, Kuwait requirements, Oman’s PDPL or Guyana’s Data Protection Act as applicable.</span></div>
-          <div class="trust-item" data-reveal><strong data-i18n="trust2Title">Defined permissions</strong><span data-i18n="trust2Copy">Information, actions, access and escalation paths are agreed in advance.</span></div>
-          <div class="trust-item" data-reveal><strong data-i18n="trust3Title">Human oversight</strong><span data-i18n="trust3Copy">Sensitive decisions remain with authorised people.</span></div>
+    <section class="section alt">
+      <div class="wrap">
+        <div class="vacancy-card">
+          <div>
+            <div class="kicker">Currently hiring?</div>
+            <h3>Before you add another role to payroll, see how much of the workload can be automated.</h3>
+            <p>
+              If you are hiring for reception, administration, sales support, call-centre work or HR administration,
+              send the responsibilities. Invenio can be mapped against the actual workload instead of giving you a generic pitch.
+            </p>
+            <div class="role-chips">
+              <a href="#receptionist">Receptionist</a>
+              <a href="#automation">Administrator / Clerk</a>
+              <a href="#sales">Sales / Call Centre</a>
+              <a href="#hr">HR Admin</a>
+              <a href="#chatbot">Online Enquiries</a>
+            </div>
+          </div>
+
+          <button class="btn btn-primary live-cta" type="button">Show Invenio the workload</button>
         </div>
       </div>
     </section>
 
-    <section class="enquire" id="enquire">
-      <div class="shell enquire-grid">
-        <aside class="contact-panel" data-reveal>
-          <span class="eyebrow" data-i18n="enquireEyebrow">Enquire</span>
-          <h2 data-i18n="enquireTitle">Identify the workflow. Quantify the cost.</h2>
-          <p data-i18n="enquireCopy">Describe the constraint; we will define the system scope.</p>
-          <div class="contact-links">
-            <a href="https://wa.me/27604868989?text=Hi%20INVENIO%20AI%20SOLUTIONS%2C%20I%27d%20like%20to%20discuss%20a%20business%20workflow." target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><small>+27 60 486 8989 · messages only</small></a>
-            <a href="mailto:invenio.ai.solutions@gmail.com"><strong>Email</strong><small>invenio.ai.solutions@gmail.com</small></a>
+    <section class="section" id="live-demo">
+      <div class="wrap">
+        <div class="chat-shell">
+          <div class="chat-copy">
+            <div class="kicker" style="color:#7ee8aa">Live Invenio</div>
+            <h3>Don't just read about it. Ask it.</h3>
+            <p>
+              Ask about Invenio, describe a business problem, or paste responsibilities from a job vacancy and see which parts could be automated.
+            </p>
+            <div class="prompt-list">
+              <button class="prompt-btn" type="button">What could you automate for a hotel?</button>
+              <button class="prompt-btn" type="button">Explain AI Chatbot vs AI Receptionist.</button>
+              <button class="prompt-btn" type="button">How can Invenio reduce HR admin workload?</button>
+            </div>
           </div>
-        </aside>
 
-        <form class="form-card" action="https://formsubmit.co/invenio.ai.solutions@gmail.com" method="POST" data-reveal>
-          <input type="hidden" name="_subject" value="New INVENIO website enquiry">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://invenio-ai-solutions.pages.dev/?sent=1#enquire">
-          <input type="hidden" name="market" id="marketField" value="South Africa">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
-          <div class="success-note" id="successNote" role="status" data-i18n="successNote">Thank you. Your enquiry was submitted successfully.</div>
-          <h3 data-i18n="formTitle">Request an assessment</h3>
-          <div class="form-grid">
-            <div class="field"><label for="name" data-i18n="nameLabel">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-            <div class="field"><label for="company" data-i18n="companyLabel">Company</label><input id="company" name="company" type="text" autocomplete="organization" required></div>
-            <div class="field"><label for="email" data-i18n="emailLabel">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="phone" data-i18n="phoneLabel">WhatsApp / phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="field full"><label for="interest" data-i18n="interestLabel">What are you interested in?</label><select id="interest" name="interest" required><option value="" data-i18n="selectOption">Select one</option><option>AI Receptionist</option><option>AI Chatbot</option><option>AI Voice & Call Centre</option><option>Admin, HR & Document Automation</option><option>CRM, Leads & Sales Automation</option><option>Website & Digital Experience</option><option>AI Marketing & Customer Growth</option><option>AI Strategy & Custom Business Systems</option><option>Several / complete suite</option><option>Not sure yet</option></select></div>
-            <div class="field full"><label for="message" data-i18n="messageLabel">Which workflow requires attention?</label><textarea id="message" name="message" required data-i18n-placeholder="messagePlaceholder" placeholder="Describe the delay, workload, cost or lost opportunity."></textarea></div>
-            <label class="consent" for="consent"><input id="consent" name="privacy_consent" value="I consent to INVENIO using my details to respond to this enquiry." type="checkbox" required><span data-i18n="consentCopy">I consent to INVENIO using my details to respond to this enquiry. Read the <a href="#privacy">privacy information</a>.</span></label>
+          <div class="chat-box">
+            <div class="chat-header">
+              <b><i></i> Invenio</b>
+              <span style="font-size:11px;color:#6d7b72">AI business assistant</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="bubble bot">Tell me what your business handles manually, what you're currently hiring for, or what you want to automate.</div>
+            </div>
+            <form class="chat-input" id="chatForm">
+              <input id="chatInput" autocomplete="off" placeholder="Ask Invenio…" aria-label="Message Invenio" />
+              <button type="submit" aria-label="Send message">→</button>
+            </form>
           </div>
-          <button class="btn btn-dark" type="submit" data-i18n="submitButton">Send my enquiry →</button>
-        </form>
+        </div>
       </div>
     </section>
 
-    <section class="privacy" id="privacy">
-      <div class="shell">
-        <details><summary data-i18n="privacyTitle">Privacy information</summary><p data-i18n="privacyCopy">Information submitted through this form is used to assess and respond to your enquiry, discuss suitable INVENIO services and keep a record of the conversation. Do not submit confidential, medical, financial or legally privileged information through the general enquiry form. You may request access, correction or deletion by emailing invenio.ai.solutions@gmail.com, subject to applicable legal and record-keeping requirements.</p></details>
+    <section class="section">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>See what happens when the workload becomes the system's job.</h2>
+            <p>Start with one enquiry or one repetitive process. Expand only where the value is obvious.</p>
+          </div>
+          <button class="btn live-cta" type="button">Try Invenio</button>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="shell">
-      <div class="footer-top">
-        <div class="footer-brand"><img src="invenio-logo.png" alt="" width="60" height="60"><div><strong>INVENIO AI SOLUTIONS</strong><div class="muted" data-i18n="footerTagline">Powering Business Through Intelligence.</div></div></div>
-        <div><h4 data-i18n="footerNavigate">Navigate</h4><div class="footer-links"><a href="#why" data-i18n="navWhy">Why INVENIO</a><a href="#industries" data-i18n="navIndustries">Industries</a><a href="#solutions" data-i18n="navSolutions">Solutions</a><a href="#process" data-i18n="navProcess">Process</a><a href="#enquire" data-i18n="navEnquire">Enquire</a></div></div>
-        <div><h4 data-i18n="footerMarkets">Country experiences</h4><div class="market-links"><a href="?market=za">South Africa</a><a href="?market=kw">Kuwait</a><a href="?market=om">Oman</a><a href="?market=gy">Guyana</a></div></div>
+    <div class="wrap footer">
+      <div>
+        <a class="brand" href="#top">
+          <img src="invenio-logo.png" alt="" onerror="this.style.display='none'">
+          <span>INVENIO</span>
+        </a>
+        <p>AI systems for online enquiries, reception, sales, HR operations and business automation.</p>
       </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> INVENIO AI SOLUTIONS.</span><span data-i18n="footerNote">Digital-first delivery · WhatsApp messages only · Custom domain planned</span></div>
+      <div class="footer-links">
+        <a href="#solutions">Solutions</a>
+        <a href="#industries">Industries</a>
+        <a href="#how">How It Works</a>
+        <a href="#why">Why Invenio</a>
+      </div>
     </div>
   </footer>
 
+  <button class="chat-fab live-cta" type="button" id="chatFab">Ask Invenio</button>
+
   <script>
-    const markets = {
-      za: { name: "South Africa", price: "R219", language: "en", copy: "South African businesses" },
-      kw: { name: "Kuwait", price: "KWD 5", language: "ar", copy: "الشركات في الكويت" },
-      om: { name: "Oman", price: "OMR 8", language: "ar", copy: "الشركات في عُمان" },
-      gy: { name: "Guyana", price: "GYD 12,000", language: "en", copy: "Guyanese businesses" }
-    };
+    /*
+      ==========================================================
+      CONNECT YOUR REAL CHATBOT HERE
+      ==========================================================
+      Paste your n8n / backend webhook URL between the quotes.
 
-    const ar = {
-      navWhy:"لماذا INVENIO",navIndustries:"القطاعات",navSolutions:"الحلول",navProcess:"المنهج",navEnquire:"تواصل معنا",navAssessment:"اطلب تقييماً",
-      heroKicker:"INVENIO AI SOLUTIONS",heroTitle:"أضف قدرة فريق كامل.<span>دون توظيف فريق كامل.</span>",heroLead:"تدير INVENIO الاستفسارات والحجوزات والمتابعات والمستندات وتحديثات CRM والإدارة الروتينية عبر نظام مترابط.",heroCta:"قيّم مسار عمل واحد ←",heroSecondary:"عرض الحلول",heroProofTitle:"ابدأ بمسار واحد.",heroProofCopy:"أضف المزيد عندما تكون الجدوى التشغيلية واضحة.",fromMonthly:"ابتداءً شهرياً",
-      pain1Title:"الرد البطيء يفقد المشترين الجاهزين.",pain1Copy:"استجب قبل انتقال الفرصة.",pain2Title:"الإدارة الروتينية تستهلك ساعات الموظفين.",pain2Copy:"أخرج العمل المتكرر من قوائم الفريق.",pain3Title:"الطلب يستمر بعد الدوام.",pain3Copy:"حافظ على مسارات العملاء المعتمدة على مدار الساعة.",
-      whyEyebrow:"لماذا INVENIO",whyQuote:"عملك يحدد القواعد. <span class='accent'>INVENIO تنفذ العمل المتكرر.</span>",whyIntro:"نحدد مساراً مكلفاً، نضع الضوابط وننفذ وفق هدف قابل للقياس.",value1Title:"وفق قواعدك",value1Copy:"الخدمات والسياسات والموافقات والساعات والأدوات الحالية تحدد النظام.",value2Title:"قياس بالنتائج",value2Copy:"تابع سرعة الرد والعبء والتحويل والخدمة والتكلفة.",value3Title:"سيطرة بشرية",value3Copy:"ينفذ AI المهام المعتمدة؛ ويحتفظ الفريق بالقرارات والاستثناءات.",value4Title:"توسع مبني على الدليل",value4Copy:"شغّل مساراً، تحقق من النتيجة، ثم اربط التالي.",
-      industriesEyebrow:"ضغوط القطاعات",industriesTitle:"حيث يتحول الضغط التشغيلي إلى <span class='accent'>خسارة قابلة للقياس.</span>",industriesIntro:"يتبع كل نظام قواعد القطاع ولغته ومتطلبات التحويل.",ind1Title:"الخدمات اللوجستية والشحن",ind1Copy:"تأخر الأسعار وتكرار طلبات الحالة وتراكم المستندات.",ind2Title:"الصحة وطب الأسنان",ind2Copy:"ضغط الاستقبال من الحجوزات والبيانات والأسئلة الروتينية.",ind3Title:"الخدمات القانونية والمهنية",ind3Copy:"الطلبات الناقصة والمستندات المفقودة تستهلك الوقت المهني.",ind4Title:"العقار",ind4Copy:"بطء الرد وتنسيق المعاينات وعدم انتظام المتابعة.",ind5Title:"التعليم والتدريب",ind5Copy:"تكرار أسئلة القبول وتشتت متابعة المتقدمين.",ind6Title:"التجزئة وخدمات الأعمال",ind6Copy:"استفسارات متعددة القنوات وعروض متأخرة وخطوات بلا مسؤول.",seeSystems:"عرض الأنظمة ←",
-      midCtaTitle:"أي مسار يكلفك أكثر؟",midCtaCopy:"حدد الخسارة. قيّم جدوى الأتمتة.",midCtaButton:"قيّم المسار ←",
-      solutionsEyebrow:"ثمانية أنظمة",solutionsTitle:"شغّل نظاماً واحداً. <span class='accent'>اربط المزيد عند الحاجة.</span>",solutionsIntro:"لكل حل دور محدد ونتيجة واضحة.",choiceTitle:"واحد أو عدة أنظمة أو منظومة مترابطة.",choiceCopy:"اشترِ القدرة التشغيلية المطلوبة فقط.",choiceOne:"حل واحد",choiceSeveral:"عدة حلول",choiceAll:"الكل مترابط",demoLabel:"عرض للحل خلال 6 ثوانٍ",painLabel:"الضغط",responseLabel:"إجراء النظام",impactLabel:"النتيجة",discussSolution:"قيّم هذا الحل ←",
-      sol1Title:"موظف استقبال بالذكاء الاصطناعي",sol1Pain:"تنتظر الاستفسارات عند انشغال الموظفين أو غيابهم.",sol1Response:"يجمع الغرض ويؤهل الطلبات ويحجز ويسجل ويوجه الخطوة التالية.",sol1Impact:"استفسارات ضائعة أقل وضغط استقبال أقل وحجوزات مكتملة أكثر.",
-      sol2Title:"روبوت محادثة ذكي",sol2Pain:"يغادر الزوار عندما تكون الإجابات والخطوات غير واضحة.",sol2Response:"يجيب عن الأسئلة المعتمدة ويوجه إلى الخدمة أو الصفحة أو النموذج أو الشخص الصحيح.",sol2Impact:"طلبات دعم أقل وزوار أكثر يصلون إلى خطوة محددة.",
-      sol3Title:"الصوت ومركز الاتصال الذكي",sol3Pain:"المكالمات الروتينية تنشئ طوابير وطلباً بلا رد.",sol3Response:"يدير المكالمات المعتمدة ويجمع الغرض ويؤهل الطلب ويحوله مع السياق.",sol3Impact:"قدرة اتصال أعلى ووقت أكبر للحالات المعقدة.",
-      sol4Title:"أتمتة الإدارة والموارد البشرية والمستندات",sol4Pain:"يضيع وقت الموظفين في الملفات والنماذج وإدخال البيانات والتذكيرات.",sol4Response:"يستخرج البيانات ويوجه المستندات ويجهز المسودات ويحدث السجلات ويرفع الاستثناءات.",sol4Impact:"إدارة أقل وأخطاء معالجة أقل ووقت موظفين أكثر إنتاجية.",
-      sol5Title:"أتمتة CRM والعملاء المحتملين والمبيعات",sol5Pain:"تفتر الفرص عندما تعتمد السجلات والمتابعة على الذاكرة.",sol5Response:"يحدث CRM ويوجه الفرص ويحدد المتابعة وينبه المسؤول.",sol5Impact:"متابعة ثابتة وتحويل أقوى للطلب الحالي.",
-      sol6Title:"الموقع والتجربة الرقمية",sol6Pain:"الرحلة الرقمية الضعيفة تقلل الثقة والإجراء.",sol6Response:"يوضح العرض ويحسن الهاتف ويربط النماذج والمحادثة والحجز وجمع الفرص.",sol6Impact:"مصداقية أعلى ومسار أقصر من الزيارة إلى الاستفسار.",
-      sol7Title:"التسويق الذكي ونمو العملاء",sol7Pain:"تضيع استجابة الحملات بسبب التقسيم الضعيف وتأخر المتابعة.",sol7Response:"ينظم بيانات الجمهور ويربط المتابعة المعتمدة بإجراءات المبيعات والتقارير.",sol7Impact:"أداء حملات أوضح واستجابات أكثر تدخل مسار المبيعات.",
-      sol8Title:"استراتيجية الذكاء وأنظمة الأعمال المخصصة",sol8Pain:"يتوقف العمل المهم بين الفرق والبرامج المنفصلة.",sol8Response:"يربط الأشخاص والبيانات والموافقات والمنصات الحالية حول عملية محددة.",sol8Impact:"مسار مضبوط بملكية وإشراف وقياس واضح.",
-      chatbotTitle:"روبوت المحادثة: يجيب ويوجه",chatbotCopy:"يدير الأسئلة المعتمدة داخل محادثة العميل.",receptionistTitle:"موظف الاستقبال: ينفذ الخطوة التالية",receptionistCopy:"يجمع ويؤهل ويحجز ويسجل ويوجه. المحادثة تدير الحوار والاستقبال ينفذ المسار.",
-      pricingEyebrow:"الشروط التجارية",pricingTitle:"سعر دخول واضح. <span class='accent'>سعر نهائي حسب النطاق.</span>",pricingIntro:"يعكس السعر النهائي التعقيد والتكاملات والاستخدام والدعم.",startingPrice:"السعر الابتدائي",perMonth:"/ شهرياً",priceScope:"تبدأ الحلول من هنا؛ وتتبع الرسوم النهائية النطاق المتفق عليه.",flexPayment:"تتوفر هياكل دفع مرنة.",weekly:"أسبوعي",monthly:"شهري",quarterly:"ربع سنوي",halfYearly:"نصف سنوي",yearly:"سنوي",onceOff:"مرة واحدة",pricingCta:"اطلب السعر ←",pricingPoint1:"اشترِ حلاً أو عدة حلول أو المنظومة المترابطة.",pricingPoint2:"ألغِ في أي وقت؛ تستمر الخدمة حتى نهاية الفترة المدفوعة.",pricingPoint3:"تبدأ الفوترة عند تشغيل النظام.",newClient:"عرض للعميل الجديد",offerTitle:"ادفع 40% في الشهر الأول.",offerCopy:"السعر القياسي <strong>1,000</strong> = <strong>400</strong> للشهر الأول. تبدأ الفوترة القياسية في الشهر الثاني.",onceTitle:"مشاريع لمرة واحدة",onceCopy:"<strong>50% قبل الإعداد.</strong> والباقي <strong>50% بعد التسليم والاعتماد.</strong>",noLockTitle:"التزام مضبوط",noLockCopy:"ابدأ بمسار واحد. أضف القدرة عند الحاجة.",
-      processEyebrow:"المنهج",processTitle:"أربع خطوات من القيد إلى <span class='accent'>نظام عامل.</span>",processIntro:"نطاق وملكية ومعايير قبول محددة.",step1Title:"التشخيص",step1Copy:"قِس التأخير والعبء والتكلفة أو الفرصة الضائعة.",step2Title:"التصميم",step2Copy:"حدد المسار والبيانات والضوابط والتحويل البشري.",step3Title:"التنفيذ",step3Copy:"اضبط واربط واختبر مقابل سيناريوهات التشغيل.",step4Title:"التحسين",step4Copy:"قِس الأداء وحسّن وفق النتائج.",
-      trustEyebrow:"الخصوصية والأمن والتحكم",trustTitle:"الحوكمة جزء من النظام.",trustCopy:"يحدد كل تنفيذ متطلبات البيانات والصلاحيات وقواعد التصعيد ومسؤوليات العميل. يبقى الامتثال القانوني خاصاً بالعميل والاستخدام.",trust1Title:"متطلبات البيانات المطبقة",trust1Copy:"يراعي نطاق المشروع متطلبات الكويت أو قانون حماية البيانات الشخصية في عُمان حسب الحالة.",trust2Title:"صلاحيات محددة",trust2Copy:"تُتفق المعلومات والإجراءات والوصول ومسارات التصعيد مسبقاً.",trust3Title:"إشراف بشري",trust3Copy:"تبقى القرارات الحساسة لدى الأشخاص المخولين.",
-      enquireEyebrow:"تواصل معنا",enquireTitle:"حدد المسار. قِس التكلفة.",enquireCopy:"صف القيد وسنحدد نطاق النظام.",successNote:"شكراً لك. تم إرسال استفسارك بنجاح.",formTitle:"اطلب تقييماً",nameLabel:"اسمك",companyLabel:"الشركة",emailLabel:"البريد الإلكتروني",phoneLabel:"واتساب / الهاتف",interestLabel:"ما الحل الذي يهمك؟",selectOption:"اختر",messageLabel:"أي مسار يحتاج إلى معالجة؟",messagePlaceholder:"صف التأخير أو العبء أو التكلفة أو الفرصة الضائعة.",consentCopy:"أوافق على استخدام INVENIO لبياناتي للرد على هذا الاستفسار. اقرأ <a href='#privacy'>معلومات الخصوصية</a>.",submitButton:"أرسل استفساري ←",privacyTitle:"معلومات الخصوصية",privacyCopy:"تستخدم المعلومات المرسلة لتقييم الاستفسار والرد عليه ومناقشة خدمات INVENIO المناسبة والاحتفاظ بسجل للمحادثة. لا ترسل معلومات سرية أو طبية أو مالية أو قانونية عبر النموذج العام.",footerTagline:"تمكين الأعمال من خلال الذكاء.",footerNavigate:"التنقل",footerMarkets:"تجارب الدول",footerNote:"تقديم رقمي · رسائل واتساب فقط"
-    };
+      Example:
+      const INVENIO_CHAT_ENDPOINT = "https://your-n8n-domain/webhook/invenio";
 
-    const marketSelect = document.getElementById("marketSelect");
-    const langToggle = document.getElementById("langToggle");
-    const params = new URLSearchParams(location.search);
-    let marketKey = markets[params.get("market")] ? params.get("market") : "za";
-    let language = params.get("lang") || markets[marketKey].language;
+      Expected request:
+      {
+        "message": "...",
+        "sessionId": "...",
+        "source": "website"
+      }
 
-    document.querySelectorAll("[data-i18n]").forEach(el => { el.dataset.english = el.innerHTML; });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => { el.dataset.englishPlaceholder = el.placeholder; });
+      This frontend accepts common response fields:
+      reply, output, text, message
+    */
+    const INVENIO_CHAT_ENDPOINT = "PASTE_YOUR_CHAT_WEBHOOK_URL_HERE";
 
-    function applyLanguage(nextLanguage, updateUrl = true) {
-      language = nextLanguage === "ar" ? "ar" : "en";
-      document.documentElement.lang = language;
-      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.dataset.i18n;
-        el.innerHTML = language === "ar" && ar[key] ? ar[key] : el.dataset.english;
-      });
-      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-        const key = el.dataset.i18nPlaceholder;
-        el.placeholder = language === "ar" && ar[key] ? ar[key] : el.dataset.englishPlaceholder;
-      });
-      langToggle.textContent = language === "ar" ? "English" : "العربية";
-      if (updateUrl) syncUrl();
-    }
+    const chatEnabled =
+      INVENIO_CHAT_ENDPOINT &&
+      !INVENIO_CHAT_ENDPOINT.includes("PASTE_YOUR_CHAT_WEBHOOK_URL_HERE");
 
-    function applyMarket(nextMarket, updateUrl = true) {
-      marketKey = markets[nextMarket] ? nextMarket : "za";
-      const market = markets[marketKey];
-      marketSelect.value = marketKey;
-      document.querySelectorAll("[data-market-name]").forEach(el => el.textContent = market.name);
-      document.querySelectorAll("[data-price]").forEach(el => el.textContent = market.price);
-      document.getElementById("marketField").value = market.name;
-      langToggle.style.display = (marketKey === "kw" || marketKey === "om") ? "inline-flex" : "none";
-      if (updateUrl) syncUrl();
-    }
+    const liveSection = document.getElementById("live-demo");
+    const liveButtons = document.querySelectorAll(".live-cta");
+    const chatFab = document.getElementById("chatFab");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+    const promptButtons = document.querySelectorAll(".prompt-btn");
 
-    function syncUrl() {
-      const url = new URL(location.href);
-      url.searchParams.set("market", marketKey);
-      if (marketKey === "kw" || marketKey === "om") url.searchParams.set("lang", language);
-      else url.searchParams.delete("lang");
-      history.replaceState({}, "", url);
-    }
+    const sessionId =
+      localStorage.getItem("invenio_session_id") ||
+      (crypto.randomUUID ? crypto.randomUUID() : "session-" + Date.now());
 
-    marketSelect.addEventListener("change", event => {
-      const next = event.target.value;
-      applyMarket(next, false);
-      applyLanguage(markets[next].language, true);
-    });
-    langToggle.addEventListener("click", () => applyLanguage(language === "ar" ? "en" : "ar"));
-    applyMarket(marketKey, false);
-    applyLanguage(language, false);
+    localStorage.setItem("invenio_session_id", sessionId);
 
-    const menuToggle = document.getElementById("menuToggle");
-    const primaryNav = document.getElementById("primaryNav");
-    menuToggle.addEventListener("click", () => {
-      const open = primaryNav.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(open));
-      menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      document.body.classList.toggle("menu-open", open);
-    });
-    primaryNav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-      primaryNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
-    }));
-
-    const heroVideo = document.getElementById("heroVideo");
-    heroVideo.addEventListener("canplay", () => heroVideo.classList.add("ready"), { once: true });
-    heroVideo.play().catch(() => {});
-
-    const revealObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add("revealed"); revealObserver.unobserve(entry.target); }
-      });
-    }, { threshold: .12 }) : null;
-    document.querySelectorAll("[data-reveal]").forEach(el => revealObserver ? revealObserver.observe(el) : el.classList.add("revealed"));
-
-    const videoObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting && !video.src) {
-          video.src = encodeURI(video.dataset.src);
-          video.load();
-          video.play().catch(() => {});
-          videoObserver.unobserve(video);
+    if (chatEnabled) {
+      liveSection.style.display = "block";
+      chatFab.style.display = "inline-flex";
+      liveButtons.forEach(btn => {
+        if (btn.textContent.trim() === "Explore Invenio" ||
+            btn.textContent.trim() === "See Invenio in action" ||
+            btn.textContent.trim() === "Try Invenio" ||
+            btn.textContent.trim() === "Show Invenio the workload") {
+          btn.textContent = btn.textContent.trim() === "Show Invenio the workload"
+            ? "Show Invenio the workload"
+            : "Try Invenio Live";
         }
       });
-    }, { rootMargin: "240px 0px" }) : null;
-    document.querySelectorAll(".lazy-video").forEach(video => videoObserver ? videoObserver.observe(video) : (video.src = encodeURI(video.dataset.src)));
+    }
 
-    if (new URLSearchParams(location.search).get("sent") === "1") document.getElementById("successNote").classList.add("show");
-    document.getElementById("year").textContent = new Date().getFullYear();
+    liveButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (chatEnabled) {
+          document.getElementById("live-demo").scrollIntoView({behavior:"smooth"});
+          setTimeout(() => chatInput.focus(), 550);
+        } else {
+          document.getElementById("solutions").scrollIntoView({behavior:"smooth"});
+        }
+      });
+    });
+
+    function addBubble(text, type) {
+      const bubble = document.createElement("div");
+      bubble.className = "bubble " + type;
+      bubble.textContent = text;
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return bubble;
+    }
+
+    async function sendMessage(text) {
+      const clean = text.trim();
+      if (!clean || !chatEnabled) return;
+
+      addBubble(clean, "user");
+      chatInput.value = "";
+      chatInput.disabled = true;
+
+      const thinking = addBubble("Thinking…", "bot");
+
+      try {
+        const response = await fetch(INVENIO_CHAT_ENDPOINT, {
+          method: "POST",
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify({
+            message: clean,
+            sessionId,
+            source: "website"
+          })
+        });
+
+        if (!response.ok) throw new Error("Request failed");
+
+        const data = await response.json();
+        const reply =
+          data.reply ||
+          data.output ||
+          data.text ||
+          data.message ||
+          "I received that. Please tell me a little more about what you want to automate.";
+
+        thinking.textContent = typeof reply === "string" ? reply : JSON.stringify(reply);
+      } catch (error) {
+        thinking.textContent = "I couldn't complete that request right now. Please try again shortly.";
+      } finally {
+        chatInput.disabled = false;
+        chatInput.focus();
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    chatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      sendMessage(chatInput.value);
+    });
+
+    promptButtons.forEach(button => {
+      button.addEventListener("click", () => sendMessage(button.textContent));
+    });
+
+    // Simple mobile menu: tapping the icon scrolls to solutions.
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("solutions").scrollIntoView({behavior:"smooth"});
+    });
   </script>
 </body>
 </html>
