@@ -1,29 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#070a08" />
-  <meta name="description" content="Invenio AI Solutions deploys AI receptionists, web chatbots, call-centre automation, admin automation and web operations." />
-  <title>INVENIO AI SOLUTIONS — AI Receptionist, Call Centre, Chatbot & Admin Automation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070a08">
+  <meta name="description" content="INVENIO AI SOLUTIONS helps businesses add AI operating capacity across reception, calls, chat, administration, CRM, HR, sales and web operations.">
+  <title>INVENIO AI SOLUTIONS — AI Operations for Real Business Work</title>
+
+  <!-- Keep these exact two MP4 files in the root of your Cloudflare Pages repository. -->
+  <link rel="preload" as="video" href="/grok-video-27f174ca-7c29-4b47-a987-c0411b84b742.mp4" type="video/mp4">
+  <link rel="preload" as="video" href="/grok-video-ffd4e302-6142-44da-9766-6cc1a3c887b6.mp4" type="video/mp4">
 
   <style>
     :root{
-      --bg:#070a08;
-      --bg-2:#0a0f0c;
-      --panel:#0d1410;
-      --panel-2:#111b15;
-      --line:rgba(205,255,90,.13);
-      --line-strong:rgba(205,255,90,.28);
-      --lime:#cbff4a;
-      --lime-2:#9fe52c;
-      --text:#f5f7f4;
-      --muted:#9da8a0;
-      --muted-2:#748078;
-      --danger:#ff8c7a;
-      --shadow:0 20px 80px rgba(0,0,0,.42);
+      --bg:#060906;
+      --bg2:#0a0e0a;
+      --panel:#0b100c;
+      --panel2:#0f1611;
+      --panel3:#121b14;
+      --line:rgba(206,255,76,.13);
+      --line2:rgba(206,255,76,.28);
+      --lime:#cfff4d;
+      --lime2:#a8ec31;
+      --text:#f5f7f3;
+      --muted:#9da79f;
+      --muted2:#707c73;
+      --danger:#ff8b78;
+      --shadow:0 24px 80px rgba(0,0,0,.42);
       --radius:26px;
-      --max:1220px;
+      --max:1210px;
     }
 
     *{box-sizing:border-box}
@@ -32,997 +37,1656 @@
       margin:0;
       color:var(--text);
       background:
-        radial-gradient(circle at 78% 5%, rgba(203,255,74,.08), transparent 25%),
-        radial-gradient(circle at 0% 35%, rgba(117,163,58,.06), transparent 25%),
-        var(--bg);
+        radial-gradient(circle at 84% 5%,rgba(207,255,77,.075),transparent 28%),
+        radial-gradient(circle at 0% 36%,rgba(114,156,54,.055),transparent 25%),
+        linear-gradient(180deg,#060806,#070a07 45%,#060806);
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
+    body.menu-open{overflow:hidden}
 
     a{color:inherit;text-decoration:none}
-    button,input,textarea{font:inherit}
+    button,input,textarea,select{font:inherit}
     button{cursor:pointer}
     img,video{display:block;max-width:100%}
-
-    .noise{
-      position:fixed;inset:0;pointer-events:none;z-index:999;
-      opacity:.025;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+      outline:2px solid var(--lime);outline-offset:3px;
     }
 
     .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .section{padding:100px 0}
-    .section-tight{padding:72px 0}
+    .section{padding:92px 0}
+    .section-tight{padding:68px 0}
+    .hidden{display:none!important}
+
+    .grid-noise{
+      position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:54px 54px;
+      mask-image:linear-gradient(#000,transparent 90%);
+    }
+
+    .reveal{opacity:0;transform:translateY(18px);transition:.65s ease}
+    .reveal.visible{opacity:1;transform:none}
 
     .eyebrow{
-      display:inline-flex;align-items:center;gap:9px;
+      display:inline-flex;align-items:center;gap:8px;
       padding:8px 11px;border:1px solid var(--line);
-      border-radius:999px;background:rgba(203,255,74,.04);
-      color:#dfff92;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+      border-radius:999px;background:rgba(207,255,77,.045);
+      color:#e3ff9e;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;
     }
-    .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px var(--lime)}
+    .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px rgba(207,255,77,.75)}
+    .kicker{font-size:11px;color:#dfff92;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    .accent{color:var(--lime)}
+    .muted{color:var(--muted)}
 
+    /* TOP POSITIONING STRIP */
     .top-strip{
-      border-bottom:1px solid rgba(255,255,255,.05);
-      background:#090d0a;
-      color:#cbd3cd;
-      font-size:12px;
+      background:#090d09;border-bottom:1px solid rgba(255,255,255,.05);
+      font-size:12px;color:#cbd2cc;
     }
     .top-strip .wrap{
-      min-height:34px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+      min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:16px;
     }
-    .top-strip strong{color:var(--lime);font-weight:750}
-    .market-switch{display:flex;gap:12px;align-items:center;color:#869188}
-    .market-switch .active{color:#eef4ee}
+    .top-strip strong{color:var(--lime)}
+    .top-strip .mini-trust{color:#78847b;white-space:nowrap}
 
+    /* NAV */
     header{
       position:sticky;top:0;z-index:80;
       backdrop-filter:blur(18px);
-      background:rgba(7,10,8,.76);
+      background:rgba(6,9,6,.83);
       border-bottom:1px solid rgba(255,255,255,.055);
     }
-    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
-    .brand-mark{
-      width:38px;height:38px;border:1px solid var(--line-strong);border-radius:12px;
-      display:grid;place-items:center;background:linear-gradient(145deg,rgba(203,255,74,.12),rgba(203,255,74,.02));
-      box-shadow:inset 0 0 24px rgba(203,255,74,.04),0 0 22px rgba(203,255,74,.04);
-      position:relative;overflow:hidden;
+    .nav{height:76px;display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;min-width:max-content}
+    .brand-logo{
+      width:116px;height:52px;object-fit:contain;background:#fff;border-radius:12px;padding:3px;
+      border:1px solid rgba(255,255,255,.13);box-shadow:0 12px 40px rgba(0,0,0,.24);
     }
-    .brand-mark::before,.brand-mark::after{content:"";position:absolute;border:2px solid var(--lime);width:14px;height:7px;border-radius:10px;transform:rotate(-12deg)}
-    .brand-mark::before{left:5px;top:14px;border-right:0}
-    .brand-mark::after{right:5px;top:14px;border-left:0;transform:rotate(12deg)}
-    .brand-copy b{display:block;font-size:14px;letter-spacing:.12em}
-    .brand-copy span{display:block;font-size:9px;color:var(--muted);letter-spacing:.17em;margin-top:2px}
-
-    .nav-links{display:flex;align-items:center;gap:26px;color:#aab4ad;font-size:13px}
+    .nav-links{margin-left:auto;display:flex;align-items:center;gap:24px;color:#aeb8b1;font-size:13px;font-weight:700}
     .nav-links a:hover{color:#fff}
-    .nav-actions{display:flex;align-items:center;gap:10px}
-    .menu-btn{display:none;border:1px solid var(--line);background:var(--panel);color:#fff;border-radius:12px;width:44px;height:44px}
 
-    .btn{
-      min-height:46px;padding:0 18px;border-radius:13px;border:1px solid transparent;
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      font-size:13px;font-weight:800;letter-spacing:.01em;transition:.2s ease;
+    .market-wrap{position:relative}
+    .market-button{
+      height:42px;border:1px solid var(--line2);background:#0a110c;color:#eef4ef;border-radius:999px;
+      padding:0 12px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;white-space:nowrap;
     }
-    .btn-primary{background:var(--lime);color:#0a0d0b;box-shadow:0 10px 40px rgba(203,255,74,.12)}
-    .btn-primary:hover{transform:translateY(-1px);background:#d6ff69}
-    .btn-secondary{border-color:var(--line-strong);background:rgba(203,255,74,.035);color:#edf5e9}
-    .btn-secondary:hover{border-color:rgba(203,255,74,.5);background:rgba(203,255,74,.07)}
+    .flag{font-size:16px;line-height:1}
+    .market-menu{
+      position:absolute;right:0;top:50px;width:238px;padding:8px;border:1px solid var(--line2);
+      background:rgba(8,13,9,.98);border-radius:18px;box-shadow:var(--shadow);
+      opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s ease;
+    }
+    .market-wrap.open .market-menu{opacity:1;visibility:visible;transform:none}
+    .market-option{
+      width:100%;border:0;background:transparent;color:#dce4de;border-radius:12px;
+      display:flex;align-items:center;gap:10px;padding:11px;text-align:left;font-size:12px;font-weight:750;
+    }
+    .market-option:hover,.market-option.active{background:rgba(207,255,77,.07);color:#fff}
+    .market-option small{margin-left:auto;color:#6f7b73;font-size:9px}
+
+    .nav-cta{
+      height:42px;padding:0 14px;border-radius:999px;border:0;background:var(--lime);
+      color:#090c09;font-size:12px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;
+    }
+    .menu-btn{
+      display:none;margin-left:auto;width:44px;height:44px;border-radius:13px;border:1px solid var(--line2);
+      background:#0a100c;color:#fff;font-size:19px;
+    }
+
+    .mobile-menu{
+      display:none;position:fixed;inset:76px 0 auto 0;background:rgba(6,9,6,.98);border-bottom:1px solid var(--line);
+      padding:16px 20px 22px;z-index:79;box-shadow:var(--shadow);
+    }
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:13px 4px;border-bottom:1px solid rgba(255,255,255,.05);color:#dbe3dd;font-weight:750;font-size:14px}
+    .mobile-menu .mobile-market-title{margin:18px 0 8px;color:#6f7b73;font-size:10px;text-transform:uppercase;letter-spacing:.13em}
+    .mobile-markets{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .mobile-market{
+      border:1px solid var(--line);border-radius:12px;background:#0a100c;color:#dfe6e0;padding:10px;
+      display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;
+    }
+    .mobile-market.active{border-color:var(--line2);background:rgba(207,255,77,.06)}
 
     /* HERO */
-    .hero{padding:86px 0 64px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:54px;align-items:center}
+    .hero{padding:72px 0 56px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
     .hero h1{
-      font-size:clamp(46px,6vw,78px);line-height:.97;letter-spacing:-.055em;
-      margin:20px 0 22px;max-width:760px;
+      font-size:clamp(44px,5.45vw,70px);line-height:.99;letter-spacing:-.055em;
+      margin:18px 0 20px;max-width:780px;
     }
-    .hero h1 .accent{color:var(--lime)}
-    .hero-lead{font-size:18px;line-height:1.65;color:#b8c1bb;max-width:690px;margin:0 0 26px}
-    .hero-lead strong{color:#f5f7f4}
-    .offer-line{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+    .hero-lead{font-size:17px;line-height:1.68;color:#b7c0b9;max-width:720px;margin:0 0 24px}
+    .hero-lead strong{color:#f7faf6}
+    .offer-line{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
     .offer-pill{
-      border:1px solid rgba(255,255,255,.08);background:#0b100d;padding:8px 10px;border-radius:10px;
-      color:#d8dfda;font-size:12px;font-weight:700;
+      border:1px solid rgba(255,255,255,.075);background:#0a0f0b;padding:9px 11px;border-radius:11px;
+      color:#d6ddd8;font-size:11px;font-weight:750;
     }
-    .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
-    .hero-note{display:flex;align-items:center;gap:10px;margin-top:20px;color:#7f8b83;font-size:12px;line-height:1.5}
-    .hero-note svg{flex:none}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{
+      min-height:48px;padding:0 18px;border-radius:14px;border:1px solid transparent;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:850;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--lime);color:#080b08;box-shadow:0 12px 38px rgba(207,255,77,.12)}
+    .btn-secondary{border-color:var(--line2);background:rgba(207,255,77,.035);color:#eff5ef}
+    .hero-foot{
+      margin-top:18px;display:flex;align-items:flex-start;gap:9px;color:#7d897f;font-size:11px;line-height:1.55;max-width:690px;
+    }
+    .hero-foot b{color:#aeb8b1}
 
+    /* LIVE OPS */
     .ops-shell{
-      border:1px solid var(--line);border-radius:30px;padding:14px;
-      background:linear-gradient(160deg,rgba(17,27,21,.94),rgba(8,12,9,.96));
-      box-shadow:var(--shadow),inset 0 0 60px rgba(203,255,74,.018);
-      position:relative;
+      border:1px solid var(--line);border-radius:30px;padding:13px;
+      background:linear-gradient(155deg,rgba(17,26,19,.95),rgba(7,11,8,.98));
+      box-shadow:var(--shadow),inset 0 0 60px rgba(207,255,77,.02);position:relative;overflow:hidden;
     }
-    .ops-shell::before{
-      content:"";position:absolute;inset:-1px;border-radius:30px;padding:1px;
-      background:linear-gradient(135deg,rgba(203,255,74,.35),transparent 30%,transparent 70%,rgba(203,255,74,.12));
-      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+    .ops-shell:before{
+      content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-80px;top:-100px;
+      background:radial-gradient(circle,rgba(207,255,77,.13),transparent 68%);animation:drift 7s ease-in-out infinite alternate;
     }
-    .ops-top{display:flex;align-items:center;justify-content:space-between;padding:8px 6px 14px}
-    .ops-title{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-    .pulse{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(203,255,74,.4);animation:pulse 2s infinite}
-    @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(203,255,74,0)}100%{box-shadow:0 0 0 0 rgba(203,255,74,0)}}
-    .sim-label{font-size:10px;color:#718078;border:1px solid rgba(255,255,255,.06);padding:5px 8px;border-radius:999px}
+    @keyframes drift{to{transform:translate(-22px,28px) scale(1.08)}}
+    .ops-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:8px 7px 14px}
+    .ops-title{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+    .pulse{
+      width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(207,255,77,.45);
+      animation:pulse 2s infinite;
+    }
+    @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(207,255,77,0)}}
+    .sim-label{font-size:9px;color:#748078;border:1px solid rgba(255,255,255,.06);padding:5px 7px;border-radius:999px}
 
-    .ops-screen{border:1px solid rgba(255,255,255,.06);background:#080c09;border-radius:22px;overflow:hidden}
+    .ops-screen{position:relative;z-index:2;border:1px solid rgba(255,255,255,.06);background:#070b08;border-radius:21px;overflow:hidden}
     .screen-head{
-      display:grid;grid-template-columns:1.3fr .7fr .9fr;padding:11px 14px;
-      border-bottom:1px solid rgba(255,255,255,.05);color:#637067;font-size:9px;text-transform:uppercase;letter-spacing:.13em;
+      display:grid;grid-template-columns:1.2fr 1fr .58fr;padding:10px 13px;border-bottom:1px solid rgba(255,255,255,.05);
+      color:#657168;font-size:8px;text-transform:uppercase;letter-spacing:.13em;
     }
-    .lane{display:grid;grid-template-columns:1.3fr .7fr .9fr;align-items:center;gap:10px;padding:14px;border-bottom:1px solid rgba(255,255,255,.045);min-height:72px;transition:.3s}
+    .lane{
+      display:grid;grid-template-columns:1.2fr 1fr .58fr;align-items:center;gap:9px;padding:12px 13px;
+      border-bottom:1px solid rgba(255,255,255,.043);min-height:66px;transition:.25s;
+    }
     .lane:last-child{border-bottom:0}
-    .lane:hover{background:rgba(203,255,74,.025)}
-    .lane-name{display:flex;align-items:center;gap:10px;min-width:0}
-    .lane-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#111913;border:1px solid var(--line);color:var(--lime);font-size:15px;flex:none}
-    .lane-name b{display:block;font-size:12px}
-    .lane-name small{display:block;color:#6f7c73;font-size:10px;margin-top:3px}
-    .lane-status{font-size:11px;color:#d5ddd7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .status-chip{justify-self:end;color:#cfff78;background:rgba(203,255,74,.06);border:1px solid var(--line);font-size:9px;font-weight:800;padding:6px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.07em}
-    .ops-foot{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;background:#0b100d;border-top:1px solid rgba(255,255,255,.05);font-size:10px;color:#68756c}
-    .ops-foot strong{color:#c4cec7}
-    .flowbar{height:2px;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
-    .flowbar::after{content:"";position:absolute;left:-35%;top:0;width:35%;height:100%;background:linear-gradient(90deg,transparent,var(--lime),transparent);animation:flow 2.7s linear infinite}
-    @keyframes flow{to{left:110%}}
-
-    .proof-strip{padding:18px 0 0}
-    .proof-grid{
-      display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,.06);border-radius:18px;overflow:hidden;background:#090d0a;
+    .lane:hover{background:rgba(207,255,77,.025)}
+    .lane-name{display:flex;align-items:center;gap:9px;min-width:0}
+    .lane-icon{
+      width:31px;height:31px;flex:none;border-radius:9px;display:grid;place-items:center;
+      border:1px solid var(--line);background:#101712;color:var(--lime);font-size:14px;
     }
-    .proof-item{padding:18px 20px;border-right:1px solid rgba(255,255,255,.055)}
-    .proof-item:last-child{border-right:0}
-    .proof-item b{font-size:13px;display:block}
-    .proof-item span{font-size:11px;color:#77837b;display:block;margin-top:5px;line-height:1.45}
+    .lane-name b{display:block;font-size:11px}
+    .lane-name small{display:block;color:#68746b;font-size:9px;margin-top:2px}
+    .lane-action{font-size:10px;color:#c8d0ca;transition:.22s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .lane-state{justify-self:end;color:#d6ff75;background:rgba(207,255,77,.055);border:1px solid var(--line);padding:5px 7px;border-radius:999px;font-size:8px;font-weight:850;text-transform:uppercase}
+    .ops-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:12px;padding:12px 7px 2px;color:#67736a;font-size:9px}
+    .ops-bottom strong{color:#aeb8b0}
 
-    /* SECTION HEADERS */
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:42px}
-    .section-head h2{font-size:clamp(36px,4.2vw,58px);line-height:1.02;letter-spacing:-.045em;margin:14px 0 0;max-width:800px}
-    .section-head p{color:#96a199;line-height:1.65;max-width:480px;margin:0;font-size:14px}
+    /* CAPABILITY SIGNALS */
+    .signal-section{padding:10px 0 72px}
+    .signal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+    .signal-card{
+      min-height:140px;border:1px solid rgba(255,255,255,.065);border-radius:20px;padding:18px;
+      background:
+        radial-gradient(circle at 90% 10%,rgba(207,255,77,.07),transparent 38%),
+        linear-gradient(145deg,#0d140f,#080c09);
+      position:relative;overflow:hidden;transition:.25s ease;
+    }
+    .signal-card:hover{transform:translateY(-3px);border-color:var(--line2)}
+    .signal-icon{font-size:22px;color:var(--lime);margin-bottom:16px}
+    .signal-card h3{font-size:17px;margin:0 0 7px;letter-spacing:-.02em}
+    .signal-card p{font-size:11px;line-height:1.55;color:#838f86;margin:0}
+    .signal-line{position:absolute;left:18px;right:18px;bottom:13px;height:2px;background:rgba(255,255,255,.04);overflow:hidden;border-radius:2px}
+    .signal-line:after{
+      content:"";display:block;height:100%;width:42%;background:linear-gradient(90deg,transparent,var(--lime),transparent);
+      animation:scan 3.4s linear infinite;
+    }
+    @keyframes scan{from{transform:translateX(-130%)}to{transform:translateX(330%)}}
 
-    /* VALUE GRID */
-    .value-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:18px}
-    .value-main,.value-side{border:1px solid rgba(255,255,255,.065);border-radius:var(--radius);background:linear-gradient(145deg,#0c120e,#090d0a);overflow:hidden}
-    .value-main{padding:34px}
-    .value-main h3{font-size:32px;letter-spacing:-.035em;margin:0 0 10px}
-    .value-main>p{color:#8f9a92;line-height:1.65;margin:0 0 28px;max-width:700px}
-    .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .compare-card{padding:20px;border-radius:18px;border:1px solid rgba(255,255,255,.06);background:#080c09}
-    .compare-card strong{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#7f8b83}
-    .compare-card.good{border-color:var(--line)}
-    .compare-card.good strong{color:var(--lime)}
-    .compare-list{display:grid;gap:11px;margin-top:17px}
-    .compare-row{display:flex;align-items:flex-start;gap:10px;color:#c8d0ca;font-size:13px;line-height:1.45}
-    .compare-row i{font-style:normal;color:#6b766f}
-    .good .compare-row i{color:var(--lime)}
+    /* SECTION HEAD */
+    .section-head{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:30px;
+    }
+    .section-head h2{
+      font-size:clamp(36px,4.4vw,56px);line-height:1.05;letter-spacing:-.05em;margin:12px 0 0;max-width:850px;
+    }
+    .section-head>p{margin:0;color:#8e9991;line-height:1.7;font-size:14px;max-width:560px;justify-self:end}
 
-    .value-side{padding:26px;display:flex;flex-direction:column;justify-content:space-between;min-height:100%}
-    .value-side .big-stat{font-size:62px;line-height:.9;letter-spacing:-.06em;color:var(--lime);font-weight:900}
-    .value-side h3{font-size:24px;line-height:1.2;margin:15px 0 10px}
-    .value-side p{color:#86928a;line-height:1.6;font-size:13px;margin:0}
-    .manager-note{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.06);color:#cdd5cf;font-size:12px;line-height:1.6}
+    /* WHY / PAIN */
+    .why-shell{
+      border:1px solid rgba(255,255,255,.055);border-radius:30px;padding:28px;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(207,255,77,.045),transparent 28%),
+        linear-gradient(180deg,#0a0f0b,#070a08);
+    }
+    .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .pain-card{
+      border:1px solid rgba(255,255,255,.06);border-radius:19px;padding:18px;background:#0a0f0b;min-height:190px;
+    }
+    .pain-card .n{font-size:9px;color:#637067;letter-spacing:.12em;font-weight:850;text-transform:uppercase}
+    .pain-card h3{font-size:18px;margin:10px 0 9px}
+    .pain-card p{font-size:11px;color:#7e8a81;line-height:1.58;margin:0}
+    .pain-to{margin-top:15px;padding-top:13px;border-top:1px solid rgba(255,255,255,.055);font-size:11px;color:#cbd3cd}
+    .pain-to strong{color:var(--lime)}
+    .why-close{
+      margin-top:14px;border:1px solid var(--line);border-radius:18px;background:rgba(207,255,77,.035);
+      padding:17px 19px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    }
+    .why-close p{margin:0;color:#b9c2bb;font-size:13px;line-height:1.55}
+    .why-close b{color:#fff}
 
-    /* ROLE SOLUTIONS */
-    .role-shell{display:grid;grid-template-columns:260px 1fr;gap:18px}
-    .role-tabs{border:1px solid rgba(255,255,255,.06);border-radius:22px;background:#0a0f0b;padding:8px;height:max-content;position:sticky;top:98px}
+    /* SOLUTIONS */
+    .role-tabs{
+      display:flex;gap:8px;overflow:auto;padding:4px 0 11px;scrollbar-width:none;
+      border-bottom:1px solid rgba(255,255,255,.055);margin-bottom:20px;
+    }
     .role-tab{
-      width:100%;text-align:left;border:0;background:transparent;color:#929d95;padding:15px 14px;border-radius:14px;font-weight:750;font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center;
+      flex:0 0 auto;border:1px solid rgba(255,255,255,.065);background:#0a0f0b;color:#88948b;
+      border-radius:14px;padding:12px 14px;font-size:11px;font-weight:800;white-space:nowrap;
     }
-    .role-tab:hover{color:#fff;background:rgba(255,255,255,.025)}
-    .role-tab.active{background:rgba(203,255,74,.08);color:#efffd0;border:1px solid var(--line)}
-    .role-tab span{font-size:10px;color:#657168}
-    .role-tab.active span{color:var(--lime)}
+    .role-tab.active{border-color:var(--line2);background:rgba(207,255,77,.075);color:#fff}
+    .role-panel{
+      display:none;border:1px solid rgba(255,255,255,.065);border-radius:28px;padding:30px;
+      background:linear-gradient(145deg,#0b110d,#080b09);
+    }
+    .role-panel.active{display:block}
+    .role-panel .role-label{font-size:10px;color:var(--lime);font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    .role-panel h3{font-size:clamp(30px,3.6vw,46px);line-height:1.06;letter-spacing:-.045em;margin:11px 0 14px;max-width:850px}
+    .role-panel .lead{font-size:14px;line-height:1.7;color:#929d95;max-width:810px;margin:0 0 22px}
+    .task-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:20px 0 25px}
+    .task{border:1px solid rgba(255,255,255,.05);background:#070b08;border-radius:13px;padding:13px;display:flex;gap:10px;color:#c8d0ca;font-size:11px;line-height:1.45}
+    .task i{color:var(--lime);font-style:normal;font-weight:900}
+    .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px solid rgba(255,255,255,.055);padding-top:21px}
+    .result-box{border:1px solid rgba(255,255,255,.05);border-radius:13px;padding:14px;background:rgba(255,255,255,.012)}
+    .result-box b{font-size:11px;color:#eff4f0;display:block}
+    .result-box span{display:block;margin-top:5px;font-size:10px;color:#728077;line-height:1.5}
 
-    .role-panel{display:none;border:1px solid rgba(255,255,255,.065);border-radius:26px;background:linear-gradient(150deg,#0d1410,#090d0a);padding:34px;min-height:520px}
-    .role-panel.active{display:block;animation:fadeUp .35s ease both}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-    .role-kicker{color:var(--lime);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.12em}
-    .role-panel h3{font-size:40px;line-height:1.05;letter-spacing:-.045em;margin:12px 0}
-    .role-panel .lead{color:#9ca79f;line-height:1.7;max-width:760px;margin:0 0 26px}
-    .task-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:22px 0 28px}
-    .task{border:1px solid rgba(255,255,255,.055);background:#080c09;border-radius:15px;padding:15px;display:flex;align-items:flex-start;gap:11px;color:#cbd3cd;font-size:12px;line-height:1.45}
-    .task .tick{width:20px;height:20px;flex:none;border-radius:6px;background:rgba(203,255,74,.08);border:1px solid var(--line);display:grid;place-items:center;color:var(--lime);font-size:11px}
-    .role-result{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px solid rgba(255,255,255,.06);padding-top:24px}
-    .result-box b{font-size:12px;display:block;color:#e9efeb}
-    .result-box span{font-size:11px;color:#77837b;line-height:1.45;display:block;margin-top:5px}
+    /* MARKET */
+    .market-shell{
+      border:1px solid var(--line);border-radius:30px;padding:30px;
+      background:
+        radial-gradient(circle at 85% 12%,rgba(207,255,77,.08),transparent 30%),
+        linear-gradient(145deg,#0c140e,#080c09);
+      display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch;
+    }
+    .market-copy h2{font-size:clamp(34px,4vw,52px);line-height:1.06;letter-spacing:-.05em;margin:12px 0 14px}
+    .market-copy p{font-size:13px;color:#929d95;line-height:1.68;max-width:700px}
+    .market-local{font-size:14px;color:#d6ff7d;font-weight:800;margin:15px 0 18px}
+    .market-bullets{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .market-bullet{border:1px solid rgba(255,255,255,.055);border-radius:13px;padding:12px;background:#09100b;color:#bbc5bd;font-size:10px;line-height:1.45}
 
-    /* VIDEO STORY */
-    .video-stack{display:grid;gap:28px}
-    .video-story{display:grid;grid-template-columns:.78fr 1.22fr;gap:22px;align-items:stretch}
-    .video-story.reverse{grid-template-columns:1.22fr .78fr}
+    .price-card{
+      border:1px solid rgba(255,255,255,.08);border-radius:24px;background:#f3f6f1;color:#111713;padding:23px;
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .price-card .tag{display:inline-flex;align-self:flex-start;border-radius:999px;background:#e5efe4;color:#31523a;padding:6px 8px;font-size:9px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+    .price-card h3{font-size:21px;line-height:1.15;margin:14px 0 7px}
+    .price-range{font-size:clamp(28px,3.6vw,44px);line-height:1;letter-spacing:-.05em;font-weight:950;margin:14px 0 10px}
+    .price-card p{font-size:10px;line-height:1.55;color:#667168;margin:0 0 15px}
+    .price-note{padding-top:14px;border-top:1px solid #dce6dc;font-size:9px;color:#6d786f;line-height:1.5}
+    .language-choice{margin-top:18px}
+    .language-choice strong{display:block;font-size:10px;color:#d7dfd9;margin-bottom:8px;text-transform:uppercase;letter-spacing:.1em}
+    .language-pills{display:flex;flex-wrap:wrap;gap:7px}
+    .language-pill{
+      border:1px solid rgba(255,255,255,.07);background:#08100a;color:#9eaaa1;border-radius:999px;padding:8px 10px;font-size:10px;font-weight:750;
+    }
+    .language-pill.active{border-color:var(--line2);background:rgba(207,255,77,.07);color:#fff}
+
+    /* VIDEO OPERATING MODES */
+    .video-stack{display:grid;gap:18px}
+    .video-intro-note{
+      border:1px solid var(--line);background:rgba(207,255,77,.03);border-radius:14px;padding:12px 14px;
+      color:#8f9a92;font-size:11px;line-height:1.55;margin-bottom:22px;
+    }
+    .video-story{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:stretch}
+    .video-story.reverse{grid-template-columns:1.2fr .8fr}
     .video-story.reverse .video-copy{order:2}
-    .video-copy{border:1px solid rgba(255,255,255,.06);border-radius:26px;padding:32px;background:#0a0f0b;display:flex;flex-direction:column;justify-content:center}
-    .video-copy .number{font-size:10px;color:#5d6b61;letter-spacing:.14em;font-weight:800}
-    .video-copy h3{font-size:34px;line-height:1.05;letter-spacing:-.04em;margin:12px 0 13px}
-    .video-copy p{color:#8e9991;line-height:1.65;font-size:13px;margin:0 0 20px}
-    .mini-flow{display:grid;gap:8px}
-    .mini-flow span{font-size:11px;color:#c3ccc6;padding:10px 11px;border:1px solid rgba(255,255,255,.05);border-radius:10px;background:#080b09}
-    .mini-flow span b{color:var(--lime)}
-    .video-card{border:1px solid var(--line);border-radius:26px;padding:9px;background:#0b100d;position:relative;overflow:hidden;min-height:390px}
-    .video-card video{width:100%;height:100%;min-height:370px;object-fit:cover;border-radius:19px;background:#050705}
-    .video-overlay{position:absolute;inset:9px;border-radius:19px;pointer-events:none;background:linear-gradient(180deg,rgba(5,7,5,.1),transparent 45%,rgba(5,7,5,.62));}
-    .video-meta{position:absolute;left:24px;right:24px;bottom:24px;display:flex;justify-content:space-between;align-items:end;gap:20px;pointer-events:none}
-    .video-meta b{font-size:13px;display:block}
-    .video-meta span{font-size:10px;color:#9eaaa1;display:block;margin-top:4px}
-    .tap-play{position:absolute;inset:0;border:0;background:rgba(5,7,5,.42);color:#fff;display:none;place-items:center;z-index:3}
-    .tap-play span{padding:12px 15px;border-radius:999px;border:1px solid var(--line-strong);background:#0b110d;font-size:12px;font-weight:800}
+    .video-copy{
+      border:1px solid rgba(255,255,255,.06);border-radius:24px;padding:28px;background:#0a0f0b;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .video-copy .number{font-size:9px;color:#617067;letter-spacing:.13em;font-weight:850;text-transform:uppercase}
+    .video-copy h3{font-size:clamp(28px,3.3vw,42px);line-height:1.06;letter-spacing:-.045em;margin:10px 0 12px}
+    .video-copy p{color:#8c9790;line-height:1.65;font-size:12px;margin:0 0 18px}
+    .mini-flow{display:grid;gap:7px}
+    .mini-flow span{font-size:10px;color:#c2cbc5;padding:10px 11px;border:1px solid rgba(255,255,255,.05);border-radius:10px;background:#070a08}
+    .mini-flow b{color:var(--lime)}
+
+    .video-card{
+      border:1px solid var(--line);border-radius:25px;padding:8px;background:#0a0f0b;position:relative;overflow:hidden;min-height:380px;
+    }
+    .video-card video{width:100%;height:100%;min-height:364px;object-fit:cover;border-radius:18px;background:#050705}
+    .video-overlay{position:absolute;inset:8px;border-radius:18px;pointer-events:none;background:linear-gradient(180deg,rgba(5,7,5,.02),transparent 55%,rgba(4,6,4,.72))}
+    .video-meta{position:absolute;left:22px;right:22px;bottom:20px;display:flex;align-items:end;justify-content:space-between;gap:14px;pointer-events:none}
+    .video-meta b{display:block;font-size:12px}
+    .video-meta span{display:block;font-size:9px;color:#a0aba3;margin-top:3px}
+    .video-live{font-size:8px;color:#d6ff76;border:1px solid var(--line);border-radius:999px;padding:5px 7px;background:rgba(207,255,77,.045)}
+    .tap-play{
+      display:none;position:absolute;inset:0;z-index:4;border:0;background:rgba(4,6,4,.5);color:#fff;place-items:center;
+    }
+    .tap-play span{border:1px solid var(--line2);border-radius:999px;background:#0a100c;padding:11px 14px;font-size:11px;font-weight:850}
     .video-card.needs-play .tap-play{display:grid}
 
-    /* CALL FLOW */
-    .call-flow{border:1px solid rgba(255,255,255,.06);border-radius:28px;background:#090d0a;padding:28px}
-    .flow-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-    .flow-steps{display:grid;gap:10px}
-    .flow-step{display:grid;grid-template-columns:36px 1fr;gap:13px;align-items:start;padding:14px;border-radius:15px;border:1px solid rgba(255,255,255,.05);background:#080b09}
-    .flow-step .n{width:36px;height:36px;border-radius:11px;background:#111913;border:1px solid var(--line);display:grid;place-items:center;color:var(--lime);font-size:11px;font-weight:850}
-    .flow-step b{font-size:12px;display:block;margin-top:1px}
-    .flow-step p{font-size:11px;color:#77827a;line-height:1.45;margin:5px 0 0}
+    /* HOW */
+    .flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .flow-card{border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px;background:#0a0f0b;min-height:170px}
+    .flow-card .n{font-size:10px;color:var(--lime);font-weight:900}
+    .flow-card h3{font-size:17px;margin:13px 0 8px}
+    .flow-card p{font-size:10px;color:#7c8880;line-height:1.55;margin:0}
 
-    .phone-demo{border:1px solid var(--line);border-radius:26px;background:#071008;padding:16px;box-shadow:inset 0 0 45px rgba(203,255,74,.025)}
-    .phone-top{display:flex;justify-content:space-between;align-items:center;padding:5px 4px 14px}
-    .phone-top b{font-size:12px}
-    .live-tag{font-size:9px;color:var(--lime);border:1px solid var(--line);border-radius:999px;padding:5px 7px}
-    .transcript{border:1px solid rgba(255,255,255,.05);border-radius:18px;background:#080b09;padding:14px;min-height:330px;display:flex;flex-direction:column;gap:10px}
-    .bubble{max-width:84%;padding:11px 12px;border-radius:14px;font-size:11px;line-height:1.5;border:1px solid rgba(255,255,255,.05);opacity:0;transform:translateY(5px);animation:chatIn .5s forwards}
-    .bubble.ai{align-self:flex-start;background:#101812;border-color:var(--line)}
-    .bubble.customer{align-self:flex-end;background:#151a17}
-    .bubble:nth-child(2){animation-delay:.5s}.bubble:nth-child(3){animation-delay:1s}.bubble:nth-child(4){animation-delay:1.5s}.bubble:nth-child(5){animation-delay:2s}
-    @keyframes chatIn{to{opacity:1;transform:none}}
-    .bubble small{display:block;color:#667168;font-size:8px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-    .phone-bottom{margin-top:12px;padding:10px;border-radius:12px;background:rgba(203,255,74,.04);border:1px solid var(--line);font-size:10px;color:#aab5ad}
-    .phone-bottom b{color:var(--lime)}
-
-    /* INTEGRATION MAP */
-    .map-shell{border:1px solid rgba(255,255,255,.06);border-radius:28px;background:linear-gradient(145deg,#0b110d,#080b09);padding:32px;overflow:hidden}
-    .map-grid{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:18px;align-items:center;position:relative}
-    .map-col{display:grid;gap:9px}
-    .node{padding:15px;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:#090d0a;font-size:12px;color:#c8d0ca;display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .node span{color:#68746c;font-size:10px}
-    .core-node{padding:26px;border:1px solid var(--line-strong);border-radius:22px;background:radial-gradient(circle at 50% 25%,rgba(203,255,74,.12),transparent 45%),#0a100c;text-align:center;box-shadow:inset 0 0 50px rgba(203,255,74,.03)}
-    .core-orb{width:74px;height:74px;border-radius:22px;margin:0 auto 16px;border:1px solid rgba(203,255,74,.35);display:grid;place-items:center;position:relative;background:#0e1710;box-shadow:0 0 30px rgba(203,255,74,.08)}
-    .core-orb::before{content:"AI";color:var(--lime);font-weight:950;letter-spacing:.05em}
-    .core-node b{font-size:17px}
-    .core-node p{font-size:11px;line-height:1.55;color:#7f8b83;margin:8px auto 0;max-width:250px}
-
-    /* INTERACTIVE PREVIEW */
-    .preview-shell{display:grid;grid-template-columns:.92fr 1.08fr;gap:20px}
+    /* PREVIEW */
+    .preview-shell{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}
     .preview-copy{padding:18px 0}
-    .preview-copy h2{font-size:45px;line-height:1.02;letter-spacing:-.045em;margin:14px 0 15px}
-    .preview-copy p{color:#919d94;line-height:1.7;max-width:510px}
-    .prompt-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-    .prompt-btn{border:1px solid rgba(255,255,255,.07);background:#0b100d;color:#c8d1ca;border-radius:999px;padding:9px 11px;font-size:11px}
-    .prompt-btn:hover{border-color:var(--line-strong);color:#fff}
-    .chat-window{border:1px solid var(--line);border-radius:26px;background:#09100b;padding:10px;box-shadow:var(--shadow)}
-    .chat-head{display:flex;justify-content:space-between;align-items:center;padding:12px 12px 16px}
-    .chat-head b{font-size:12px}
-    .chat-head span{font-size:9px;color:#728078}
-    .chat-body{min-height:360px;background:#080b09;border:1px solid rgba(255,255,255,.05);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px;overflow:auto}
-    .chat-msg{max-width:86%;font-size:12px;line-height:1.55;padding:12px 13px;border-radius:14px;border:1px solid rgba(255,255,255,.05)}
-    .chat-msg.bot{align-self:flex-start;background:#101812;border-color:var(--line)}
-    .chat-msg.user{align-self:flex-end;background:#181d1a}
-    .chat-input{display:flex;gap:8px;padding:10px 2px 2px}
-    .chat-input input{flex:1;min-width:0;background:#0d130f;color:#fff;border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:13px;outline:none}
-    .chat-input input:focus{border-color:var(--line-strong)}
-    .chat-input button{width:45px;border-radius:13px;border:0;background:var(--lime);font-weight:900;color:#070a08}
-    .preview-disclaimer{font-size:9px;color:#637067;margin:8px 4px 0}
+    .preview-copy h2{font-size:clamp(34px,4.2vw,52px);line-height:1.05;letter-spacing:-.05em;margin:12px 0 14px}
+    .preview-copy p{color:#929d95;line-height:1.68;font-size:13px;max-width:520px}
+    .prompt-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+    .prompt-btn{border:1px solid rgba(255,255,255,.07);background:#0a100c;color:#c7d0c9;border-radius:999px;padding:9px 10px;font-size:10px}
+    .prompt-btn:hover{border-color:var(--line2);color:#fff}
 
-    /* CTA */
-    .cta-box{border:1px solid var(--line-strong);border-radius:32px;padding:42px;background:radial-gradient(circle at 85% 20%,rgba(203,255,74,.12),transparent 32%),linear-gradient(145deg,#0d1510,#080c09);display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
-    .cta-box h2{font-size:clamp(38px,4.5vw,60px);line-height:1;letter-spacing:-.05em;margin:14px 0 14px}
-    .cta-box p{color:#929e95;line-height:1.65;margin:0;max-width:620px}
-    .cta-form{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-    .cta-form input,.cta-form textarea,.cta-form select{width:100%;border:1px solid rgba(255,255,255,.07);background:#0a100c;color:#f5f7f4;border-radius:13px;padding:13px;outline:none;font:inherit;font-size:12px}
-    .cta-form textarea{grid-column:1/-1;min-height:105px;resize:vertical}
-    .cta-form .full{grid-column:1/-1}
-    .cta-form input:focus,.cta-form textarea:focus,.cta-form select:focus{border-color:var(--line-strong)}
-    .form-status{grid-column:1/-1;color:#859188;font-size:10px;line-height:1.5;min-height:16px}
+    .chat-window{border:1px solid var(--line);border-radius:26px;background:#09100b;padding:9px;box-shadow:var(--shadow)}
+    .chat-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 12px 15px}
+    .chat-head b{font-size:13px}
+    .chat-head span{font-size:9px;color:#718077}
+    .chat-body{
+      min-height:365px;max-height:430px;overflow:auto;border:1px solid rgba(255,255,255,.055);border-radius:18px;background:#070a08;
+      padding:16px;display:flex;flex-direction:column;gap:9px;
+    }
+    .chat-msg{max-width:84%;padding:11px 12px;border-radius:14px;font-size:11px;line-height:1.55}
+    .chat-msg.bot{align-self:flex-start;background:#0f1912;border:1px solid var(--line);color:#e6ede7}
+    .chat-msg.user{align-self:flex-end;background:var(--lime);color:#090c09}
+    .chat-msg small{display:block;margin-top:5px;color:#748078;font-size:8px}
+    .chat-input{display:flex;gap:8px;padding:9px 2px 1px}
+    .chat-input input{flex:1;min-width:0;border:1px solid rgba(255,255,255,.07);background:#070a08;color:#fff;border-radius:12px;padding:11px 12px;font-size:11px}
+    .chat-input button{width:42px;border:0;border-radius:12px;background:var(--lime);color:#080b08;font-weight:950}
+    .typing{display:inline-flex;gap:4px}
+    .typing i{width:5px;height:5px;border-radius:50%;background:#94a098;animation:bounce 1s infinite alternate}
+    .typing i:nth-child(2){animation-delay:.16s}.typing i:nth-child(3){animation-delay:.32s}
+    @keyframes bounce{to{transform:translateY(-4px);opacity:.45}}
 
-    footer{padding:28px 0 40px;border-top:1px solid rgba(255,255,255,.05);color:#6f7b73}
-    .footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center}
-    .footer-grid small{font-size:10px;line-height:1.6}
-    .footer-links{display:flex;gap:18px;font-size:10px}
+    /* CONTACT */
+    .contact-shell{
+      border:1px solid var(--line);border-radius:30px;background:
+        radial-gradient(circle at 8% 15%,rgba(207,255,77,.07),transparent 28%),
+        linear-gradient(145deg,#0c130e,#080b09);
+      padding:30px;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;
+    }
+    .contact-copy h2{font-size:clamp(34px,4.2vw,52px);line-height:1.04;letter-spacing:-.05em;margin:12px 0 14px}
+    .contact-copy p{font-size:13px;color:#929d95;line-height:1.68}
+    .contact-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}
+    .trust-list{display:grid;gap:8px;margin-top:24px}
+    .trust-item{font-size:10px;color:#a4afa7;display:flex;gap:8px;align-items:flex-start}
+    .trust-item i{font-style:normal;color:var(--lime);font-weight:900}
 
-    .mobile-menu{display:none}
+    .contact-form{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .field{display:grid;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:9px;color:#849087;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .field input,.field select,.field textarea{
+      width:100%;border:1px solid rgba(255,255,255,.075);border-radius:12px;background:#070a08;color:#eef3ef;
+      padding:11px 12px;font-size:11px;outline:0;
+    }
+    .field textarea{min-height:112px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--line2)}
+    .form-submit{grid-column:1/-1}
+    .form-submit button{width:100%}
+    .form-small{grid-column:1/-1;font-size:9px;color:#657168;line-height:1.5}
 
-    @media (max-width:1000px){
-      .nav-links{display:none}.menu-btn{display:block}
-      .hero-grid,.value-grid,.preview-shell,.cta-box{grid-template-columns:1fr}
-      .hero{padding-top:64px}.hero-grid{gap:38px}
-      .proof-grid{grid-template-columns:1fr 1fr}.proof-item:nth-child(2){border-right:0}.proof-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.05)}
-      .role-shell{grid-template-columns:1fr}.role-tabs{position:static;display:flex;overflow:auto}.role-tab{min-width:max-content;width:auto}
-      .video-story,.video-story.reverse{grid-template-columns:1fr}.video-story.reverse .video-copy{order:0}
-      .flow-grid{grid-template-columns:1fr}.map-grid{grid-template-columns:1fr}.map-col{grid-template-columns:repeat(2,1fr)}
-      .mobile-menu.open{display:grid;gap:6px;padding:0 0 16px}.mobile-menu a{padding:12px 4px;color:#b1bbb4;border-bottom:1px solid rgba(255,255,255,.045);font-size:12px}
+    /* FOOTER */
+    footer{border-top:1px solid rgba(255,255,255,.055);padding:32px 0 40px;background:#050705}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
+    .footer-brand{display:flex;align-items:center;gap:16px}
+    .footer-logo{width:150px;background:#fff;border-radius:12px;padding:4px}
+    .footer-copy{font-size:10px;color:#6f7b73;line-height:1.6}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#9ca79f;font-size:10px}
+    .footer-links a:hover{color:#fff}
+
+    /* RESPONSIVE */
+    @media(max-width:1020px){
+      .nav-links,.nav-cta{display:none}
+      .menu-btn{display:block}
+      .market-wrap{margin-left:auto}
+      .hero-grid,.market-shell,.preview-shell,.contact-shell{grid-template-columns:1fr}
+      .signal-grid{grid-template-columns:repeat(2,1fr)}
+      .pain-grid{grid-template-columns:repeat(2,1fr)}
+      .section-head{grid-template-columns:1fr;gap:14px}
+      .section-head>p{justify-self:start}
+      .flow-grid{grid-template-columns:repeat(3,1fr)}
+      .video-story,.video-story.reverse{grid-template-columns:1fr}
+      .video-story.reverse .video-copy{order:0}
+      .video-card{min-height:340px}
+      .video-card video{min-height:324px}
     }
 
-    @media (max-width:640px){
-      .wrap{width:min(var(--max),calc(100% - 24px))}
-      .section{padding:72px 0}.section-tight{padding:54px 0}
-      .top-strip .wrap{min-height:38px}.market-switch{display:none}
-      nav{height:64px}.brand-copy span{display:none}.nav-actions .btn{display:none}
-      .hero{padding-top:46px}.hero h1{font-size:43px}.hero-lead{font-size:15px;line-height:1.6}
-      .hero-cta .btn{width:100%}
-      .ops-shell{border-radius:22px;padding:8px}.ops-screen{border-radius:16px}.screen-head{display:none}.lane{grid-template-columns:1fr auto;padding:12px}.lane-status{grid-column:1/-1;padding-left:44px;margin-top:-7px}.status-chip{grid-column:2;grid-row:1}
-      .ops-foot{flex-direction:column;gap:5px}
-      .proof-grid{grid-template-columns:1fr}.proof-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.05)!important}.proof-item:last-child{border-bottom:0!important}
-      .section-head{display:block;margin-bottom:28px}.section-head p{margin-top:18px}.section-head h2{font-size:38px}
-      .value-main,.value-side,.role-panel,.video-copy,.map-shell,.call-flow{padding:22px}.compare{grid-template-columns:1fr}.value-side .big-stat{font-size:52px}
-      .role-panel h3{font-size:33px}.task-grid,.role-result{grid-template-columns:1fr}.role-result{gap:16px}
-      .video-card{min-height:260px}.video-card video{min-height:245px}.video-meta{left:18px;right:18px;bottom:18px}
-      .map-col{grid-template-columns:1fr}
-      .preview-copy h2{font-size:38px}.chat-body{min-height:320px}
-      .cta-box{padding:24px}.cta-form{grid-template-columns:1fr}.cta-form textarea,.cta-form .full{grid-column:auto}
-      .footer-grid{display:block}.footer-links{margin-top:16px;flex-wrap:wrap}
+    @media(max-width:680px){
+      .wrap{width:min(calc(100% - 24px),var(--max))}
+      .section{padding:72px 0}
+      .section-tight{padding:56px 0}
+      .top-strip .wrap{min-height:44px}
+      .top-strip .mini-trust{display:none}
+      .top-strip{font-size:10px;line-height:1.35}
+      .nav{height:68px;gap:9px}
+      .brand-logo{width:88px;height:44px;border-radius:10px}
+      .market-button{height:40px;padding:0 10px;font-size:10px}
+      .market-button .market-full-name{display:none}
+      .market-menu{position:fixed;left:12px;right:12px;top:118px;width:auto}
+      .mobile-menu{inset:112px 0 auto 0}
+
+      .hero{padding:54px 0 46px}
+      .hero h1{font-size:clamp(38px,11.2vw,52px);line-height:1.01;margin-top:15px}
+      .hero-lead{font-size:15px;line-height:1.63}
+      .offer-line{gap:6px}
+      .offer-pill{font-size:10px;padding:8px 9px}
+      .hero-actions{display:grid}
+      .hero-actions .btn{width:100%}
+      .hero-foot{font-size:10px}
+
+      .ops-shell{padding:9px;border-radius:24px}
+      .ops-title{font-size:9px}
+      .sim-label{font-size:8px}
+      .screen-head{grid-template-columns:1.15fr .85fr .48fr;padding:9px;font-size:7px}
+      .lane{grid-template-columns:1.15fr .85fr .48fr;padding:10px 9px;min-height:60px}
+      .lane-icon{width:27px;height:27px;font-size:12px}
+      .lane-name b{font-size:9px}
+      .lane-name small{display:none}
+      .lane-action{font-size:8px}
+      .lane-state{font-size:7px;padding:4px 5px}
+      .ops-bottom{font-size:8px}
+
+      .signal-section{padding-bottom:58px}
+      .signal-grid{grid-template-columns:1fr 1fr;gap:8px}
+      .signal-card{min-height:154px;padding:15px}
+      .signal-card h3{font-size:15px}
+      .signal-card p{font-size:10px}
+
+      .section-head h2{font-size:clamp(33px,9.8vw,44px)}
+      .why-shell{padding:16px;border-radius:24px}
+      .pain-grid{grid-template-columns:1fr}
+      .why-close{display:block}
+      .why-close .btn{width:100%;margin-top:14px}
+
+      .role-panel{padding:20px;border-radius:23px}
+      .role-panel h3{font-size:32px}
+      .task-grid,.result-grid{grid-template-columns:1fr}
+
+      .market-shell{padding:20px}
+      .market-bullets{grid-template-columns:1fr}
+      .price-card{padding:20px}
+
+      .video-intro-note{font-size:10px}
+      .video-copy{padding:21px}
+      .video-copy h3{font-size:31px}
+      .video-card{min-height:0;aspect-ratio:16/10}
+      .video-card video{min-height:0;height:100%;object-fit:cover}
+
+      .flow-grid{grid-template-columns:1fr}
+      .flow-card{min-height:0}
+
+      .preview-copy{padding-top:0}
+      .preview-copy h2{font-size:38px}
+      .chat-body{min-height:320px}
+
+      .contact-shell{padding:20px}
+      .contact-form{grid-template-columns:1fr}
+      .field.full,.form-submit,.form-small{grid-column:auto}
+
+      .footer-grid{grid-template-columns:1fr}
+      .footer-links{justify-content:flex-start}
+      .footer-logo{width:128px}
     }
 
-    @media (prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+    @media(max-width:400px){
+      .signal-grid{grid-template-columns:1fr}
+      .market-button{padding:0 8px}
+      .market-button .market-chevron{display:none}
+      .hero h1{font-size:38px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .signal-line:after,.pulse,.ops-shell:before,.typing i{animation:none}
     }
   </style>
 </head>
+
 <body>
-  <div class="noise"></div>
+  <div class="grid-noise"></div>
 
   <div class="top-strip">
     <div class="wrap">
-      <div><strong>South Africa</strong> · AI operating capacity for customer service, reception, admin and web</div>
-      <div class="market-switch"><span class="active">ZA</span><span>KUWAIT</span><span>OMAN</span><span>GUYANA</span></div>
+      <div id="topLine"><strong>Virtual by design.</strong> We help South African businesses use AI to operate smarter, leaner and more consistently — while keeping human judgement where it matters.</div>
+      <div class="mini-trust">24/7 approved workflows · remote-first deployment</div>
     </div>
   </div>
 
   <header>
-    <div class="wrap">
-      <nav>
-        <a class="brand" href="#top" aria-label="Invenio AI Solutions home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-copy"><b>INVENIO</b><span>AI SOLUTIONS</span></span>
-        </a>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="INVENIO AI SOLUTIONS home">
+        <img class="brand-logo" src="invenio-logo.png" alt="INVENIO AI SOLUTIONS">
+      </a>
 
-        <div class="nav-links">
-          <a href="#solutions">Solutions</a>
-          <a href="#operations">See it operate</a>
-          <a href="#how">How it works</a>
-          <a href="#preview">Try preview</a>
-        </div>
-
-        <div class="nav-actions">
-          <a class="btn btn-primary" href="#deploy">Map my workload →</a>
-          <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-        </div>
-      </nav>
-      <div class="mobile-menu" id="mobileMenu">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#why">Why Invenio</a>
         <a href="#solutions">Solutions</a>
-        <a href="#operations">See it operate</a>
         <a href="#how">How it works</a>
-        <a href="#preview">Try preview</a>
-        <a href="#deploy">Map my workload</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="market-wrap" id="marketWrap">
+        <button class="market-button" id="marketButton" type="button" aria-expanded="false" aria-haspopup="menu">
+          <span class="flag" id="marketFlag">🇿🇦</span>
+          <span class="market-full-name" id="marketName">South Africa</span>
+          <span class="market-chevron">⌄</span>
+        </button>
+        <div class="market-menu" id="marketMenu" role="menu" aria-label="Choose market">
+          <button class="market-option" data-market="south-africa" type="button"><span class="flag">🇿🇦</span>South Africa <small>ZAR</small></button>
+          <button class="market-option" data-market="kuwait" type="button"><span class="flag">🇰🇼</span>Kuwait <small>KWD</small></button>
+          <button class="market-option" data-market="oman" type="button"><span class="flag">🇴🇲</span>Oman <small>OMR</small></button>
+          <button class="market-option" data-market="guyana" type="button"><span class="flag">🇬🇾</span>Guyana <small>GYD</small></button>
+        </div>
+      </div>
+
+      <a class="nav-cta whatsapp-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#why">Why Invenio</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="whatsapp-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+
+      <div class="mobile-market-title">Choose your market</div>
+      <div class="mobile-markets">
+        <button class="mobile-market" data-market="south-africa" type="button"><span class="flag">🇿🇦</span>South Africa</button>
+        <button class="mobile-market" data-market="kuwait" type="button"><span class="flag">🇰🇼</span>Kuwait</button>
+        <button class="mobile-market" data-market="oman" type="button"><span class="flag">🇴🇲</span>Oman</button>
+        <button class="mobile-market" data-market="guyana" type="button"><span class="flag">🇬🇾</span>Guyana</button>
       </div>
     </div>
   </header>
 
   <main id="top">
-    <!-- HERO: INSTANT CLARITY -->
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow"><span class="dot"></span> AI operations for real business work</div>
-          <h1>Your <span class="accent">reception, calls, chat & admin</span> can keep moving without the queue.</h1>
-          <p class="hero-lead">
-            INVENIO deploys AI systems that can <strong>answer customers, handle inbound calls, run website chat, process repetitive admin, update business systems and escalate to your team when needed.</strong>
+          <div class="eyebrow"><i></i><span id="heroEyebrow">AI operations for real business work</span></div>
+          <h1 id="heroTitle">Keep reception, calls, chat &amp; admin moving — <span class="accent">even when your team is busy or offline.</span></h1>
+          <p class="hero-lead" id="heroLead">
+            INVENIO deploys AI systems that can <strong>answer customers, handle inbound and approved outbound calls, run website chat, process repetitive admin, update business systems and escalate to your team when human judgement is needed.</strong> The goal is simple: faster response, less repetitive workload and more operating capacity.
           </p>
 
-          <div class="offer-line" aria-label="Main Invenio solutions">
+          <div class="offer-line">
             <span class="offer-pill">AI Receptionist</span>
             <span class="offer-pill">AI Call Centre</span>
             <span class="offer-pill">Web Chatbot</span>
             <span class="offer-pill">Admin / Clerk Automation</span>
+            <span class="offer-pill">HR + CRM</span>
             <span class="offer-pill">Web Operations</span>
           </div>
 
-          <div class="hero-cta">
-            <a href="#operations" class="btn btn-primary">See what it can take over →</a>
-            <a href="#deploy" class="btn btn-secondary">Show us your workload</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#solutions">See what Invenio can take on →</a>
+            <a class="btn btn-secondary whatsapp-link" href="#" target="_blank" rel="noopener">Talk to Invenio on WhatsApp</a>
           </div>
 
-          <div class="hero-note">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.8 8-7 10-4.2-2-7-5.4-7-10V6l7-3z" stroke="#8fa195" stroke-width="1.5"/><path d="M9 12l2 2 4-5" stroke="#cbff4a" stroke-width="1.5"/></svg>
-            Built around your rules, permissions and escalation points. Human approval can remain wherever you want it.
+          <div class="hero-foot">
+            <span>✓</span>
+            <span id="heroTrust"><b>24/7 where configured:</b> approved workflows can keep running after hours, on weekends and public holidays, with human escalation at the points your business chooses.</span>
           </div>
         </div>
 
-        <div class="ops-shell" aria-label="Illustrative live operations preview">
+        <div class="ops-shell" aria-label="Illustrative live operations panel">
           <div class="ops-top">
             <div class="ops-title"><span class="pulse"></span> Invenio operations</div>
-            <div class="sim-label">Illustrative live preview</div>
+            <div class="sim-label">live capability visual</div>
           </div>
 
           <div class="ops-screen">
-            <div class="screen-head"><span>Workstream</span><span>Current action</span><span style="text-align:right">State</span></div>
+            <div class="screen-head"><span>Workstream</span><span>Current action</span><span>State</span></div>
 
             <div class="lane">
-              <div class="lane-name"><div class="lane-icon">☎</div><div><b>AI Receptionist</b><small>Voice · booking · routing</small></div></div>
-              <div class="lane-status" data-lane="reception">Answering inbound enquiry</div>
-              <div class="status-chip">Active</div>
+              <div class="lane-name"><span class="lane-icon">☎</span><div><b>AI Receptionist</b><small>voice · booking · routing</small></div></div>
+              <div class="lane-action" data-lane="reception">Answering inbound enquiry</div>
+              <div class="lane-state">Active</div>
             </div>
 
             <div class="lane">
-              <div class="lane-name"><div class="lane-icon">◎</div><div><b>Call Centre</b><small>Parallel customer conversations</small></div></div>
-              <div class="lane-status" data-lane="calls">Resolving service request</div>
-              <div class="status-chip">Active</div>
+              <div class="lane-name"><span class="lane-icon">↗</span><div><b>Outbound Voice</b><small>follow-up · reminders · leads</small></div></div>
+              <div class="lane-action" data-lane="outbound">Preparing approved follow-up</div>
+              <div class="lane-state">Active</div>
             </div>
 
             <div class="lane">
-              <div class="lane-name"><div class="lane-icon">⌁</div><div><b>Web Chatbot</b><small>Website · lead · support</small></div></div>
-              <div class="lane-status" data-lane="chat">Qualifying website visitor</div>
-              <div class="status-chip">Active</div>
+              <div class="lane-name"><span class="lane-icon">◎</span><div><b>Call Centre</b><small>parallel conversations</small></div></div>
+              <div class="lane-action" data-lane="calls">Resolving service request</div>
+              <div class="lane-state">Active</div>
             </div>
 
             <div class="lane">
-              <div class="lane-name"><div class="lane-icon">⌘</div><div><b>Admin / Clerk</b><small>Inbox · records · follow-up</small></div></div>
-              <div class="lane-status" data-lane="admin">Updating customer record</div>
-              <div class="status-chip">Active</div>
+              <div class="lane-name"><span class="lane-icon">⌁</span><div><b>Web Chatbot</b><small>website · lead · support</small></div></div>
+              <div class="lane-action" data-lane="chat">Qualifying website visitor</div>
+              <div class="lane-state">Active</div>
             </div>
 
             <div class="lane">
-              <div class="lane-name"><div class="lane-icon">↗</div><div><b>Web Operations</b><small>Forms · content · routing</small></div></div>
-              <div class="lane-status" data-lane="web">Routing new form enquiry</div>
-              <div class="status-chip">Active</div>
+              <div class="lane-name"><span class="lane-icon">⌘</span><div><b>Admin + CRM</b><small>records · follow-up · routing</small></div></div>
+              <div class="lane-action" data-lane="admin">Updating customer record</div>
+              <div class="lane-state">Active</div>
             </div>
-
-            <div class="flowbar"></div>
-            <div class="ops-foot"><span>Session online · <strong id="sessionClock">00:00</strong></span><span>Connected actions can require approval</span></div>
           </div>
-        </div>
-      </div>
 
-      <div class="wrap proof-strip">
-        <div class="proof-grid">
-          <div class="proof-item"><b>24/7 digital response</b><span>Keep handling approved workflows after office hours.</span></div>
-          <div class="proof-item"><b>Concurrent conversations</b><span>Scale beyond one-person-at-a-time queues, subject to provider capacity.</span></div>
-          <div class="proof-item"><b>One connected workflow</b><span>Move from enquiry → action → CRM/calendar/database update.</span></div>
-          <div class="proof-item"><b>Human control stays</b><span>Escalate exceptions and keep approvals at chosen steps.</span></div>
+          <div class="ops-bottom">
+            <span>Session online · <strong id="sessionClock">00:00</strong></span>
+            <span>Human approval can remain at chosen steps</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BUSINESS CASE -->
-    <section class="section-tight" id="operations">
+    <section class="signal-section">
+      <div class="wrap signal-grid">
+        <article class="signal-card reveal">
+          <div class="signal-icon">◷</div>
+          <h3>24/7 approved response</h3>
+          <p>Keep suitable enquiries, bookings, follow-ups and routine workflows moving after office hours.</p>
+          <div class="signal-line"></div>
+        </article>
+
+        <article class="signal-card reveal">
+          <div class="signal-icon">∞</div>
+          <h3>Parallel capacity</h3>
+          <p>Handle more than one digital conversation at a time, subject to the connected provider and infrastructure.</p>
+          <div class="signal-line"></div>
+        </article>
+
+        <article class="signal-card reveal">
+          <div class="signal-icon">⟲</div>
+          <h3>Connected actions</h3>
+          <p>Move from enquiry to booking, CRM update, notification, follow-up or another approved next step.</p>
+          <div class="signal-line"></div>
+        </article>
+
+        <article class="signal-card reveal">
+          <div class="signal-icon">✓</div>
+          <h3 id="complianceTitle">POPIA-aware deployment</h3>
+          <p id="complianceCopy">South African workflows can be configured around data minimisation, controlled access, security safeguards and human oversight.</p>
+          <div class="signal-line"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="why">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div>
-            <div class="eyebrow">What a manager sees</div>
-            <h2>Remove the repetitive queue. Keep humans on the work that needs judgment.</h2>
+            <div class="eyebrow"><i></i> Why Invenio</div>
+            <h2>Every delay has a cost. Every repetitive task has an alternative.</h2>
           </div>
-          <p>Invenio is not “a chatbot stuck in the corner of a website.” It is a connected operating layer that can receive work, understand it, take approved actions and hand off exceptions.</p>
+          <p>INVENIO is built around business pressure points: missed enquiries, slow follow-up, repetitive admin, disconnected systems and the constant temptation to add payroll before improving the process.</p>
         </div>
 
-        <div class="value-grid">
-          <div class="value-main">
-            <h3>From waiting work → moving work.</h3>
-            <p>Think about every enquiry, call, email, form, booking, status request and routine update that currently waits for a person to become available.</p>
-            <div class="compare">
-              <div class="compare-card">
-                <strong>Typical queue</strong>
-                <div class="compare-list">
-                  <div class="compare-row"><i>—</i><span>Customer waits for the next available person.</span></div>
-                  <div class="compare-row"><i>—</i><span>Information gets copied between inboxes and systems.</span></div>
-                  <div class="compare-row"><i>—</i><span>Follow-up depends on someone remembering the next step.</span></div>
-                  <div class="compare-row"><i>—</i><span>After-hours requests sit until the team returns.</span></div>
-                </div>
-              </div>
-              <div class="compare-card good">
-                <strong>With Invenio</strong>
-                <div class="compare-list">
-                  <div class="compare-row"><i>✓</i><span>Approved conversations can start immediately.</span></div>
-                  <div class="compare-row"><i>✓</i><span>Connected workflows can update the right system automatically.</span></div>
-                  <div class="compare-row"><i>✓</i><span>Next steps, reminders and follow-ups can trigger consistently.</span></div>
-                  <div class="compare-row"><i>✓</i><span>Exceptions route to a human with the context already collected.</span></div>
-                </div>
-              </div>
+        <div class="why-shell reveal">
+          <div class="pain-grid">
+            <article class="pain-card">
+              <div class="n">01 · Missed demand</div>
+              <h3>Customers arrive when your team is busy.</h3>
+              <p>Calls, website visitors and messages do not politely wait for the next free employee.</p>
+              <div class="pain-to"><strong>With Invenio:</strong> suitable enquiries can be answered, qualified, booked or routed immediately.</div>
+            </article>
+
+            <article class="pain-card">
+              <div class="n">02 · After-hours silence</div>
+              <h3>Opportunities do not keep office hours.</h3>
+              <p>A lead that waits until tomorrow can become someone else's customer tonight.</p>
+              <div class="pain-to"><strong>With Invenio:</strong> approved digital workflows can continue 24/7 and escalate when a human is needed.</div>
+            </article>
+
+            <article class="pain-card">
+              <div class="n">03 · Repetitive admin</div>
+              <h3>Skilled people spend hours moving information.</h3>
+              <p>Copying data, checking inboxes, creating records and sending routine follow-ups absorb real payroll.</p>
+              <div class="pain-to"><strong>With Invenio:</strong> repetitive steps can move automatically between connected systems.</div>
+            </article>
+
+            <article class="pain-card">
+              <div class="n">04 · Weak follow-up</div>
+              <h3>Leads go cold because the next step depends on memory.</h3>
+              <p>Manual follow-up becomes inconsistent as volume rises or the team gets busy.</p>
+              <div class="pain-to"><strong>With Invenio:</strong> reminders, qualification, re-engagement and approved outbound contact can trigger consistently.</div>
+            </article>
+
+            <article class="pain-card">
+              <div class="n">05 · Disconnected systems</div>
+              <h3>The conversation ends, then the admin starts.</h3>
+              <p>Staff often retype the same information into CRM, calendars, email, spreadsheets or internal tools.</p>
+              <div class="pain-to"><strong>With Invenio:</strong> the conversation can become the start of a connected workflow instead of another task.</div>
+            </article>
+
+            <article class="pain-card">
+              <div class="n">06 · Hiring pressure</div>
+              <h3>More workload should not automatically mean more headcount.</h3>
+              <p>Some work needs human judgement. Some work is simply repeated because that is how the process has always run.</p>
+              <div class="pain-to"><strong>With Invenio:</strong> add digital capacity first, then keep people focused on the work that truly needs people.</div>
+            </article>
+          </div>
+
+          <div class="why-close">
+            <p><b>In 2026, the useful question is not “Can AI do everything?”</b> It is: which work is your business still paying people to repeat manually that could be handled faster, more consistently and at greater scale?</p>
+            <a class="btn btn-primary" href="#solutions">Find the best starting point →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solutions">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><i></i> Choose your starting point</div>
+            <h2>Start with the pressure point costing you time, capacity or opportunities.</h2>
+          </div>
+          <p>You do not need to know which AI product to buy. Choose the work you want reduced, improved or connected. INVENIO is configured around the business process — not the other way around.</p>
+        </div>
+
+        <div class="role-tabs reveal" id="roleTabs"></div>
+        <div id="rolePanels" class="reveal"></div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="market-shell reveal">
+          <div class="market-copy">
+            <div class="eyebrow"><i></i><span id="marketKicker">Built for South African operating reality</span></div>
+            <h2 id="marketHeadline">Local business pressure. Practical AI capacity.</h2>
+            <div class="market-local" id="marketLocal">English + supported South African languages · WhatsApp, web and voice where configured</div>
+            <p id="marketBody">South African businesses often need faster customer response and more operating capacity without adding another full-time salary to every new stream of repetitive work. INVENIO focuses on practical automation that can be deployed remotely and expanded only where the value is clear.</p>
+
+            <div class="market-bullets" id="marketBullets"></div>
+
+            <div class="language-choice">
+              <strong>Preferred deployment language</strong>
+              <div class="language-pills" id="languagePills"></div>
             </div>
           </div>
 
-          <aside class="value-side">
+          <aside class="price-card">
             <div>
-              <div class="big-stat">5×</div>
-              <h3>One platform. Five immediate starting points.</h3>
-              <p>Receptionist, call centre, website chat, admin/clerk workflows and web operations can be deployed separately or connected into one coordinated system.</p>
+              <span class="tag">Indicative monthly scope</span>
+              <h3>Flexible pricing because the workload is never identical.</h3>
+              <div class="price-range" id="priceRange">R299 — R15,000+ / month</div>
+              <p id="priceCopy">Start small with a focused workflow, or connect several channels and systems as the business case grows.</p>
             </div>
-            <div class="manager-note"><strong>Manager view:</strong> choose the workload first. Invenio is configured around your business process—not the other way around.</div>
+            <div class="price-note" id="priceNote">We do not force every business into a rigid package. Final pricing follows the actual workload, channels, conversation/call volume, integrations, support and third-party provider costs.</div>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- EXACT SOLUTIONS -->
-    <section class="section" id="solutions">
+    <section class="section" id="operating-modes">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div>
-            <div class="eyebrow">Choose the workload</div>
-            <h2>Show a manager the job. Show them exactly what Invenio can handle.</h2>
+            <div class="eyebrow"><i></i> How Invenio can be structured</div>
+            <h2>One operation. The right AI structure behind it.</h2>
           </div>
-          <p>Switch between the roles below. The goal is instant relevance for the person visiting your site.</p>
+          <p>INVENIO can use one connected agent when a journey should stay together, or coordinated specialist agents when different responsibilities need separate rules, tools and knowledge.</p>
         </div>
 
-        <div class="role-shell">
-          <div class="role-tabs" role="tablist" aria-label="Invenio solutions">
-            <button class="role-tab active" data-role="reception"><b>AI Receptionist</b><span>01</span></button>
-            <button class="role-tab" data-role="callcentre"><b>AI Call Centre</b><span>02</span></button>
-            <button class="role-tab" data-role="chatbot"><b>Web Chatbot</b><span>03</span></button>
-            <button class="role-tab" data-role="admin"><b>Admin / Clerk</b><span>04</span></button>
-            <button class="role-tab" data-role="webmanager"><b>Web Manager</b><span>05</span></button>
-          </div>
-
-          <div>
-            <article class="role-panel active" data-panel="reception">
-              <div class="role-kicker">Front desk automation</div>
-              <h3>An AI receptionist that can actually move the customer forward.</h3>
-              <p class="lead">Answer common enquiries, speak with callers where voice is connected, capture details, check approved information, book or reschedule, send confirmations and hand over when a human should take over.</p>
-              <div class="task-grid">
-                <div class="task"><span class="tick">✓</span><span>Answer website, WhatsApp or voice enquiries from approved company knowledge.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Collect names, contact details, service needs and required context.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Check calendar availability and process approved bookings.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Send confirmations, reminders and next-step instructions.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Route urgent, sensitive or unusual cases to a person.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Keep the same tone, rules and process across every interaction.</span></div>
-              </div>
-              <div class="role-result">
-                <div class="result-box"><b>Best fit</b><span>Clinics, offices, service companies, property, hospitality and appointment-led businesses.</span></div>
-                <div class="result-box"><b>Manager benefit</b><span>Less front-desk pressure and fewer enquiries waiting unattended.</span></div>
-                <div class="result-box"><b>Human role</b><span>Take exceptions, judgment-heavy issues and escalations.</span></div>
-              </div>
-            </article>
-
-            <article class="role-panel" data-panel="callcentre">
-              <div class="role-kicker">High-volume customer operations</div>
-              <h3>Turn repetitive call-centre demand into parallel AI capacity.</h3>
-              <p class="lead">When telephony is connected, AI voice agents can handle approved inbound conversations, status questions, intake, bookings and routine service flows—while complex cases can move to human agents.</p>
-              <div class="task-grid">
-                <div class="task"><span class="tick">✓</span><span>Handle multiple customer conversations concurrently, within provider and infrastructure limits.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Carry natural back-and-forth conversations with supported voice models.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Run identity, intake or qualification steps according to your rules.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Check connected information where permissions allow it.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Create cases, update CRM records and trigger follow-up actions.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Escalate complaints, exceptions or high-risk situations to human staff.</span></div>
-              </div>
-              <div class="role-result">
-                <div class="result-box"><b>Best fit</b><span>Customer service, support desks, bookings, application/status enquiries and overflow.</span></div>
-                <div class="result-box"><b>Manager benefit</b><span>More operating capacity without forcing every routine request into the same human queue.</span></div>
-                <div class="result-box"><b>Human role</b><span>Focus on complex cases, retention, complaints and exceptions.</span></div>
-              </div>
-            </article>
-
-            <article class="role-panel" data-panel="chatbot">
-              <div class="role-kicker">Website conversion + support</div>
-              <h3>Turn your website from a brochure into an active service desk.</h3>
-              <p class="lead">The chatbot can answer from approved business knowledge, ask useful follow-up questions, qualify visitors, capture leads, start booking flows and push the conversation into your business systems.</p>
-              <div class="task-grid">
-                <div class="task"><span class="tick">✓</span><span>Answer services, requirements, hours, policies and process questions.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Guide visitors to the right service or next step.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Capture and qualify leads instead of sending everyone to a generic form.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Start bookings, document collection or handoff workflows.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Connect the website conversation to CRM, email, calendar or automation.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Update its approved knowledge when your business information changes.</span></div>
-              </div>
-              <div class="role-result">
-                <div class="result-box"><b>Best fit</b><span>Businesses losing visitors to unanswered questions or slow forms.</span></div>
-                <div class="result-box"><b>Manager benefit</b><span>More enquiries become structured, actionable conversations.</span></div>
-                <div class="result-box"><b>Human role</b><span>Join when a lead is ready or the request needs judgment.</span></div>
-              </div>
-            </article>
-
-            <article class="role-panel" data-panel="admin">
-              <div class="role-kicker">Back-office automation</div>
-              <h3>Let repetitive clerical work move from inbox to completion automatically.</h3>
-              <p class="lead">Invenio can read incoming information, extract what matters, update records, create routine outputs, route tasks, send follow-ups and monitor the next step across connected systems.</p>
-              <div class="task-grid">
-                <div class="task"><span class="tick">✓</span><span>Read and route incoming emails, forms and routine requests.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Extract details from messages or documents into structured fields.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Create or update CRM, spreadsheet or database records.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Generate routine summaries, confirmations, notices or task records.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Trigger reminders and follow-ups when a status changes or deadline arrives.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Require manager approval before sensitive actions.</span></div>
-              </div>
-              <div class="role-result">
-                <div class="result-box"><b>Best fit</b><span>Admin teams, clerks, operations, HR support and service desks.</span></div>
-                <div class="result-box"><b>Manager benefit</b><span>Less copy-paste work, less chasing and clearer process consistency.</span></div>
-                <div class="result-box"><b>Human role</b><span>Review exceptions, approvals and non-standard cases.</span></div>
-              </div>
-            </article>
-
-            <article class="role-panel" data-panel="webmanager">
-              <div class="role-kicker">Website + digital operations</div>
-              <h3>A website that is maintained as part of the operation—not left as a static brochure.</h3>
-              <p class="lead">Invenio can build or improve the front end, connect chat and forms to real workflows, maintain approved content, improve enquiry paths and keep the digital experience aligned with the business.</p>
-              <div class="task-grid">
-                <div class="task"><span class="tick">✓</span><span>Build or refresh professional pages and landing experiences.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Connect website forms to CRM, email, calendar or workflow actions.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Add AI chat, lead capture and booking journeys.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Update approved content, offers, FAQs and service information.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Improve conversion paths instead of sending every visitor to “contact us”.</span></div>
-                <div class="task"><span class="tick">✓</span><span>Keep the web layer connected to the same automation behind the business.</span></div>
-              </div>
-              <div class="role-result">
-                <div class="result-box"><b>Best fit</b><span>Companies whose website should actively create, route or resolve work.</span></div>
-                <div class="result-box"><b>Manager benefit</b><span>Less separation between the website and the operational systems behind it.</span></div>
-                <div class="result-box"><b>Human role</b><span>Approve brand, content and business-critical changes.</span></div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIDEOS PLACED WITH PURPOSE -->
-    <section class="section-tight">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">How the AI is structured</div>
-            <h2>One agent when context should stay together. Multiple agents when the work needs specialists.</h2>
-          </div>
-          <p>The videos are used as presentation visuals—not as fake recordings of a client deployment. Their purpose is to explain the operating model clearly.</p>
+        <div class="video-intro-note reveal">
+          These visuals illustrate the idea of coordinated AI work. They are not literal recordings of the hidden system running in the background.
         </div>
 
         <div class="video-stack">
-          <article class="video-story">
+          <article class="video-story reveal">
             <div class="video-copy">
-              <div class="number">MODEL 01 · ONE CONNECTED AGENT</div>
-              <h3>One customer. One continuous thread.</h3>
-              <p>A single configured agent can understand the request, keep context, take several approved actions and continue the same journey without forcing the customer to restart.</p>
+              <div class="number">INVENIO MODEL 01 · CONNECTED AGENT</div>
+              <h3>One customer journey. One continuous thread.</h3>
+              <p>Useful when the same context should move smoothly from understanding the request to taking approved actions and updating the right system.</p>
               <div class="mini-flow">
                 <span><b>01</b> Receive call / chat / message</span>
                 <span><b>02</b> Understand request + business context</span>
                 <span><b>03</b> Book / update / route / notify</span>
-                <span><b>04</b> Confirm result or hand over</span>
+                <span><b>04</b> Confirm the result or hand over</span>
               </div>
             </div>
+
             <div class="video-card">
-              <video data-autoplay autoplay muted loop playsinline webkit-playsinline preload="auto" poster="">
-                <source src="/grok-video-27f174ca-7c29-4b47-a987-c0411b84b742.mp4" type="video/mp4" />
+              <video data-autoplay autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Illustrative INVENIO connected AI agent visual">
+                <source src="/grok-video-27f174ca-7c29-4b47-a987-c0411b84b742.mp4" type="video/mp4">
               </video>
               <button class="tap-play" type="button" aria-label="Play video"><span>▶ Tap to play</span></button>
               <div class="video-overlay"></div>
-              <div class="video-meta"><div><b>Connected AI Agent</b><span>Illustrative operations visual</span></div><div class="status-chip">Looping</div></div>
+              <div class="video-meta">
+                <div><b>One connected INVENIO agent</b><span>Illustrative operating concept</span></div>
+                <div class="video-live">AUTO LOOP</div>
+              </div>
             </div>
           </article>
 
-          <article class="video-story reverse">
+          <article class="video-story reverse reveal">
             <div class="video-copy">
-              <div class="number">MODEL 02 · COORDINATED AI TEAM</div>
-              <h3>Different responsibilities. One operation.</h3>
-              <p>When the workload becomes broader, specialist agents can each handle their own rules and actions while passing the right context through the same coordinated workflow.</p>
+              <div class="number">INVENIO MODEL 02 · COORDINATED AI TEAM</div>
+              <h3>Different responsibilities. One coordinated operation.</h3>
+              <p>A stronger fit when reception, customer service, sales, admin or other areas need their own rules while still passing the right context through one connected workflow.</p>
               <div class="mini-flow">
                 <span><b>Front office</b> Reception + customer service</span>
-                <span><b>Back office</b> Admin + records + notifications</span>
                 <span><b>Revenue</b> Leads + qualification + follow-up</span>
-                <span><b>Web</b> Chat + forms + online journeys</span>
+                <span><b>Back office</b> Admin + records + notifications</span>
+                <span><b>Digital</b> Chat + forms + online journeys</span>
               </div>
             </div>
+
             <div class="video-card">
-              <video data-autoplay autoplay muted loop playsinline webkit-playsinline preload="auto" poster="">
-                <source src="/grok-video-ffd4e302-6142-44da-9766-6cc1a3c887b6.mp4" type="video/mp4" />
+              <video data-autoplay autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Illustrative INVENIO coordinated AI team visual">
+                <source src="/grok-video-ffd4e302-6142-44da-9766-6cc1a3c887b6.mp4" type="video/mp4">
               </video>
               <button class="tap-play" type="button" aria-label="Play video"><span>▶ Tap to play</span></button>
               <div class="video-overlay"></div>
-              <div class="video-meta"><div><b>Coordinated AI Workforce</b><span>Illustrative multi-agent visual</span></div><div class="status-chip">Looping</div></div>
+              <div class="video-meta">
+                <div><b>Coordinated INVENIO agents</b><span>Illustrative operating concept</span></div>
+                <div class="video-live">AUTO LOOP</div>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CALL CENTRE EXAMPLE -->
     <section class="section" id="how">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div>
-            <div class="eyebrow">Example workflow</div>
-            <h2>A call should not end with “someone will get back to you” when the system can resolve the next step now.</h2>
+            <div class="eyebrow"><i></i> From enquiry to completed next step</div>
+            <h2>The value is not just the conversation. It is what INVENIO can do next.</h2>
           </div>
-          <p>This is the operational story a call-centre or reception manager needs to see: receive, understand, act, update and escalate.</p>
+          <p>A well-connected system can receive the request, understand it, take an approved action, update the business system and bring a human in when judgement is required.</p>
         </div>
 
-        <div class="call-flow">
-          <div class="flow-grid">
-            <div class="flow-steps">
-              <div class="flow-step"><div class="n">01</div><div><b>Receive</b><p>Phone, website, WhatsApp, email or form starts the workflow.</p></div></div>
-              <div class="flow-step"><div class="n">02</div><div><b>Understand</b><p>AI identifies the request, asks needed questions and uses approved business knowledge.</p></div></div>
-              <div class="flow-step"><div class="n">03</div><div><b>Act</b><p>Book, qualify, update, create a case, route, notify or trigger the approved next step.</p></div></div>
-              <div class="flow-step"><div class="n">04</div><div><b>Update systems</b><p>Push the right information into CRM, calendar, database, email or internal workflow.</p></div></div>
-              <div class="flow-step"><div class="n">05</div><div><b>Escalate intelligently</b><p>Send exceptions to a person with the context already captured.</p></div></div>
-            </div>
-
-            <div class="phone-demo" aria-label="Illustrative AI receptionist conversation">
-              <div class="phone-top"><b>AI Receptionist · Inbound</b><span class="live-tag">● connected flow</span></div>
-              <div class="transcript">
-                <div class="bubble customer"><small>Customer</small>I need to move my appointment to Friday afternoon. Can you check what is available?</div>
-                <div class="bubble ai"><small>Invenio</small>Yes. I can help with that. I’ll first confirm the booking details, then I can check the approved calendar for Friday afternoon.</div>
-                <div class="bubble customer"><small>Customer</small>It’s under Thabo M. My email ends in @example.co.za.</div>
-                <div class="bubble ai"><small>Invenio</small>Thank you. I found the booking. There are two approved slots available Friday afternoon. Would you prefer the earlier or later one?</div>
-                <div class="bubble ai"><small>System action</small>Booking updated → confirmation prepared → calendar record updated.</div>
-              </div>
-              <div class="phone-bottom"><b>Outcome:</b> the customer gets a completed next step—not just another queue.</div>
-            </div>
-          </div>
+        <div class="flow-grid">
+          <article class="flow-card reveal"><div class="n">01</div><h3>Receive</h3><p>Phone, website, WhatsApp, email or a form starts the workflow.</p></article>
+          <article class="flow-card reveal"><div class="n">02</div><h3>Understand</h3><p>Use approved business knowledge, ask the required questions and keep the context.</p></article>
+          <article class="flow-card reveal"><div class="n">03</div><h3>Act</h3><p>Book, qualify, route, create a case, prepare an outbound follow-up or trigger another approved step.</p></article>
+          <article class="flow-card reveal"><div class="n">04</div><h3>Update</h3><p>Write the right information into CRM, calendar, database, email or another connected system.</p></article>
+          <article class="flow-card reveal"><div class="n">05</div><h3>Escalate</h3><p>Move sensitive, unusual or judgement-heavy work to a person with the useful context already collected.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- CONNECTION MAP -->
-    <section class="section-tight">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Connected, not isolated</div>
-            <h2>The conversation is only the front door. The value is what happens behind it.</h2>
-          </div>
-          <p>Invenio becomes useful when it can move information between the channels customers use and the systems your staff already work in.</p>
-        </div>
-
-        <div class="map-shell">
-          <div class="map-grid">
-            <div class="map-col">
-              <div class="node"><b>Phone calls</b><span>VOICE</span></div>
-              <div class="node"><b>Website chat</b><span>WEB</span></div>
-              <div class="node"><b>WhatsApp</b><span>MSG</span></div>
-              <div class="node"><b>Email / forms</b><span>INPUT</span></div>
-            </div>
-
-            <div class="core-node">
-              <div class="core-orb"></div>
-              <b>INVENIO AI OPERATIONS</b>
-              <p>Understand → apply rules → use knowledge → take action → request approval → hand off.</p>
-            </div>
-
-            <div class="map-col">
-              <div class="node"><b>CRM / records</b><span>UPDATE</span></div>
-              <div class="node"><b>Calendar / bookings</b><span>ACT</span></div>
-              <div class="node"><b>Notifications</b><span>SEND</span></div>
-              <div class="node"><b>Human team</b><span>ESCALATE</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INTERACTIVE DEMO -->
     <section class="section" id="preview">
       <div class="wrap preview-shell">
-        <div class="preview-copy">
-          <div class="eyebrow"><span class="dot"></span> Interactive capability preview</div>
-          <h2>Ask the questions a manager would actually ask.</h2>
-          <p>This guided preview is intentionally transparent: it demonstrates how the offer is explained before a real AI endpoint is connected to the site.</p>
+        <div class="preview-copy reveal">
+          <div class="eyebrow"><i></i> Explore the fit</div>
+          <h2>Ask INVENIO about the workload your business wants to reduce.</h2>
+          <p>Describe the problem — reception, calls, admin, CRM, HR, web, follow-up or something custom. The preview explains where INVENIO could fit, what needs a connection and where a human should stay involved.</p>
+
           <div class="prompt-list">
-            <button class="prompt-btn" data-question="Can you answer several calls at once?">Several calls at once?</button>
-            <button class="prompt-btn" data-question="Can you update our CRM after a conversation?">Update CRM?</button>
-            <button class="prompt-btn" data-question="What happens when you cannot resolve something?">Human handoff?</button>
-            <button class="prompt-btn" data-question="Can you manage repetitive admin work?">Admin work?</button>
+            <button class="prompt-btn" data-question="We miss calls after hours. What could Invenio do?">We miss calls after hours</button>
+            <button class="prompt-btn" data-question="Our team spends too much time on admin. What could be automated?">Too much admin</button>
+            <button class="prompt-btn" data-question="Our leads go cold because follow-up is slow. How can Invenio help?">Leads go cold</button>
+            <button class="prompt-btn" data-question="Can Invenio help with HR administration and interview coordination?">HR workload</button>
           </div>
         </div>
 
-        <div class="chat-window">
-          <div class="chat-head"><b>Talk to Invenio</b><span>Guided preview · not a live client deployment</span></div>
+        <div class="chat-window reveal">
+          <div class="chat-head">
+            <b>Talk to INVENIO</b>
+            <span>Capability preview · not a live client system</span>
+          </div>
           <div class="chat-body" id="chatBody">
-            <div class="chat-msg bot">Tell me what your team is hiring for—or the repetitive workload you want to reduce. I’ll show you where Invenio could fit.</div>
+            <div class="chat-msg bot">What part of your business is creating the most repetitive work, slow response or missed opportunities? Choose a prompt or type it below.</div>
           </div>
           <form class="chat-input" id="chatForm">
-            <input id="chatInput" autocomplete="off" placeholder="Ask about calls, reception, admin, chatbot or web…" />
-            <button aria-label="Send">→</button>
+            <input id="chatInput" autocomplete="off" placeholder="Ask about calls, admin, CRM, HR, web or pricing…">
+            <button aria-label="Send message">→</button>
           </form>
-          <div class="preview-disclaimer">For production, connect this interface to your real n8n / AI endpoint and company knowledge base.</div>
         </div>
       </div>
     </section>
 
-    <!-- DEPLOY CTA -->
-    <section class="section-tight" id="deploy">
-      <div class="wrap">
-        <div class="cta-box">
-          <div>
-            <div class="eyebrow">Start with the workload</div>
-            <h2>Before you add another role to the queue, show us the work.</h2>
-            <p>Send the vacancy, call flow, admin process, website or customer-service problem. Invenio can map what should stay human, what can be automated and where approvals should remain.</p>
+    <section class="section-tight" id="contact">
+      <div class="wrap contact-shell reveal">
+        <div class="contact-copy">
+          <div class="eyebrow"><i></i> Start with the business problem</div>
+          <h2>Not sure what you need? That is fine.</h2>
+          <p>Tell us how the business currently operates, where work is piling up, where customers wait, or what you are hiring for. INVENIO can identify where AI, automation or digital improvement could create the most practical value.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:invenio.ai.solutions@gmail.com">Email Invenio</a>
           </div>
 
-          <form class="cta-form" id="leadForm">
-            <input name="company" placeholder="Company" required />
-            <select name="role" required>
-              <option value="">What do you want to improve?</option>
-              <option>AI Receptionist</option>
-              <option>AI Call Centre</option>
-              <option>Web Chatbot</option>
-              <option>Admin / Clerk Automation</option>
-              <option>Web Operations</option>
-              <option>Multiple areas</option>
-            </select>
-            <input name="contact" class="full" placeholder="Work email or preferred contact" required />
-            <textarea name="workload" placeholder="Describe the workload, vacancy, queue or process you want Invenio to study…" required></textarea>
-            <button class="btn btn-primary full" type="submit">Request a workload map →</button>
-            <div class="form-status" id="formStatus">Connect this form to your existing n8n lead webhook in the CONFIG section of the script below.</div>
-          </form>
+          <div class="trust-list">
+            <div class="trust-item"><i>✓</i><span><strong>Virtual by design.</strong> Strategy, previews, implementation and support can be handled remotely.</span></div>
+            <div class="trust-item"><i>✓</i><span><strong>Business results first. Technology second.</strong> Start with the workload, not the buzzword.</span></div>
+            <div class="trust-item"><i>✓</i><span><strong>No paying for undelivered promises.</strong> Agreed project deliverables are defined first; undelivered agreed work is not billed as delivered work.</span></div>
+          </div>
         </div>
+
+        <!-- Existing static-site approach: FormSubmit sends enquiries to the INVENIO email inbox. -->
+        <form class="contact-form" action="https://formsubmit.co/invenio.ai.solutions@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New INVENIO website enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="Market" id="formMarket" value="South Africa">
+          <input type="hidden" name="Preferred deployment language" id="formLanguage" value="English">
+
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="Name" required placeholder="Your name">
+          </div>
+
+          <div class="field">
+            <label for="company">Company</label>
+            <input id="company" name="Company" required placeholder="Business / organisation">
+          </div>
+
+          <div class="field">
+            <label for="email">Business email</label>
+            <input id="email" type="email" name="Business email" required placeholder="you@company.com">
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="Phone / WhatsApp" placeholder="Preferred contact number">
+          </div>
+
+          <div class="field">
+            <label for="size">Business size</label>
+            <select id="size" name="Business size">
+              <option value="">Choose</option>
+              <option>1–5 people</option>
+              <option>6–20 people</option>
+              <option>21–100 people</option>
+              <option>101–500 people</option>
+              <option>500+ people</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="contactMethod">Preferred contact method</label>
+            <select id="contactMethod" name="Preferred contact method">
+              <option>Email</option>
+              <option>WhatsApp</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="solution">Solution interested in</label>
+            <select id="solution" name="Solution interested in">
+              <option>AI Receptionist</option>
+              <option>AI Chatbot</option>
+              <option>AI Voice / Call Centre</option>
+              <option>Clerical / Admin Automation</option>
+              <option>HR Automation</option>
+              <option>CRM & Lead Automation</option>
+              <option>Sales Automation</option>
+              <option>Internal AI System</option>
+              <option>Website / Digital Improvement</option>
+              <option>AI Marketing & Growth</option>
+              <option>AI Strategy / Guidance</option>
+              <option>Custom Business Automation</option>
+              <option selected>I am not sure — analyse my business</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="time">Preferred contact time</label>
+            <input id="time" name="Preferred contact time" placeholder="e.g. mornings / after 14:00">
+          </div>
+
+          <div class="field full">
+            <label for="problem">What is the business problem?</label>
+            <textarea id="problem" name="Business problem" required placeholder="Describe the queue, workload, missed enquiries, repetitive process, vacancy or customer-service problem you want INVENIO to study."></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button class="btn btn-primary" type="submit">Request an INVENIO assessment →</button>
+          </div>
+
+          <div class="form-small">By submitting, you are asking INVENIO AI SOLUTIONS to contact you about this enquiry. Share only information necessary for the assessment.</div>
+        </form>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-grid">
-      <small><strong style="color:#dce4de">INVENIO AI SOLUTIONS</strong><br />AI receptionist · call centre · chatbot · admin automation · web operations</small>
-      <div class="footer-links"><a href="#solutions">Solutions</a><a href="#how">How it works</a><a href="#deploy">Request plan</a></div>
+      <div class="footer-brand">
+        <img class="footer-logo" src="invenio-logo.png" alt="INVENIO AI SOLUTIONS">
+        <div class="footer-copy">Powering Your Business Through Intelligence.<br>AI reception · voice · chat · admin · CRM · HR · sales · web operations</div>
+      </div>
+      <div class="footer-links">
+        <a href="#why">Why Invenio</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // ============================================================
-    // CONFIG — replace this one value with your production n8n webhook.
-    // Example: https://your-n8n-domain.com/webhook/invenio-lead
-    // Leave blank while testing the front end.
-    // ============================================================
-    const LEAD_WEBHOOK_URL = "";
+    /* ---------------------------------------------------------
+       CONFIG
+       Leave empty to keep the polished guided capability preview.
+       Add your real n8n chat webhook later if you want a live AI.
+    --------------------------------------------------------- */
+    const INVENIO_CHAT_ENDPOINT = "";
 
-    // Mobile navigation
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    const WHATSAPP_URL =
+      "https://wa.me/27604868989?text=" +
+      encodeURIComponent("Hello INVENIO AI SOLUTIONS. I would like to discuss what AI or automation could improve in my business.");
 
-    // Hero operations animation — illustrative UI only.
-    const laneMessages = {
-      reception:["Answering inbound enquiry","Checking approved booking slots","Sending booking confirmation","Routing exception to team"],
-      calls:["Resolving service request","Running verification questions","Creating customer case","Updating call outcome"],
-      chat:["Qualifying website visitor","Answering service question","Starting booking workflow","Capturing lead context"],
-      admin:["Updating customer record","Reading incoming request","Extracting form details","Triggering follow-up task"],
-      web:["Routing new form enquiry","Refreshing approved content","Connecting lead to workflow","Checking conversion path"]
+    document.querySelectorAll(".whatsapp-link").forEach(a => a.href = WHATSAPP_URL);
+
+    /* MARKET-SPECIFIC POSITIONING — intentionally not simple currency conversion. */
+    const markets = {
+      "south-africa":{
+        name:"South Africa",
+        flag:"🇿🇦",
+        top:'<strong>Virtual by design.</strong> We help South African businesses use AI to operate smarter, leaner and more consistently — while keeping human judgement where it matters.',
+        eyebrow:"AI operations for South African business",
+        hero:'Keep reception, calls, chat & admin moving — <span class="accent">even when your team is busy or offline.</span>',
+        lead:'INVENIO deploys AI systems that can <strong>answer customers, handle inbound and approved outbound calls, run website chat, process repetitive admin, update business systems and escalate to your team when human judgement is needed.</strong> The goal is simple: faster response, less repetitive workload and more operating capacity.',
+        trust:'<b>24/7 where configured:</b> approved workflows can keep running after hours, on weekends and public holidays, with human escalation at the points your business chooses.',
+        complianceTitle:"POPIA-aware deployment",
+        complianceCopy:"South African workflows can be configured around data minimisation, controlled access, security safeguards and human oversight.",
+        kicker:"Built for South African operating reality",
+        headline:"More digital demand should not automatically mean more payroll.",
+        local:"English + supported South African languages · WhatsApp, web and voice where configured",
+        body:"South African businesses often need faster customer response and more operating capacity without adding another full-time salary to every new stream of repetitive work. INVENIO focuses on practical automation that can be deployed remotely and expanded only where the value is clear.",
+        bullets:[
+          "After-hours response, booking and lead capture",
+          "Inbound + approved outbound voice workflows",
+          "WhatsApp, web, email, CRM and calendar connections",
+          "Human approval and escalation at chosen steps"
+        ],
+        languages:["English","isiZulu","isiXhosa","Afrikaans","Sesotho","Other"],
+        price:"R299 — R15,000+ / month",
+        priceCopy:"A focused digital workflow can start small. Deeper voice, CRM, HR, sales or multi-system operations are scoped around the real workload.",
+        priceNote:"Indicative South African scope, not a fixed package promise. Final pricing depends on channels, volume, integrations, support, complexity and third-party AI/voice/messaging costs."
+      },
+
+      "kuwait":{
+        name:"Kuwait",
+        flag:"🇰🇼",
+        top:'<strong>Digital-first AI capacity for Kuwait.</strong> Premium response speed, bilingual service and connected follow-up without building another large support layer.',
+        eyebrow:"AI operations for Kuwait · تشغيل ذكي للأعمال",
+        hero:'Faster customer response. Stronger follow-up. <span class="accent">Arabic or English, day and night.</span>',
+        lead:'INVENIO can support <strong>premium customer handling across web, WhatsApp, voice and business workflows</strong> — including inbound enquiries, approved outbound follow-up, qualification, booking, CRM updates and escalation to your team when needed.',
+        trust:'<b>Designed for premium service:</b> fast response, bilingual customer journeys, 24/7 approved workflows and clear human handoff where the brand wants personal attention.',
+        complianceTitle:"Controlled data handling",
+        complianceCopy:"Permissions, access, handoff rules and data flow are configured around the business and the connected providers selected for the deployment.",
+        kicker:"Built for Kuwait's premium service market",
+        headline:"In a high-service market, speed and polish become part of the brand.",
+        local:"العربية + English · WhatsApp + web + voice where configured",
+        body:"Kuwait is positioned around service quality, bilingual customer experience and fast lead handling rather than cheap automation. INVENIO can help premium businesses respond faster, keep follow-up consistent and connect front-office conversations to real business actions.",
+        bullets:[
+          "Arabic + English customer journeys",
+          "Premium after-hours reception and lead response",
+          "Qualification, booking and approved outbound follow-up",
+          "CRM, calendar and workflow integration"
+        ],
+        languages:["English","العربية"],
+        price:"KWD 25 — 650+ / month",
+        priceCopy:"Small bilingual assistants can start at the lower end; voice-heavy and multi-system operations move higher as volume, integrations and service depth increase.",
+        priceNote:"Indicative Kuwait market-positioned scope, not a rand conversion. Final pricing follows workload, channels, bilingual requirements, call/conversation volume, integrations and third-party provider costs."
+      },
+
+      "oman":{
+        name:"Oman",
+        flag:"🇴🇲",
+        top:'<strong>Digital-first AI operations for Oman.</strong> Reliable bilingual service capacity with clear control, continuity and practical business integration.',
+        eyebrow:"AI operations for Oman · أتمتة ذكية للأعمال",
+        hero:'Reliable customer response and admin automation — <span class="accent">Arabic or English, with human control where it matters.</span>',
+        lead:'INVENIO can support <strong>customer enquiries, inbound and approved outbound voice, website chat, bookings, routine admin, CRM updates and follow-up</strong> while keeping sensitive or judgement-heavy work with your team.',
+        trust:'<b>Built for continuity:</b> approved workflows can keep operating after hours while permissions, escalation and business rules remain under your control.',
+        complianceTitle:"Permission-led operation",
+        complianceCopy:"The deployment can be structured around defined permissions, limited access, approval steps and the data-handling requirements of the selected systems.",
+        kicker:"Built for Oman's service and SME market",
+        headline:"Automate the routine work without losing control of the customer experience.",
+        local:"العربية + English · web, WhatsApp and voice where configured",
+        body:"For Oman, the emphasis is dependable bilingual service, clear business control and practical automation. Start with one recurring problem — customer response, booking, admin or follow-up — and expand only when the connected workflow proves useful.",
+        bullets:[
+          "Arabic + English service journeys",
+          "After-hours enquiries, bookings and routing",
+          "Admin, CRM and follow-up automation",
+          "Clear approvals and human escalation"
+        ],
+        languages:["English","العربية"],
+        price:"OMR 12 — 500+ / month",
+        priceCopy:"Focused chatbot and messaging workflows can start lower; voice, deeper integrations and multi-department automation are scoped higher.",
+        priceNote:"Indicative Oman market-positioned scope, not a currency conversion. Final pricing depends on conversation/call volume, channels, integrations, support and the providers selected."
+      },
+
+      "guyana":{
+        name:"Guyana",
+        flag:"🇬🇾",
+        top:'<strong>Digital-first AI capacity for Guyana.</strong> Help a growing business respond faster, follow up consistently and add operating capacity without adding payroll at the same pace.',
+        eyebrow:"AI operations for growing Guyanese businesses",
+        hero:'Give customer response and back-office work more capacity — <span class="accent">without making every growth step another hire.</span>',
+        lead:'INVENIO can help businesses <strong>answer enquiries, run website chat, support inbound and approved outbound calls, qualify leads, process repetitive admin, update systems and keep follow-up moving</strong> even when the team is busy.',
+        trust:'<b>Built to scale with the business:</b> start with one high-friction workflow and connect more channels, systems or follow-up only when the need is clear.',
+        complianceTitle:"Controlled business workflows",
+        complianceCopy:"Access, permissions, handoffs and connected actions are configured around the specific business process rather than switched on indiscriminately.",
+        kicker:"Built for a growing service economy",
+        headline:"More enquiries should create opportunity — not another queue.",
+        local:"English-first · web, WhatsApp, email and voice where configured",
+        body:"Guyana's growth creates a practical opening for leaner customer response and administration. INVENIO is positioned to help businesses capture more enquiries, reduce repetitive office work and keep follow-up consistent without overbuilding the team too early.",
+        bullets:[
+          "After-hours enquiry capture and qualification",
+          "Web, WhatsApp, email and optional voice workflows",
+          "Lead follow-up, booking and CRM updates",
+          "Remote deployment with flexible scope"
+        ],
+        languages:["English","Other"],
+        price:"GYD 8,000 — 250,000+ / month",
+        priceCopy:"A focused website or messaging assistant can sit at the lower end. Custom AI agents, voice, CRM and multi-system operations are scoped according to complexity and usage.",
+        priceNote:"Indicative Guyana market-positioned scope, not a rand conversion. Final pricing follows workload, channels, integrations, monthly usage, support and third-party provider costs."
+      }
     };
+
+    const solutions = [
+      {
+        id:"reception",
+        tab:"AI Receptionist",
+        label:"Front-desk automation",
+        title:"An INVENIO AI receptionist that can move the customer forward.",
+        lead:"Use AI for routine enquiries, appointment handling, lead capture and first-line customer response while keeping unusual, sensitive or judgement-heavy work with people.",
+        tasks:[
+          "Answer website, WhatsApp or voice enquiries from approved business knowledge.",
+          "Capture names, contact details, service needs and useful context.",
+          "Check approved availability and handle booking or rescheduling workflows.",
+          "Send confirmations, reminders and next-step instructions.",
+          "Support inbound calls and approved outbound follow-up where voice is connected.",
+          "Escalate urgent, sensitive or unusual cases to a person."
+        ],
+        money:"Reduces repetitive front-desk workload and after-hours staffing pressure.",
+        revenue:"Captures more enquiries, bookings and follow-up before opportunities go cold.",
+        human:"People keep the walk-ins, exceptions, relationships and judgement-heavy cases."
+      },
+      {
+        id:"calls",
+        tab:"AI Call Centre",
+        label:"Voice + customer operations",
+        title:"Turn repetitive call demand into parallel INVENIO capacity.",
+        lead:"When telephony is connected, AI voice agents can handle approved inbound and outbound conversations, intake, qualification, status questions, reminders and routine service flows.",
+        tasks:[
+          "Handle multiple conversations concurrently within provider/infrastructure limits.",
+          "Carry natural back-and-forth conversations with supported voice models.",
+          "Run approved verification, intake or qualification steps.",
+          "Create cases, update CRM records and trigger follow-up.",
+          "Make approved outbound reminders, reactivation or follow-up calls.",
+          "Escalate complaints, exceptions and higher-risk situations to human staff."
+        ],
+        money:"Reduces the amount of routine call handling that requires one person per conversation.",
+        revenue:"Recovers missed demand, supports faster lead response and keeps follow-up active.",
+        human:"Agents focus on complex service, retention, negotiation, complaints and exceptions."
+      },
+      {
+        id:"chat",
+        tab:"Web Chatbot",
+        label:"Website conversion + support",
+        title:"Turn the website from a brochure into an active INVENIO service channel.",
+        lead:"The chatbot can answer from approved business knowledge, qualify visitors, capture leads, start bookings and connect the conversation to the systems behind the business.",
+        tasks:[
+          "Answer services, requirements, hours, process and policy questions.",
+          "Guide visitors to the right service or next step.",
+          "Capture and qualify leads instead of sending everyone to a generic form.",
+          "Start booking, document-collection or handoff workflows.",
+          "Connect conversations to CRM, email, calendar or automation.",
+          "Keep approved knowledge aligned when the business information changes."
+        ],
+        money:"Reduces repetitive website enquiries and basic support workload.",
+        revenue:"Turns more visitors into structured enquiries, leads, bookings and sales opportunities.",
+        human:"People step in when a lead is ready, high-value or needs judgement."
+      },
+      {
+        id:"admin",
+        tab:"Admin / Clerk",
+        label:"Back-office automation",
+        title:"Move repetitive clerical work from inbox to completion with INVENIO.",
+        lead:"INVENIO can read incoming information, extract what matters, update records, create routine outputs, route tasks, send follow-ups and monitor the next step across connected systems.",
+        tasks:[
+          "Read and route incoming emails, forms and routine requests.",
+          "Extract details from messages or documents into structured fields.",
+          "Create or update CRM, spreadsheet or database records.",
+          "Generate routine summaries, confirmations, notices or task records.",
+          "Trigger reminders and follow-ups when status or deadlines change.",
+          "Require human approval before sensitive actions."
+        ],
+        money:"Cuts copy-paste work, repetitive checking, chasing and manual data movement.",
+        revenue:"Faster processing can shorten response time and keep customer-facing work from stalling.",
+        human:"Staff review exceptions, approvals and non-standard cases."
+      },
+      {
+        id:"hr",
+        tab:"HR Automation",
+        label:"People operations",
+        title:"Reduce repetitive HR administration without removing human judgement from people decisions.",
+        lead:"Use INVENIO for approved candidate questions, pre-screening steps, document collection, interview coordination, reminders and routine employee requests.",
+        tasks:[
+          "Answer approved candidate FAQs and role requirements.",
+          "Collect application information and required documents.",
+          "Run rule-based pre-screening questions without making unsupported decisions.",
+          "Coordinate interview availability and reminders.",
+          "Route candidates or employee requests to the correct person.",
+          "Keep human approval for hiring, sensitive matters and judgement-heavy decisions."
+        ],
+        money:"Reduces coordination, repetitive candidate communication and routine HR admin.",
+        revenue:"Main value is time and process efficiency; better response can also improve candidate experience.",
+        human:"HR retains hiring decisions, sensitive conversations, fairness review and people judgement."
+      },
+      {
+        id:"sales",
+        tab:"Sales + CRM",
+        label:"Lead + revenue operations",
+        title:"Do not let good leads disappear between the first enquiry and the next follow-up.",
+        lead:"INVENIO can respond quickly, qualify leads using your criteria, update CRM, trigger reminders, re-engage suitable prospects and route sales-ready opportunities.",
+        tasks:[
+          "Capture and qualify leads from website, WhatsApp, email or calls.",
+          "Update stages, notes and customer records automatically.",
+          "Trigger approved follow-up and lead-nurture steps.",
+          "Support approved outbound calling or messaging where configured.",
+          "Book appointments or route qualified opportunities to sales staff.",
+          "Re-engage older leads according to business rules."
+        ],
+        money:"Reduces manual CRM administration and repetitive chasing.",
+        revenue:"Improves speed-to-lead, consistency of follow-up and recovery of opportunities that would otherwise go cold.",
+        human:"Salespeople focus on relationships, negotiation, closing and high-value judgement."
+      },
+      {
+        id:"web",
+        tab:"Web Operations",
+        label:"Website + digital operations",
+        title:"Make the website part of the operation — not a static brochure.",
+        lead:"INVENIO can build or improve the front end, connect forms and chat to real workflows, maintain approved content and improve the path from visitor to business action.",
+        tasks:[
+          "Build or refresh professional pages and landing experiences.",
+          "Improve mobile usability and conversion-focused customer journeys.",
+          "Connect forms to CRM, email, calendar or workflows.",
+          "Add AI chat, lead capture and booking journeys.",
+          "Update approved FAQs, offers and service information.",
+          "Connect the website to the same automation used behind the business."
+        ],
+        money:"Reduces friction between the website, staff inboxes and internal systems.",
+        revenue:"Improves conversion paths and gives visitors more ways to become real enquiries or customers.",
+        human:"The business approves brand, content, offers and business-critical changes."
+      }
+    ];
+
+    /* NAV / MARKET */
+    const marketWrap = document.getElementById("marketWrap");
+    const marketButton = document.getElementById("marketButton");
+    const marketMenu = document.getElementById("marketMenu");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    marketButton.addEventListener("click", () => {
+      const open = marketWrap.classList.toggle("open");
+      marketButton.setAttribute("aria-expanded", String(open));
+    });
+
+    document.addEventListener("click", e => {
+      if(!marketWrap.contains(e.target)){
+        marketWrap.classList.remove("open");
+        marketButton.setAttribute("aria-expanded","false");
+      }
+    });
+
+    menuBtn.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.textContent = open ? "×" : "☰";
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMobileMenu));
+    function closeMobileMenu(){
+      mobileMenu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuBtn.setAttribute("aria-expanded","false");
+      menuBtn.textContent = "☰";
+    }
+
+    let currentMarket = new URLSearchParams(location.search).get("market");
+    if(!markets[currentMarket]) currentMarket = "south-africa";
+    let currentLanguage = markets[currentMarket].languages[0];
+
+    function renderLanguagePills(m){
+      const host = document.getElementById("languagePills");
+      host.innerHTML = "";
+      m.languages.forEach((lang,idx) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "language-pill" + (idx===0 ? " active" : "");
+        b.textContent = lang;
+        b.addEventListener("click", () => {
+          currentLanguage = lang;
+          host.querySelectorAll(".language-pill").forEach(x => x.classList.toggle("active",x===b));
+          document.getElementById("formLanguage").value = lang;
+        });
+        host.appendChild(b);
+      });
+      currentLanguage = m.languages[0];
+      document.getElementById("formLanguage").value = currentLanguage;
+    }
+
+    function applyMarket(key){
+      currentMarket = key;
+      const m = markets[key];
+
+      document.getElementById("marketFlag").textContent = m.flag;
+      document.getElementById("marketName").textContent = m.name;
+      document.getElementById("topLine").innerHTML = m.top;
+      document.getElementById("heroEyebrow").textContent = m.eyebrow;
+      document.getElementById("heroTitle").innerHTML = m.hero;
+      document.getElementById("heroLead").innerHTML = m.lead;
+      document.getElementById("heroTrust").innerHTML = m.trust;
+      document.getElementById("complianceTitle").textContent = m.complianceTitle;
+      document.getElementById("complianceCopy").textContent = m.complianceCopy;
+
+      document.getElementById("marketKicker").textContent = m.kicker;
+      document.getElementById("marketHeadline").textContent = m.headline;
+      document.getElementById("marketLocal").textContent = m.local;
+      document.getElementById("marketBody").textContent = m.body;
+      document.getElementById("priceRange").textContent = m.price;
+      document.getElementById("priceCopy").textContent = m.priceCopy;
+      document.getElementById("priceNote").textContent = m.priceNote;
+      document.getElementById("formMarket").value = m.name;
+
+      const bullets = document.getElementById("marketBullets");
+      bullets.innerHTML = "";
+      m.bullets.forEach(x => {
+        const d = document.createElement("div");
+        d.className = "market-bullet";
+        d.textContent = x;
+        bullets.appendChild(d);
+      });
+
+      renderLanguagePills(m);
+
+      document.querySelectorAll("[data-market]").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.market === key);
+      });
+
+      const url = new URL(location.href);
+      url.searchParams.set("market",key);
+      history.replaceState({}, "", url);
+
+      marketWrap.classList.remove("open");
+      marketButton.setAttribute("aria-expanded","false");
+      closeMobileMenu();
+    }
+
+    document.querySelectorAll("[data-market]").forEach(btn => {
+      btn.addEventListener("click", () => applyMarket(btn.dataset.market));
+    });
+
+    applyMarket(currentMarket);
+
+    /* LIVE OPERATIONS ANIMATION */
+    const laneMessages = {
+      reception:[
+        "Answering inbound enquiry",
+        "Checking approved availability",
+        "Preparing booking confirmation",
+        "Routing exception to team"
+      ],
+      outbound:[
+        "Preparing approved follow-up",
+        "Calling back missed enquiry",
+        "Sending reminder workflow",
+        "Logging contact outcome"
+      ],
+      calls:[
+        "Resolving service request",
+        "Running intake questions",
+        "Creating customer case",
+        "Updating call outcome"
+      ],
+      chat:[
+        "Qualifying website visitor",
+        "Answering service question",
+        "Starting booking workflow",
+        "Capturing lead context"
+      ],
+      admin:[
+        "Updating customer record",
+        "Reading incoming request",
+        "Extracting form details",
+        "Triggering follow-up task"
+      ]
+    };
+
     let laneTick = 0;
     setInterval(() => {
       laneTick++;
-      document.querySelectorAll('[data-lane]').forEach(el => {
+      document.querySelectorAll("[data-lane]").forEach(el => {
         const list = laneMessages[el.dataset.lane];
-        el.style.opacity = .35;
+        el.style.opacity = ".28";
         setTimeout(() => {
           el.textContent = list[laneTick % list.length];
-          el.style.opacity = 1;
-        }, 180);
+          el.style.opacity = "1";
+        },180);
       });
-    }, 2800);
+    },2700);
 
-    // Session clock (page-session time, not a fake production metric).
-    const clock = document.getElementById('sessionClock');
-    let seconds = 0;
+    let sessionSeconds = 0;
+    const sessionClock = document.getElementById("sessionClock");
     setInterval(() => {
-      seconds++;
-      const m = String(Math.floor(seconds / 60)).padStart(2,'0');
-      const s = String(seconds % 60).padStart(2,'0');
-      clock.textContent = `${m}:${s}`;
+      sessionSeconds++;
+      const m = String(Math.floor(sessionSeconds/60)).padStart(2,"0");
+      const s = String(sessionSeconds%60).padStart(2,"0");
+      sessionClock.textContent = `${m}:${s}`;
     },1000);
 
-    // Solution tabs
-    const tabs = document.querySelectorAll('.role-tab');
-    const panels = document.querySelectorAll('.role-panel');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const role = tab.dataset.role;
-        tabs.forEach(t => t.classList.toggle('active', t === tab));
-        panels.forEach(p => p.classList.toggle('active', p.dataset.panel === role));
-      });
+    /* SOLUTION TABS */
+    const tabsHost = document.getElementById("roleTabs");
+    const panelsHost = document.getElementById("rolePanels");
+
+    solutions.forEach((s,idx) => {
+      const tab = document.createElement("button");
+      tab.type = "button";
+      tab.className = "role-tab" + (idx===0 ? " active" : "");
+      tab.dataset.role = s.id;
+      tab.textContent = s.tab;
+      tabsHost.appendChild(tab);
+
+      const panel = document.createElement("article");
+      panel.className = "role-panel" + (idx===0 ? " active" : "");
+      panel.dataset.panel = s.id;
+      panel.innerHTML = `
+        <div class="role-label">${s.label}</div>
+        <h3>${s.title}</h3>
+        <p class="lead">${s.lead}</p>
+        <div class="task-grid">${s.tasks.map(t => `<div class="task"><i>✓</i><span>${t}</span></div>`).join("")}</div>
+        <div class="result-grid">
+          <div class="result-box"><b>How it can save money</b><span>${s.money}</span></div>
+          <div class="result-box"><b>How it can create revenue opportunity</b><span>${s.revenue}</span></div>
+          <div class="result-box"><b>Where humans stay strongest</b><span>${s.human}</span></div>
+        </div>`;
+      panelsHost.appendChild(panel);
     });
 
-    // ------------------------------------------------------------
-    // VIDEO AUTOPLAY FIX
-    // Browsers generally permit autoplay only when video is muted.
-    // These videos use autoplay + muted + playsinline and we retry
-    // playback after page load / visibility / first user interaction.
-    // ------------------------------------------------------------
-    const videos = [...document.querySelectorAll('video[data-autoplay]')];
+    tabsHost.addEventListener("click", e => {
+      const tab = e.target.closest(".role-tab");
+      if(!tab) return;
+      tabsHost.querySelectorAll(".role-tab").forEach(t => t.classList.toggle("active",t===tab));
+      panelsHost.querySelectorAll(".role-panel").forEach(p => p.classList.toggle("active",p.dataset.panel===tab.dataset.role));
+    });
+
+    /* VIDEO AUTOPLAY — aggressive but honest: browsers/network can still override. */
+    const videos = [...document.querySelectorAll("video[data-autoplay]")];
 
     async function tryPlay(video){
       video.muted = true;
       video.defaultMuted = true;
-      video.setAttribute('muted','');
-      video.setAttribute('playsinline','');
-      const card = video.closest('.video-card');
+      video.setAttribute("muted","");
+      video.setAttribute("playsinline","");
+      const card = video.closest(".video-card");
       try{
-        await video.play();
-        card?.classList.remove('needs-play');
+        const result = video.play();
+        if(result) await result;
+        card?.classList.remove("needs-play");
       }catch(err){
-        card?.classList.add('needs-play');
+        card?.classList.add("needs-play");
       }
     }
 
     videos.forEach(video => {
-      video.addEventListener('loadedmetadata', () => tryPlay(video), {once:true});
-      video.addEventListener('canplay', () => tryPlay(video), {once:true});
-      video.addEventListener('error', () => video.closest('.video-card')?.classList.add('needs-play'));
-      const card = video.closest('.video-card');
-      card?.querySelector('.tap-play')?.addEventListener('click', () => tryPlay(video));
+      video.load();
+      ["loadeddata","canplay","canplaythrough"].forEach(evt => {
+        video.addEventListener(evt, () => tryPlay(video), {once:true});
+      });
+      video.addEventListener("error", () => video.closest(".video-card")?.classList.add("needs-play"));
+      video.closest(".video-card")?.querySelector(".tap-play")?.addEventListener("click", () => tryPlay(video));
+      tryPlay(video);
     });
 
-    window.addEventListener('load', () => videos.forEach(tryPlay));
-    document.addEventListener('visibilitychange', () => {
+    document.addEventListener("DOMContentLoaded", () => videos.forEach(tryPlay));
+    window.addEventListener("load", () => videos.forEach(tryPlay));
+    document.addEventListener("visibilitychange", () => {
       if(!document.hidden) videos.forEach(tryPlay);
     });
-    ['touchstart','pointerdown','keydown'].forEach(evt => {
-      document.addEventListener(evt, () => videos.forEach(tryPlay), {once:true, passive:true});
+    ["touchstart","pointerdown","keydown"].forEach(evt => {
+      document.addEventListener(evt, () => videos.forEach(tryPlay), {once:true,passive:true});
     });
 
-    // Only spend resources playing videos while they are near the viewport.
-    if('IntersectionObserver' in window){
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          const v = entry.target;
-          if(entry.isIntersecting) tryPlay(v);
-          else v.pause();
-        });
-      },{rootMargin:'250px 0px',threshold:.05});
-      videos.forEach(v => io.observe(v));
-    }
+    /* CAPABILITY PREVIEW */
+    const liveChat = Boolean(INVENIO_CHAT_ENDPOINT);
+    const chatBody = document.getElementById("chatBody");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
 
-    // Guided chat preview
-    const answers = [
-      {keys:['several','many','multiple','calls','concurrent'], text:'Yes—when telephony and suitable providers are connected, Invenio can be designed to handle multiple conversations concurrently. Exact capacity depends on the voice provider, infrastructure, model and workflow configuration.'},
-      {keys:['crm','record','database'], text:'Yes. After an approved interaction, Invenio can create or update CRM/database records, save notes, change stages, create a case and trigger the next workflow—subject to the permissions you configure.'},
-      {keys:['human','handoff','escalate','cannot','complex'], text:'You define the handoff rules. Invenio can escalate complaints, sensitive requests, unusual cases or anything outside policy—and pass the human the context already collected so the customer does not have to restart.'},
-      {keys:['admin','clerk','email','data entry','documents'], text:'Yes. Repetitive admin workflows can include reading emails/forms, extracting information, updating records, generating routine summaries, creating tasks, sending follow-ups and monitoring status changes.'},
-      {keys:['website','web','chatbot','chat'], text:'The web chatbot can answer from approved company knowledge, guide visitors, qualify leads, capture details, start booking or document workflows and connect the conversation to the systems behind the website.'},
-      {keys:['reception','receptionist','booking'], text:'The AI receptionist can handle common enquiries, collect details, check approved availability, book or reschedule, send confirmations and route exceptions to your staff.'}
-    ];
-    const chatBody = document.getElementById('chatBody');
-    const chatInput = document.getElementById('chatInput');
-    const chatForm = document.getElementById('chatForm');
+    const sessionId =
+      localStorage.getItem("invenio_session_id") ||
+      (crypto.randomUUID ? crypto.randomUUID() : "session-"+Date.now());
+    localStorage.setItem("invenio_session_id", sessionId);
 
-    function appendMessage(text, who='user'){
-      const div = document.createElement('div');
-      div.className = `chat-msg ${who === 'bot' ? 'bot' : 'user'}`;
-      div.textContent = text;
-      chatBody.appendChild(div);
+    function addBubble(text,type,small=""){
+      const el = document.createElement("div");
+      el.className = "chat-msg " + type;
+      el.textContent = text;
+      if(small){
+        const s = document.createElement("small");
+        s.textContent = small;
+        el.appendChild(s);
+      }
+      chatBody.appendChild(el);
       chatBody.scrollTop = chatBody.scrollHeight;
+      return el;
     }
 
-    function previewAnswer(question){
-      const q = question.toLowerCase();
-      const found = answers.find(item => item.keys.some(k => q.includes(k)));
-      return found?.text || 'Invenio can be configured around that workflow if the required information, permissions and connected systems are available. The next step would be to map the exact process, define what can happen automatically and set the human approval or handoff points.';
+    function typingBubble(){
+      const el = document.createElement("div");
+      el.className = "chat-msg bot";
+      el.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+      chatBody.appendChild(el);
+      chatBody.scrollTop = chatBody.scrollHeight;
+      return el;
     }
 
-    function askPreview(question){
-      if(!question.trim()) return;
-      appendMessage(question,'user');
-      chatInput.value='';
-      setTimeout(() => appendMessage(previewAnswer(question),'bot'),320);
+    function guidedReply(message){
+      const q = message.toLowerCase();
+      const m = markets[currentMarket];
+
+      if(q.includes("price") || q.includes("cost") || q.includes("pricing")){
+        return `For ${m.name}, the current indicative monthly scope shown on this site is ${m.price}. INVENIO does not force every business into a rigid package: the final quote depends on the exact workload, channels, volume, integrations, support and third-party usage.`;
+      }
+      if(q.includes("after hour") || q.includes("miss") || q.includes("call")){
+        return "INVENIO can be configured for inbound calls, missed-call recovery, approved outbound follow-up, reminders, qualification, bookings, routine service questions and human escalation. Voice quality, languages and concurrency depend on the selected telephony and voice providers.";
+      }
+      if(q.includes("admin") || q.includes("clerk") || q.includes("data") || q.includes("email")){
+        return "INVENIO can reduce repetitive office work by reading incoming requests, extracting information, updating CRM or records, creating routine outputs, routing tasks and triggering reminders or follow-up. Sensitive actions can remain approval-based.";
+      }
+      if(q.includes("lead") || q.includes("sales") || q.includes("follow")){
+        return "For leads and sales operations, INVENIO can respond quickly, qualify using your criteria, update CRM, trigger follow-up, re-engage suitable prospects and route sales-ready opportunities to a person. The goal is to reduce the number of good opportunities that simply go cold.";
+      }
+      if(q.includes("hr") || q.includes("candidate") || q.includes("interview")){
+        return "For HR, INVENIO can help with approved candidate questions, information collection, rule-based pre-screening steps, document requests, interview coordination and reminders. Hiring decisions and sensitive people matters should remain with humans.";
+      }
+      if(q.includes("popia") || q.includes("privacy") || q.includes("data")){
+        return "For South African deployments, INVENIO should be configured with POPIA-aware handling such as collecting only necessary information, controlling access, applying appropriate safeguards and keeping clear human/accountability processes. Compliance still depends on the client's actual use case, policies, providers and configuration.";
+      }
+      if(q.includes("language") || q.includes("arabic") || q.includes("zulu") || q.includes("xhosa") || q.includes("afrikaans")){
+        return `For ${m.name}, the deployment language options shown here are ${m.languages.join(", ")}. Actual text or voice language quality must be tested against the specific AI/voice provider before launch.`;
+      }
+      return "INVENIO is designed around the business problem rather than a single product. Tell us what is creating delay, repetitive work, missed enquiries, weak follow-up or unnecessary hiring pressure, and we can map the best starting point — including what should remain human.";
     }
 
-    chatForm.addEventListener('submit', e => {e.preventDefault(); askPreview(chatInput.value);});
-    document.querySelectorAll('.prompt-btn').forEach(btn => btn.addEventListener('click', () => askPreview(btn.dataset.question)));
+    async function sendMessage(text){
+      const clean = (text || "").trim();
+      if(!clean) return;
 
-    // Lead form
-    const leadForm = document.getElementById('leadForm');
-    const formStatus = document.getElementById('formStatus');
-    leadForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(leadForm).entries());
+      addBubble(clean,"user");
+      chatInput.value = "";
+      chatInput.disabled = true;
+      const thinking = typingBubble();
 
-      if(!LEAD_WEBHOOK_URL){
-        formStatus.textContent = 'Front end is working. Add your n8n production webhook to LEAD_WEBHOOK_URL before launch so submissions are delivered.';
+      if(!liveChat){
+        setTimeout(() => {
+          thinking.remove();
+          addBubble(guidedReply(clean),"bot","INVENIO capability preview");
+          chatInput.disabled = false;
+          chatInput.focus();
+        },520);
         return;
       }
 
-      formStatus.textContent = 'Sending…';
       try{
-        const res = await fetch(LEAD_WEBHOOK_URL,{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({...data,source:'invenio-website',market:'south-africa',page:location.href})
+        const response = await fetch(INVENIO_CHAT_ENDPOINT,{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({
+            message:clean,
+            sessionId,
+            source:"website",
+            market:currentMarket,
+            preferredLanguage:currentLanguage
+          })
         });
-        if(!res.ok) throw new Error('Request failed');
-        leadForm.reset();
-        formStatus.textContent = 'Received. Your workload has been submitted for review.';
+        if(!response.ok) throw new Error("Chat request failed");
+        const data = await response.json();
+        const reply = data.reply || data.output || data.text || data.message || "I received that. Tell me a little more about the process you want to improve.";
+        thinking.remove();
+        addBubble(typeof reply === "string" ? reply : JSON.stringify(reply),"bot");
       }catch(err){
-        formStatus.textContent = 'Could not submit right now. Check the webhook URL / CORS settings and try again.';
+        thinking.remove();
+        addBubble("I could not complete that live request right now. You can still use the contact form or WhatsApp to discuss the workload.","bot");
+      }finally{
+        chatInput.disabled = false;
       }
+    }
+
+    chatForm.addEventListener("submit", e => {
+      e.preventDefault();
+      sendMessage(chatInput.value);
     });
+
+    document.querySelectorAll(".prompt-btn").forEach(btn => {
+      btn.addEventListener("click", () => sendMessage(btn.dataset.question));
+    });
+
+    /* REVEAL */
+    if("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },{threshold:.08,rootMargin:"0px 0px -30px 0px"});
+      document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    }else{
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
   </script>
 </body>
 </html>
