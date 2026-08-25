@@ -1690,3 +1690,30 @@
   </script>
 </body>
 </html>
+<link
+  href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
+  rel="stylesheet"
+/>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://guns-schools-exceed-considered.trycloudflare.com/webhook/3e3d45af-1577-4dcb-aff6-88ad046f3d87/chat',
+    mode: 'window',
+    showWelcomeScreen: false,
+    initialMessages: [
+      'Hi there! 👋',
+      'Welcome to INVENIO AI SOLUTIONS. How can I assist you?'
+    ],
+    i18n: {
+      en: {
+        title: 'INVENIO AI',
+        subtitle: 'Ask us anything about our AI solutions.',
+        footer: '',
+        getStarted: 'Start conversation',
+        inputPlaceholder: 'Type your message...'
+      }
+    }
+  });
+</script>
