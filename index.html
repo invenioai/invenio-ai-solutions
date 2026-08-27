@@ -4,12 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#070a08">
-  <meta name="description" content="INVENIO AI SOLUTIONS helps businesses add AI operating capacity across reception, calls, chat, administration, CRM, HR, sales and web operations.">
-  <title>INVENIO AI SOLUTIONS — AI Operations for Real Business Work</title>
+  <meta name="description" content="INVENIO AI SOLUTIONS adds always-on AI operating capacity across reception, calls, website chat, administration, HR, CRM, sales and web operations — configured around real business workflows.">
+  <link rel="canonical" href="https://invenioai.tech/">
+  <meta property="og:title" content="INVENIO AI SOLUTIONS — More Business Capacity Without More Repetitive Payroll">
+  <meta property="og:description" content="AI reception, voice, web chat, admin, HR, CRM, sales and web operations configured around real business work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invenioai.tech/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+  <title>INVENIO AI SOLUTIONS — AI Reception, Calls, Chat & Business Automation</title>
 
-  <!-- Keep these exact two MP4 files in the root of your Cloudflare Pages repository. -->
   <link rel="preload" as="video" href="/grok-video-27f174ca-7c29-4b47-a987-c0411b84b742.mp4" type="video/mp4">
-  <link rel="preload" as="video" href="/grok-video-ffd4e302-6142-44da-9766-6cc1a3c887b6.mp4" type="video/mp4">
 
   <style>
     :root{
@@ -103,7 +110,7 @@
     .nav{height:76px;display:flex;align-items:center;gap:18px}
     .brand{display:flex;align-items:center;min-width:max-content}
     .brand-logo{
-      width:116px;height:52px;object-fit:contain;background:#fff;border-radius:12px;padding:3px;
+      width:132px;height:54px;object-fit:contain;background:transparent;border-radius:12px;padding:0;
       border:1px solid rgba(255,255,255,.13);box-shadow:0 12px 40px rgba(0,0,0,.24);
     }
     .nav-links{margin-left:auto;display:flex;align-items:center;gap:24px;color:#aeb8b1;font-size:13px;font-weight:700}
@@ -155,7 +162,7 @@
     .hero{padding:72px 0 56px;position:relative}
     .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
     .hero h1{
-      font-size:clamp(44px,5.45vw,70px);line-height:.99;letter-spacing:-.055em;
+      font-size:clamp(40px,5vw,64px);line-height:1.01;letter-spacing:-.055em;
       margin:18px 0 20px;max-width:780px;
     }
     .hero-lead{font-size:17px;line-height:1.68;color:#b7c0b9;max-width:720px;margin:0 0 24px}
@@ -435,10 +442,132 @@
     footer{border-top:1px solid rgba(255,255,255,.055);padding:32px 0 40px;background:#050705}
     .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
     .footer-brand{display:flex;align-items:center;gap:16px}
-    .footer-logo{width:150px;background:#fff;border-radius:12px;padding:4px}
+    .footer-logo{width:160px;background:transparent;border-radius:12px;padding:0}
     .footer-copy{font-size:10px;color:#6f7b73;line-height:1.6}
     .footer-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;color:#9ca79f;font-size:10px}
     .footer-links a:hover{color:#fff}
+
+
+    /* LIVE, PREMIUM INTERACTION */
+    .ambient-field{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+    .ambient-field::before,.ambient-field::after{
+      content:"";position:absolute;inset:-20%;opacity:.4;
+      background:
+        radial-gradient(circle at 14% 28%,rgba(207,255,77,.12) 0 1px,transparent 2px),
+        radial-gradient(circle at 73% 18%,rgba(114,190,255,.09) 0 1px,transparent 2px),
+        radial-gradient(circle at 88% 72%,rgba(207,255,77,.09) 0 1px,transparent 2px),
+        radial-gradient(circle at 42% 82%,rgba(255,255,255,.055) 0 1px,transparent 2px);
+      background-size:190px 190px,240px 240px,170px 170px,260px 260px;
+      animation:ambientShift 22s linear infinite;
+    }
+    .ambient-field::after{filter:blur(.2px);opacity:.22;animation-direction:reverse;animation-duration:31s;transform:scale(1.12)}
+    @keyframes ambientShift{to{transform:translate3d(64px,-38px,0)}}
+
+    .signal-card,.pain-card,.role-panel,.flow-card,.video-copy,.video-card,.market-shell,.price-card,.contact-shell,.client-desk,.live-ai-shell{
+      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,background .28s ease;
+      will-change:transform;
+    }
+    @media(hover:hover) and (pointer:fine){
+      .signal-card:hover,.pain-card:hover,.flow-card:hover,.video-copy:hover,.video-card:hover,.price-card:hover{
+        transform:translateY(-4px);border-color:rgba(207,255,77,.22);box-shadow:0 18px 45px rgba(0,0,0,.26),0 0 30px rgba(207,255,77,.025)
+      }
+      .role-panel:hover,.market-shell:hover,.client-desk:hover,.live-ai-shell:hover{transform:translateY(-3px)}
+    }
+
+    .capacity-band{padding:16px 0 6px}
+    .capacity-shell{
+      display:grid;grid-template-columns:1.18fr .82fr;gap:22px;align-items:center;
+      padding:22px 24px;border:1px solid var(--line2);border-radius:22px;
+      background:linear-gradient(120deg,rgba(207,255,77,.075),rgba(8,13,9,.92) 48%,rgba(91,153,255,.035));
+      position:relative;overflow:hidden;
+    }
+    .capacity-shell::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-100px;background:radial-gradient(circle,rgba(207,255,77,.18),transparent 68%);animation:drift 7s ease-in-out infinite alternate}
+    .capacity-copy{position:relative;z-index:1}
+    .capacity-copy h2{font-size:clamp(25px,3.2vw,42px);line-height:1.05;letter-spacing:-.04em;margin:7px 0 9px}
+    .capacity-copy p{margin:0;color:#aeb8b1;line-height:1.62;font-size:12px;max-width:780px}
+    .capacity-proof{display:grid;gap:8px;position:relative;z-index:1}
+    .capacity-proof div{padding:11px 12px;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:rgba(5,8,6,.62);font-size:10px;color:#c7d0c9}
+    .capacity-proof b{color:var(--lime);display:block;font-size:11px;margin-bottom:2px}
+
+    .privacy-banner{
+      margin-top:16px;padding:15px 17px;border:1px solid rgba(207,255,77,.28);border-radius:16px;
+      background:linear-gradient(90deg,rgba(207,255,77,.085),rgba(207,255,77,.018));
+      display:flex;align-items:flex-start;gap:11px;color:#ced7d0;font-size:11px;line-height:1.55;
+      box-shadow:inset 0 0 35px rgba(207,255,77,.025)
+    }
+    .privacy-banner strong{color:#efffc8;display:block;margin-bottom:2px}
+    .privacy-dot{width:9px;height:9px;border-radius:50%;background:var(--lime);margin-top:4px;box-shadow:0 0 18px rgba(207,255,77,.72);flex:0 0 auto}
+
+    .client-desk{margin:0 auto 30px;border:1px solid var(--line);border-radius:26px;padding:28px;background:linear-gradient(145deg,#0c120e,#081009);position:relative;overflow:hidden}
+    .client-desk-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:28px;align-items:center}
+    .client-desk h2{font-size:clamp(30px,4vw,50px);line-height:1.02;letter-spacing:-.045em;margin:10px 0 12px}
+    .client-desk p{color:#9fa9a1;line-height:1.65;font-size:12px;margin:0}
+    .desk-bubbles{display:grid;gap:9px}
+    .desk-bubble{max-width:92%;padding:12px 14px;border-radius:16px 16px 16px 5px;background:#101812;border:1px solid rgba(255,255,255,.06);color:#d6ddd8;font-size:11px;line-height:1.5;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+    .desk-bubble:nth-child(even){margin-left:auto;border-radius:16px 16px 5px 16px;background:rgba(207,255,77,.08);border-color:var(--line2)}
+    .desk-tag{margin-top:14px;display:inline-flex;gap:8px;align-items:center;color:#dfff92;font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.09em}
+
+    .solution-more{margin-top:14px;padding:14px 16px;border:1px dashed rgba(207,255,77,.19);border-radius:15px;color:#8f9a92;font-size:11px;line-height:1.55}
+    .solution-more b{color:#eaffb3}
+    .solution-contact{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+    .solution-contact span{font-size:10px;color:#7f8a82;margin-right:auto}
+    .solution-link{padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:#0a110c;color:#e8eee9;font-size:10px;font-weight:850}
+    .solution-link.primary{background:var(--lime);border-color:var(--lime);color:#080b08}
+
+    .price-card .price-range{letter-spacing:-.055em}
+    .pricing-clarity{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0 0}
+    .pricing-clarity div{padding:10px;border-radius:11px;border:1px solid rgba(0,0,0,.08);background:rgba(9,12,9,.05);font-size:9px;line-height:1.45;color:#354039}
+    .pricing-clarity b{display:block;color:#111812;font-size:10px;margin-bottom:2px}
+    .launch-offer{margin-top:14px;padding:14px;border-radius:13px;background:#0d140f;color:#cdd5cf;border:1px solid rgba(207,255,77,.22);font-size:10px;line-height:1.5}
+    .launch-offer strong{display:block;color:var(--lime);font-size:12px;margin-bottom:3px}
+
+    .live-ai-shell{border:1px solid var(--line);border-radius:28px;padding:14px;background:linear-gradient(145deg,#0c120e,#071009);box-shadow:var(--shadow)}
+    .live-ai-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:stretch}
+    .live-ai-copy{padding:24px 14px 24px 18px;display:flex;flex-direction:column;justify-content:center}
+    .live-ai-copy h2{font-size:clamp(32px,4.4vw,54px);line-height:1.01;letter-spacing:-.05em;margin:11px 0 13px}
+    .live-ai-copy p{font-size:12px;line-height:1.65;color:#9fa9a1;margin:0 0 15px}
+    .live-ai-points{display:grid;gap:7px;margin:0 0 18px}
+    .live-ai-points span{padding:9px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.055);background:#08100a;color:#c4cdc6;font-size:10px}
+    .live-ai-points b{color:var(--lime)}
+    .chat-stage{min-height:560px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.065);background:#071009;position:relative}
+    #n8n-chat{height:560px;min-height:560px}
+    .chat-placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 30%,rgba(207,255,77,.08),transparent 35%),#071009;text-align:center}
+    .chat-placeholder-card{max-width:390px}
+    .chat-placeholder-logo{width:116px;max-height:58px;object-fit:contain;margin:0 auto 18px}
+    .chat-placeholder h3{font-size:28px;margin:0 0 5px;letter-spacing:-.04em}
+    .chat-placeholder p{color:#8e9a91;font-size:11px;line-height:1.55;margin:0 0 16px}
+    .chat-placeholder small{display:block;color:#667168;font-size:9px;line-height:1.5;margin-top:12px}
+    .live-ai-anchor{scroll-margin-top:100px}
+
+    :root{
+      --chat--color--primary:#cfff4d;
+      --chat--color--primary-shade-50:#bbed44;
+      --chat--color--primary--shade-100:#a4d93c;
+      --chat--color--secondary:#cfff4d;
+      --chat--color-secondary-shade-50:#bbed44;
+      --chat--color-white:#f5f7f3;
+      --chat--color-light:#0b100c;
+      --chat--color-light-shade-50:#101712;
+      --chat--color-light-shade-100:#18211a;
+      --chat--color-medium:#566258;
+      --chat--color-dark:#070a08;
+      --chat--color-disabled:#566258;
+      --chat--color-typing:#a8b2aa;
+      --chat--border-radius:.85rem;
+      --chat--header--background:#0b100c;
+      --chat--header--color:#f5f7f3;
+      --chat--body--background:#070a08;
+      --chat--footer--background:#0b100c;
+      --chat--footer--color:#f5f7f3;
+      --chat--message--bot--background:#111813;
+      --chat--message--bot--color:#eef4ef;
+      --chat--message--user--background:#cfff4d;
+      --chat--message--user--color:#090c09;
+      --chat--input--background:#0c120e;
+      --chat--input--text-color:#f5f7f3;
+      --chat--input--send--button--background:#0c120e;
+      --chat--input--send--button--color:#cfff4d;
+    }
 
     /* RESPONSIVE */
     @media(max-width:1020px){
@@ -465,7 +594,7 @@
       .top-strip .mini-trust{display:none}
       .top-strip{font-size:10px;line-height:1.35}
       .nav{height:68px;gap:9px}
-      .brand-logo{width:88px;height:44px;border-radius:10px}
+      .brand-logo{width:104px;height:42px;border-radius:9px}
       .market-button{height:40px;padding:0 10px;font-size:10px}
       .market-button .market-full-name{display:none}
       .market-menu{position:fixed;left:12px;right:12px;top:118px;width:auto}
@@ -526,7 +655,13 @@
       .chat-body{min-height:320px}
 
       .contact-shell{padding:20px}
-      .contact-form{grid-template-columns:1fr}
+      .capacity-shell{grid-template-columns:1fr;padding:18px}
+      .client-desk-grid{grid-template-columns:1fr}
+      .live-ai-grid{grid-template-columns:1fr}
+      .live-ai-copy{padding:12px 7px 4px}
+      .chat-stage,#n8n-chat{min-height:520px;height:520px}
+      .pricing-clarity{grid-template-columns:1fr}
+            .contact-form{grid-template-columns:1fr}
       .field.full,.form-submit,.form-small{grid-column:auto}
 
       .footer-grid{grid-template-columns:1fr}
@@ -538,19 +673,30 @@
       .signal-grid{grid-template-columns:1fr}
       .market-button{padding:0 8px}
       .market-button .market-chevron{display:none}
-      .hero h1{font-size:38px}
+      .hero h1{font-size:35px}
     }
 
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       .reveal{opacity:1;transform:none;transition:none}
-      .signal-line:after,.pulse,.ops-shell:before,.typing i{animation:none}
+      .signal-line:after,.pulse,.ops-shell:before,.typing i,.ambient-field::before,.ambient-field::after{animation:none}
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"INVENIO AI SOLUTIONS",
+    "url":"https://invenioai.tech/",
+    "email":"invenio.ai.solutions@gmail.com",
+    "description":"AI reception, voice, website chat, administration, HR, CRM, sales and web operations configured around real business workflows."
+  }
+  </script>
 </head>
 
 <body>
   <div class="grid-noise"></div>
+  <div class="ambient-field" aria-hidden="true"></div>
 
   <div class="top-strip">
     <div class="wrap">
@@ -629,13 +775,18 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#solutions">See what Invenio can take on →</a>
-            <a class="btn btn-secondary whatsapp-link" href="#" target="_blank" rel="noopener">Talk to Invenio on WhatsApp</a>
+            <a class="btn btn-primary" href="#live-ai">Try INVENIO AI live →</a>
+            <a class="btn btn-secondary" href="#solutions">See what we can take on</a>
+            <a class="btn btn-secondary whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp our team</a>
           </div>
 
           <div class="hero-foot">
             <span>✓</span>
             <span id="heroTrust"><b>24/7 where configured:</b> approved workflows can keep running after hours, on weekends and public holidays, with human escalation at the points your business chooses.</span>
+          </div>
+          <div class="privacy-banner" id="privacyBanner">
+            <span class="privacy-dot"></span>
+            <span><strong>POPIA-aware by design for South African deployments.</strong><span id="privacyBannerText">Designed with POPIA-aware data handling, controlled access, data minimisation and human oversight in mind.</span></span>
           </div>
         </div>
 
@@ -698,8 +849,8 @@
 
         <article class="signal-card reveal">
           <div class="signal-icon">∞</div>
-          <h3>Parallel capacity</h3>
-          <p>Handle more than one digital conversation at a time, subject to the connected provider and infrastructure.</p>
+          <h3>Elastic parallel capacity</h3>
+          <p>A properly sized INVENIO deployment can scale across hundreds or thousands of parallel digital interactions or tasks where the connected infrastructure supports it — without one person per task.</p>
           <div class="signal-line"></div>
         </article>
 
@@ -719,14 +870,31 @@
       </div>
     </section>
 
+    <section class="capacity-band" aria-label="Scalable business capacity">
+      <div class="wrap">
+        <div class="capacity-shell reveal">
+          <div class="capacity-copy">
+            <div class="kicker">Capacity that does not clock out</div>
+            <h2>Grow the workload without giving every repetitive task another salary.</h2>
+            <p>INVENIO can keep approved digital work moving while your team is busy, offline, asleep, on weekends or on holiday. As demand grows, the same connected operation can be scaled across far more simultaneous digital interactions and routine tasks — while human judgement stays exactly where your business wants it.</p>
+          </div>
+          <div class="capacity-proof">
+            <div><b>Always available where configured</b>Response, qualification, routing, follow-up and routine actions can continue beyond office hours.</div>
+            <div><b>Scale the system, not the queue</b>Infrastructure can be expanded for high parallel demand instead of assigning one employee to every repetitive interaction.</div>
+            <div><b>Humans stay in control</b>Approvals, exceptions, relationships, negotiation and sensitive decisions can remain human-led.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="why">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
             <div class="eyebrow"><i></i> Why Invenio</div>
-            <h2>Every delay has a cost. Every repetitive task has an alternative.</h2>
+            <h2>Your business needs more capacity — not another person for every repeated task.</h2>
           </div>
-          <p>INVENIO is built around business pressure points: missed enquiries, slow follow-up, repetitive admin, disconnected systems and the constant temptation to add payroll before improving the process.</p>
+          <p>INVENIO turns missed enquiries, slow follow-up, repetitive admin and disconnected digital work into connected workflows that can respond faster, operate longer and scale more affordably than assigning another person to every repetitive step.</p>
         </div>
 
         <div class="why-shell reveal">
@@ -775,8 +943,29 @@
           </div>
 
           <div class="why-close">
-            <p><b>In 2026, the useful question is not “Can AI do everything?”</b> It is: which work is your business still paying people to repeat manually that could be handled faster, more consistently and at greater scale?</p>
+            <p><b>In 2026, the useful question is not “Can AI do everything?”</b> It is: which repetitive work is your business still paying people to perform manually that could be handled faster, more consistently and more affordably — while your people focus on the work that actually needs them?</p>
             <a class="btn btn-primary" href="#solutions">Find the best starting point →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="client-operations">
+      <div class="wrap">
+        <div class="client-desk reveal">
+          <div class="client-desk-grid">
+            <div>
+              <div class="eyebrow"><i></i> Your direct INVENIO operations desk</div>
+              <h2>Once we are working together, help can be a WhatsApp message away.</h2>
+              <p>Within the agreed service scope, clients can receive a dedicated INVENIO service WhatsApp line for operational requests, changes and support. Think of it as a direct digital operations desk: tell us what needs to change, schedule, update or investigate, and we move the right work forward or tell you exactly what is needed.</p>
+              <div class="desk-tag"><span class="pulse"></span> Dedicated client support channel after onboarding</div>
+            </div>
+            <div class="desk-bubbles" aria-label="Examples of client requests">
+              <div class="desk-bubble">“Update our Friday business hours and make sure the website assistant knows them.”</div>
+              <div class="desk-bubble">“Schedule tomorrow’s lead follow-up for 09:00 and send me the outcome summary.”</div>
+              <div class="desk-bubble">“Add this new service to our website journey and route interested visitors to sales.”</div>
+              <div class="desk-bubble">“Can you help us book or arrange this business task?”</div>
+            </div>
           </div>
         </div>
       </div>
@@ -789,11 +978,12 @@
             <div class="eyebrow"><i></i> Choose your starting point</div>
             <h2>Start with the pressure point costing you time, capacity or opportunities.</h2>
           </div>
-          <p>You do not need to know which AI product to buy. Choose the work you want reduced, improved or connected. INVENIO is configured around the business process — not the other way around.</p>
+          <p>You do not need to know which AI product to buy. Choose the work you want reduced, improved or connected. INVENIO is configured around the business process — not the other way around. Every solution can be scoped further through WhatsApp <strong>+27 60 486 8989</strong> or <strong>invenio.ai.solutions@gmail.com</strong>.</p>
         </div>
 
         <div class="role-tabs reveal" id="roleTabs"></div>
         <div id="rolePanels" class="reveal"></div>
+        <div class="solution-more reveal"><b>And more.</b> INVENIO is highly flexible: the final system can be customized around the company’s actual rules, channels, approvals, customer journey and internal workflow. If the exact use case is not listed, tell us the process and we can assess it.</div>
       </div>
     </section>
 
@@ -817,9 +1007,16 @@
           <aside class="price-card">
             <div>
               <span class="tag">Indicative monthly scope</span>
-              <h3>Flexible pricing because the workload is never identical.</h3>
+              <h3>Start small. Scale only when the workload earns it.</h3>
               <div class="price-range" id="priceRange">R299 — R15,000+ / month</div>
               <p id="priceCopy">Start small with a focused workflow, or connect several channels and systems as the business case grows.</p>
+              <div class="pricing-clarity">
+                <div><b>Monthly subscriptions</b>Start with a focused deployment and scale up or down around the real workload.</div>
+                <div><b>Once-off setup available</b>Suitable projects can also be scoped as a once-off implementation.</div>
+                <div><b>No artificial ceiling</b>High-volume voice, multi-department and multi-system deployments can exceed the displayed range.</div>
+                <div><b>Quote follows scope</b>Channels, volume, integrations, support and third-party usage determine the final amount.</div>
+              </div>
+              <div class="launch-offer"><strong>First-time subscriber offer</strong>Pay 40% of the selected monthly subscription price for the first month. Standard monthly pricing applies thereafter. Any separately quoted setup work or third-party usage costs remain outside that subscription discount unless included in writing.</div>
             </div>
             <div class="price-note" id="priceNote">We do not force every business into a rigid package. Final pricing follows the actual workload, channels, conversation/call volume, integrations, support and third-party provider costs.</div>
           </aside>
@@ -882,13 +1079,37 @@
             </div>
 
             <div class="video-card">
-              <video data-autoplay autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="Illustrative INVENIO coordinated AI team visual">
+              <video data-autoplay autoplay muted loop playsinline webkit-playsinline preload="metadata" aria-label="Illustrative INVENIO coordinated AI team visual">
                 <source src="/grok-video-ffd4e302-6142-44da-9766-6cc1a3c887b6.mp4" type="video/mp4">
               </video>
               <button class="tap-play" type="button" aria-label="Play video"><span>▶ Tap to play</span></button>
               <div class="video-overlay"></div>
               <div class="video-meta">
                 <div><b>Coordinated INVENIO agents</b><span>Illustrative operating concept</span></div>
+                <div class="video-live">AUTO LOOP</div>
+              </div>
+            </div>
+          </article>
+          <article class="video-story reveal optional-video-story" id="videoStoryThree">
+            <div class="video-copy">
+              <div class="number">INVENIO MODEL 03 · CUSTOMER-FACING AI</div>
+              <h3>Turn customer attention into an active business journey.</h3>
+              <p>Use this space for the third production video: website AI, reception, voice or another customer-facing workflow. The surrounding text stays crawlable so the visual supports the message instead of becoming the only source of knowledge.</p>
+              <div class="mini-flow">
+                <span><b>Discover</b> Visitor asks, calls or messages</span>
+                <span><b>Guide</b> AI answers and recommends the relevant next step</span>
+                <span><b>Convert</b> Capture details, qualify interest or route to sales</span>
+                <span><b>Handoff</b> Human team receives the useful context when required</span>
+              </div>
+            </div>
+            <div class="video-card">
+              <video data-autoplay data-optional-video autoplay muted loop playsinline webkit-playsinline preload="metadata" aria-label="Illustrative INVENIO customer-facing AI visual">
+                <source src="/invenio-video-3.mp4" type="video/mp4">
+              </video>
+              <button class="tap-play" type="button" aria-label="Play video"><span>▶ Tap to play</span></button>
+              <div class="video-overlay"></div>
+              <div class="video-meta">
+                <div><b>Customer-facing INVENIO AI</b><span>Third production visual</span></div>
                 <div class="video-live">AUTO LOOP</div>
               </div>
             </div>
@@ -917,33 +1138,39 @@
       </div>
     </section>
 
-    <section class="section" id="preview">
-      <div class="wrap preview-shell">
-        <div class="preview-copy reveal">
-          <div class="eyebrow"><i></i> Explore the fit</div>
-          <h2>Ask INVENIO about the workload your business wants to reduce.</h2>
-          <p>Describe the problem — reception, calls, admin, CRM, HR, web, follow-up or something custom. The preview explains where INVENIO could fit, what needs a connection and where a human should stay involved.</p>
-
-          <div class="prompt-list">
-            <button class="prompt-btn" data-question="We miss calls after hours. What could Invenio do?">We miss calls after hours</button>
-            <button class="prompt-btn" data-question="Our team spends too much time on admin. What could be automated?">Too much admin</button>
-            <button class="prompt-btn" data-question="Our leads go cold because follow-up is slow. How can Invenio help?">Leads go cold</button>
-            <button class="prompt-btn" data-question="Can Invenio help with HR administration and interview coordination?">HR workload</button>
+    <section class="section live-ai-anchor" id="live-ai">
+      <div class="wrap">
+        <div class="live-ai-shell reveal">
+          <div class="live-ai-grid">
+            <div class="live-ai-copy">
+              <div class="eyebrow"><i></i> Try the product</div>
+              <h2>Do not just read about AI. Talk to INVENIO AI.</h2>
+              <p>This website assistant is the same kind of customer-facing capability we can customize for a business: trained on approved company knowledge, shaped around the brand, connected to the right actions and designed to move serious visitors toward the next step.</p>
+              <div class="live-ai-points">
+                <span><b>Website support:</b> answer services, requirements, policies, pricing and common questions from approved knowledge.</span>
+                <span><b>AI sales assistant:</b> understand what a visitor wants, recommend relevant services, handle common objections and move qualified interest toward sales.</span>
+                <span><b>Lead capture:</b> ask for contact details naturally, capture whatever useful details the visitor provides and notify the team.</span>
+                <span><b>Human handoff:</b> move ready visitors directly to WhatsApp or the preferred human channel instead of trapping them in the bot.</span>
+                <span><b>Highly customizable:</b> brand, tone, languages, rules, knowledge, workflows, forms, CRM actions, notifications and more can be configured around the business.</span>
+              </div>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#n8n-chat">Open INVENIO AI →</a>
+                <a class="btn btn-secondary whatsapp-link" href="#" target="_blank" rel="noopener">Talk to a human</a>
+              </div>
+            </div>
+            <div class="chat-stage" aria-label="INVENIO live AI demo">
+              <div id="n8n-chat"></div>
+              <div class="chat-placeholder" id="chatPlaceholder">
+                <div class="chat-placeholder-card">
+                  <img class="chat-placeholder-logo" src="invenio-logo.png" alt="INVENIO AI SOLUTIONS">
+                  <h3>INVENIO AI</h3>
+                  <p><strong>Powering Business Through Intelligence.</strong><br>Ask about our services, pricing or what we could automate for your business.</p>
+                  <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Chat with INVENIO while live AI is connected</a>
+                  <small>This space is wired for the real n8n Chat Trigger. Once the final knowledge base is re-indexed, add the production webhook URL in the configuration at the bottom of this file and the real assistant replaces this fallback automatically.</small>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="chat-window reveal">
-          <div class="chat-head">
-            <b>Talk to INVENIO</b>
-            <span>Capability preview · not a live client system</span>
-          </div>
-          <div class="chat-body" id="chatBody">
-            <div class="chat-msg bot">What part of your business is creating the most repetitive work, slow response or missed opportunities? Choose a prompt or type it below.</div>
-          </div>
-          <form class="chat-input" id="chatForm">
-            <input id="chatInput" autocomplete="off" placeholder="Ask about calls, admin, CRM, HR, web or pricing…">
-            <button aria-label="Send message">→</button>
-          </form>
         </div>
       </div>
     </section>
@@ -952,8 +1179,8 @@
       <div class="wrap contact-shell reveal">
         <div class="contact-copy">
           <div class="eyebrow"><i></i> Start with the business problem</div>
-          <h2>Not sure what you need? That is fine.</h2>
-          <p>Tell us how the business currently operates, where work is piling up, where customers wait, or what you are hiring for. INVENIO can identify where AI, automation or digital improvement could create the most practical value.</p>
+          <h2>Tell us the pressure point. We will scope the right starting point.</h2>
+          <p>Describe where customers wait, staff repeat the same work, leads disappear, calls pile up or systems fail to connect. INVENIO can collect what is needed for a quote, identify the practical starting point and return with a scope built around the actual workload.</p>
 
           <div class="contact-actions">
             <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
@@ -1058,25 +1285,22 @@
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <img class="footer-logo" src="invenio-logo.png" alt="INVENIO AI SOLUTIONS">
-        <div class="footer-copy">Powering Your Business Through Intelligence.<br>AI reception · voice · chat · admin · CRM · HR · sales · web operations</div>
+        <div class="footer-copy">Powering Business Through Intelligence.<br>AI reception · voice · chat · admin · CRM · HR · sales · web operations</div>
       </div>
       <div class="footer-links">
         <a href="#why">Why Invenio</a>
         <a href="#solutions">Solutions</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
         <a class="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
       </div>
     </div>
   </footer>
 
   <script>
-    /* ---------------------------------------------------------
-       CONFIG
-       Leave empty to keep the polished guided capability preview.
-       Add your real n8n chat webhook later if you want a live AI.
-    --------------------------------------------------------- */
-    const INVENIO_CHAT_ENDPOINT = "";
+    const INVENIO_CHAT_WEBHOOK_URL = ""; // Paste the n8n Chat Trigger PRODUCTION webhook URL here after the final knowledge re-index.
 
     const WHATSAPP_URL =
       "https://wa.me/27604868989?text=" +
@@ -1095,9 +1319,10 @@
         lead:'INVENIO deploys AI systems that can <strong>answer customers, handle inbound and approved outbound calls, run website chat, process repetitive admin, update business systems and escalate to your team when human judgement is needed.</strong> The goal is simple: faster response, less repetitive workload and more operating capacity.',
         trust:'<b>24/7 where configured:</b> approved workflows can keep running after hours, on weekends and public holidays, with human escalation at the points your business chooses.',
         complianceTitle:"POPIA-aware deployment",
-        complianceCopy:"South African workflows can be configured around data minimisation, controlled access, security safeguards and human oversight.",
+        complianceCopy:"Designed with POPIA-aware data handling and controlled workflows in mind: data minimisation, permissioned access, appropriate safeguards and human oversight can be configured around the use case.",
+        privacyBanner:"Designed with POPIA-aware data handling, controlled access, data minimisation and human oversight in mind.",
         kicker:"Built for South African operating reality",
-        headline:"More digital demand should not automatically mean more payroll.",
+        headline:"More digital demand should create more capacity — not automatically more payroll.",
         local:"English + supported South African languages · WhatsApp, web and voice where configured",
         body:"South African businesses often need faster customer response and more operating capacity without adding another full-time salary to every new stream of repetitive work. INVENIO focuses on practical automation that can be deployed remotely and expanded only where the value is clear.",
         bullets:[
@@ -1108,8 +1333,8 @@
         ],
         languages:["English","isiZulu","isiXhosa","Afrikaans","Sesotho","Other"],
         price:"R299 — R15,000+ / month",
-        priceCopy:"A focused digital workflow can start small. Deeper voice, CRM, HR, sales or multi-system operations are scoped around the real workload.",
-        priceNote:"Indicative South African scope, not a fixed package promise. Final pricing depends on channels, volume, integrations, support, complexity and third-party AI/voice/messaging costs."
+        priceCopy:"Monthly subscriptions can start from R299 for very light, focused deployments and scale through R15,000+ for deeper voice, CRM, HR, sales, multi-system or higher-volume operations. Every scope can move lower or higher around the real business need.",
+        priceNote:"South Africa: R299 is an entry point for lightweight scope, not a promise that every automation costs R299. R15,000+ is not a ceiling. Final pricing depends on channels, volume, integrations, support, complexity and third-party AI/voice/messaging costs."
       },
 
       "kuwait":{
@@ -1122,6 +1347,7 @@
         trust:'<b>Designed for premium service:</b> fast response, bilingual customer journeys, 24/7 approved workflows and clear human handoff where the brand wants personal attention.',
         complianceTitle:"Controlled data handling",
         complianceCopy:"Permissions, access, handoff rules and data flow are configured around the business and the connected providers selected for the deployment.",
+        privacyBanner:"Privacy, permissions, data access and human handoff are configured around the business process and selected providers.",
         kicker:"Built for Kuwait's premium service market",
         headline:"In a high-service market, speed and polish become part of the brand.",
         local:"العربية + English · WhatsApp + web + voice where configured",
@@ -1148,6 +1374,7 @@
         trust:'<b>Built for continuity:</b> approved workflows can keep operating after hours while permissions, escalation and business rules remain under your control.',
         complianceTitle:"Permission-led operation",
         complianceCopy:"The deployment can be structured around defined permissions, limited access, approval steps and the data-handling requirements of the selected systems.",
+        privacyBanner:"Privacy, permissions, data access and human handoff are configured around the business process and selected providers.",
         kicker:"Built for Oman's service and SME market",
         headline:"Automate the routine work without losing control of the customer experience.",
         local:"العربية + English · web, WhatsApp and voice where configured",
@@ -1174,6 +1401,7 @@
         trust:'<b>Built to scale with the business:</b> start with one high-friction workflow and connect more channels, systems or follow-up only when the need is clear.',
         complianceTitle:"Controlled business workflows",
         complianceCopy:"Access, permissions, handoffs and connected actions are configured around the specific business process rather than switched on indiscriminately.",
+        privacyBanner:"Privacy, permissions, data access and human handoff are configured around the business process and selected providers.",
         kicker:"Built for a growing service economy",
         headline:"More enquiries should create opportunity — not another queue.",
         local:"English-first · web, WhatsApp, email and voice where configured",
@@ -1215,13 +1443,13 @@
         tab:"AI Call Centre",
         label:"Voice + customer operations",
         title:"Turn repetitive call demand into parallel INVENIO capacity.",
-        lead:"When telephony is connected, AI voice agents can handle approved inbound and outbound conversations, intake, qualification, status questions, reminders and routine service flows.",
+        lead:"When telephony is connected, INVENIO voice agents can handle approved inbound and outbound calls for customer service, enquiries, qualification, reminders, lead follow-up and sales outreach — while escalating complaints, sensitive cases, negotiation or exceptions to people when required.",
         tasks:[
           "Handle multiple conversations concurrently within provider/infrastructure limits.",
           "Carry natural back-and-forth conversations with supported voice models.",
           "Run approved verification, intake or qualification steps.",
           "Create cases, update CRM records and trigger follow-up.",
-          "Make approved outbound reminders, reactivation or follow-up calls.",
+          "Make approved outbound sales, lead follow-up, reactivation, reminder or service calls where configured and legally appropriate.",
           "Escalate complaints, exceptions and higher-risk situations to human staff."
         ],
         money:"Reduces the amount of routine call handling that requires one person per conversation.",
@@ -1232,11 +1460,11 @@
         id:"chat",
         tab:"Web Chatbot",
         label:"Website conversion + support",
-        title:"Turn the website from a brochure into an active INVENIO service channel.",
-        lead:"The chatbot can answer from approved business knowledge, qualify visitors, capture leads, start bookings and connect the conversation to the systems behind the business.",
+        title:"Turn the website into support, qualification and an always-on AI sales channel.",
+        lead:"The chatbot can answer from approved business knowledge, explain products or services, recommend the right option, qualify visitors, capture leads, support sales conversations, start approved actions and hand serious prospects to your team with context already collected.",
         tasks:[
           "Answer services, requirements, hours, process and policy questions.",
-          "Guide visitors to the right service or next step.",
+          "Act as an AI sales assistant: understand visitor intent, recommend relevant services and handle common pre-sale questions or objections.",
           "Capture and qualify leads instead of sending everyone to a generic form.",
           "Start booking, document-collection or handoff workflows.",
           "Connect conversations to CRM, email, calendar or automation.",
@@ -1304,8 +1532,8 @@
         id:"web",
         tab:"Web Operations",
         label:"Website + digital operations",
-        title:"Make the website part of the operation — not a static brochure.",
-        lead:"INVENIO can build or improve the front end, connect forms and chat to real workflows, maintain approved content and improve the path from visitor to business action.",
+        title:"Build or improve the website — then connect it to the business behind it.",
+        lead:"INVENIO does not only operate websites. We can create or improve the customer-facing experience itself, strengthen mobile usability and conversion paths, then connect forms, AI chat, CRM, email, booking and automation so the site drives better customer outcomes instead of sitting as a static brochure.",
         tasks:[
           "Build or refresh professional pages and landing experiences.",
           "Improve mobile usability and conversion-focused customer journeys.",
@@ -1317,6 +1545,60 @@
         money:"Reduces friction between the website, staff inboxes and internal systems.",
         revenue:"Improves conversion paths and gives visitors more ways to become real enquiries or customers.",
         human:"The business approves brand, content, offers and business-critical changes."
+      },
+      {
+        id:"followup",
+        tab:"Follow-up & Reminders",
+        label:"Retention + continuity",
+        title:"Make the next step happen even when nobody remembers to chase it.",
+        lead:"INVENIO can trigger approved reminders, abandoned-enquiry follow-up, payment prompts, review requests, lead re-engagement and status checks based on the rules your business chooses.",
+        tasks:[
+          "Follow up unanswered enquiries after a chosen delay.",
+          "Send appointment, payment or document reminders.",
+          "Re-engage suitable leads or customers based on approved criteria.",
+          "Request reviews after completed service where appropriate.",
+          "Notify staff when a follow-up needs human attention.",
+          "Stop or change the sequence immediately when status changes."
+        ],
+        money:"Reduces manual chasing and repetitive reminder work.",
+        revenue:"Recovers opportunities and customer actions that often disappear after the first contact.",
+        human:"People handle negotiation, exceptions, complaints and relationship-sensitive follow-up."
+      },
+      {
+        id:"documents",
+        tab:"Documents & Data",
+        label:"Information processing",
+        title:"Turn incoming documents and messages into structured business action.",
+        lead:"INVENIO can extract approved information from forms, emails and documents, structure it, update records, route it and trigger the next workflow step.",
+        tasks:[
+          "Extract fields from forms, messages and supported documents.",
+          "Classify incoming requests and route them to the right process.",
+          "Create structured records in CRM, spreadsheets or databases.",
+          "Generate routine confirmations, summaries or task records.",
+          "Flag missing information or exceptions for review.",
+          "Keep sensitive actions behind human approval where required."
+        ],
+        money:"Cuts repetitive reading, copy-paste and record-entry work.",
+        revenue:"Faster processing reduces delays between customer intent and business action.",
+        human:"People review exceptions, ambiguous documents and sensitive decisions."
+      },
+      {
+        id:"internal",
+        tab:"Internal AI Assistant",
+        label:"Team knowledge + operations",
+        title:"Give staff a controlled AI assistant that knows the approved business knowledge.",
+        lead:"An internal assistant can answer approved policy or process questions, find information, start routine workflows and help staff navigate company knowledge without exposing public-facing data unnecessarily.",
+        tasks:[
+          "Answer approved internal FAQs and process questions.",
+          "Search company knowledge and return relevant information.",
+          "Start routine requests, reminders or internal workflows.",
+          "Help staff locate policies, templates or operational instructions.",
+          "Route requests that require another department or manager.",
+          "Respect role, permission and data-access boundaries when configured."
+        ],
+        money:"Reduces time spent repeatedly asking, searching and forwarding routine internal questions.",
+        revenue:"Indirectly improves execution speed by helping staff reach the right information and action sooner.",
+        human:"Managers retain policy interpretation, exceptions and sensitive people or business decisions."
       }
     ];
 
@@ -1354,8 +1636,18 @@
       menuBtn.textContent = "☰";
     }
 
-    let currentMarket = new URLSearchParams(location.search).get("market");
-    if(!markets[currentMarket]) currentMarket = "south-africa";
+    const marketParam = new URLSearchParams(location.search).get("market");
+    const storedMarket = localStorage.getItem("invenio_market");
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    const timezoneMarkets = {
+      "Africa/Johannesburg":"south-africa",
+      "Africa/Maseru":"south-africa",
+      "Africa/Mbabane":"south-africa",
+      "Asia/Kuwait":"kuwait",
+      "Asia/Muscat":"oman",
+      "America/Guyana":"guyana"
+    };
+    let currentMarket = markets[marketParam] ? marketParam : (markets[storedMarket] ? storedMarket : (timezoneMarkets[timezone] || "south-africa"));
     let currentLanguage = markets[currentMarket].languages[0];
 
     function renderLanguagePills(m){
@@ -1390,6 +1682,8 @@
       document.getElementById("heroTrust").innerHTML = m.trust;
       document.getElementById("complianceTitle").textContent = m.complianceTitle;
       document.getElementById("complianceCopy").textContent = m.complianceCopy;
+      document.getElementById("privacyBannerText").textContent = m.privacyBanner || m.complianceCopy;
+      document.getElementById("privacyBanner").style.display = key === "south-africa" ? "flex" : "none";
 
       document.getElementById("marketKicker").textContent = m.kicker;
       document.getElementById("marketHeadline").textContent = m.headline;
@@ -1425,10 +1719,15 @@
     }
 
     document.querySelectorAll("[data-market]").forEach(btn => {
-      btn.addEventListener("click", () => applyMarket(btn.dataset.market));
+      btn.addEventListener("click", () => {
+        localStorage.setItem("invenio_market", btn.dataset.market);
+        applyMarket(btn.dataset.market);
+      });
     });
 
     applyMarket(currentMarket);
+
+    /* GEO MARKET: Cloudflare Pages middleware sets ?market= at the edge; browser timezone is only the fallback. */
 
     /* LIVE OPERATIONS ANIMATION */
     const laneMessages = {
@@ -1510,6 +1809,11 @@
           <div class="result-box"><b>How it can save money</b><span>${s.money}</span></div>
           <div class="result-box"><b>How it can create revenue opportunity</b><span>${s.revenue}</span></div>
           <div class="result-box"><b>Where humans stay strongest</b><span>${s.human}</span></div>
+        </div>
+        <div class="solution-contact">
+          <span>Want this customized for your business?</span>
+          <a class="solution-link primary" href="${WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp INVENIO</a>
+          <a class="solution-link" href="mailto:invenio.ai.solutions@gmail.com">Email us</a>
         </div>`;
       panelsHost.appendChild(panel);
     });
@@ -1558,120 +1862,68 @@
       document.addEventListener(evt, () => videos.forEach(tryPlay), {once:true,passive:true});
     });
 
-    /* CAPABILITY PREVIEW */
-    const liveChat = Boolean(INVENIO_CHAT_ENDPOINT);
-    const chatBody = document.getElementById("chatBody");
-    const chatForm = document.getElementById("chatForm");
-    const chatInput = document.getElementById("chatInput");
-
-    const sessionId =
-      localStorage.getItem("invenio_session_id") ||
-      (crypto.randomUUID ? crypto.randomUUID() : "session-"+Date.now());
-    localStorage.setItem("invenio_session_id", sessionId);
-
-    function addBubble(text,type,small=""){
-      const el = document.createElement("div");
-      el.className = "chat-msg " + type;
-      el.textContent = text;
-      if(small){
-        const s = document.createElement("small");
-        s.textContent = small;
-        el.appendChild(s);
-      }
-      chatBody.appendChild(el);
-      chatBody.scrollTop = chatBody.scrollHeight;
-      return el;
-    }
-
-    function typingBubble(){
-      const el = document.createElement("div");
-      el.className = "chat-msg bot";
-      el.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
-      chatBody.appendChild(el);
-      chatBody.scrollTop = chatBody.scrollHeight;
-      return el;
-    }
-
-    function guidedReply(message){
-      const q = message.toLowerCase();
-      const m = markets[currentMarket];
-
-      if(q.includes("price") || q.includes("cost") || q.includes("pricing")){
-        return `For ${m.name}, the current indicative monthly scope shown on this site is ${m.price}. INVENIO does not force every business into a rigid package: the final quote depends on the exact workload, channels, volume, integrations, support and third-party usage.`;
-      }
-      if(q.includes("after hour") || q.includes("miss") || q.includes("call")){
-        return "INVENIO can be configured for inbound calls, missed-call recovery, approved outbound follow-up, reminders, qualification, bookings, routine service questions and human escalation. Voice quality, languages and concurrency depend on the selected telephony and voice providers.";
-      }
-      if(q.includes("admin") || q.includes("clerk") || q.includes("data") || q.includes("email")){
-        return "INVENIO can reduce repetitive office work by reading incoming requests, extracting information, updating CRM or records, creating routine outputs, routing tasks and triggering reminders or follow-up. Sensitive actions can remain approval-based.";
-      }
-      if(q.includes("lead") || q.includes("sales") || q.includes("follow")){
-        return "For leads and sales operations, INVENIO can respond quickly, qualify using your criteria, update CRM, trigger follow-up, re-engage suitable prospects and route sales-ready opportunities to a person. The goal is to reduce the number of good opportunities that simply go cold.";
-      }
-      if(q.includes("hr") || q.includes("candidate") || q.includes("interview")){
-        return "For HR, INVENIO can help with approved candidate questions, information collection, rule-based pre-screening steps, document requests, interview coordination and reminders. Hiring decisions and sensitive people matters should remain with humans.";
-      }
-      if(q.includes("popia") || q.includes("privacy") || q.includes("data")){
-        return "For South African deployments, INVENIO should be configured with POPIA-aware handling such as collecting only necessary information, controlling access, applying appropriate safeguards and keeping clear human/accountability processes. Compliance still depends on the client's actual use case, policies, providers and configuration.";
-      }
-      if(q.includes("language") || q.includes("arabic") || q.includes("zulu") || q.includes("xhosa") || q.includes("afrikaans")){
-        return `For ${m.name}, the deployment language options shown here are ${m.languages.join(", ")}. Actual text or voice language quality must be tested against the specific AI/voice provider before launch.`;
-      }
-      return "INVENIO is designed around the business problem rather than a single product. Tell us what is creating delay, repetitive work, missed enquiries, weak follow-up or unnecessary hiring pressure, and we can map the best starting point — including what should remain human.";
-    }
-
-    async function sendMessage(text){
-      const clean = (text || "").trim();
-      if(!clean) return;
-
-      addBubble(clean,"user");
-      chatInput.value = "";
-      chatInput.disabled = true;
-      const thinking = typingBubble();
-
-      if(!liveChat){
-        setTimeout(() => {
-          thinking.remove();
-          addBubble(guidedReply(clean),"bot","INVENIO capability preview");
-          chatInput.disabled = false;
-          chatInput.focus();
-        },520);
-        return;
-      }
-
+    /* REAL n8n CHAT — only initializes when a production Chat Trigger URL is supplied. */
+    async function initInvenioChat(){
+      const placeholder = document.getElementById("chatPlaceholder");
+      if(!INVENIO_CHAT_WEBHOOK_URL) return;
       try{
-        const response = await fetch(INVENIO_CHAT_ENDPOINT,{
-          method:"POST",
-          headers:{"Content-Type":"application/json"},
-          body:JSON.stringify({
-            message:clean,
-            sessionId,
-            source:"website",
-            market:currentMarket,
-            preferredLanguage:currentLanguage
-          })
+        const { createChat } = await import("https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js");
+        placeholder?.remove();
+        createChat({
+          webhookUrl: INVENIO_CHAT_WEBHOOK_URL,
+          target: "#n8n-chat",
+          mode: "fullscreen",
+          chatInputKey: "chatInput",
+          chatSessionKey: "sessionId",
+          loadPreviousSession: true,
+          showWelcomeScreen: false,
+          initialMessages: [
+            "Welcome to INVENIO AI.",
+            "Ask about our services, pricing, or tell me what repetitive work you want to reduce in your business."
+          ],
+          i18n: {
+            en: {
+              title: "INVENIO AI",
+              subtitle: "Powering Business Through Intelligence.",
+              footer: "",
+              getStarted: "Start a conversation",
+              inputPlaceholder: "Ask INVENIO AI…"
+            }
+          },
+          metadata: {
+            source: "invenioai.tech",
+            market: currentMarket
+          },
+          enableStreaming: false
         });
-        if(!response.ok) throw new Error("Chat request failed");
-        const data = await response.json();
-        const reply = data.reply || data.output || data.text || data.message || "I received that. Tell me a little more about the process you want to improve.";
-        thinking.remove();
-        addBubble(typeof reply === "string" ? reply : JSON.stringify(reply),"bot");
       }catch(err){
-        thinking.remove();
-        addBubble("I could not complete that live request right now. You can still use the contact form or WhatsApp to discuss the workload.","bot");
-      }finally{
-        chatInput.disabled = false;
+        console.error("INVENIO chat could not initialize", err);
       }
     }
+    initInvenioChat();
 
-    chatForm.addEventListener("submit", e => {
-      e.preventDefault();
-      sendMessage(chatInput.value);
+    document.querySelectorAll('a[href="#n8n-chat"],a[href="#live-ai"]').forEach(link => {
+      link.addEventListener("click", () => setTimeout(() => document.getElementById("n8n-chat")?.scrollIntoView({behavior:"smooth",block:"center"}), 80));
     });
 
-    document.querySelectorAll(".prompt-btn").forEach(btn => {
-      btn.addEventListener("click", () => sendMessage(btn.dataset.question));
+    /* OPTIONAL THIRD VIDEO: hide the story cleanly until the asset exists. */
+    document.querySelectorAll("video[data-optional-video]").forEach(video => {
+      video.addEventListener("error", () => video.closest(".optional-video-story")?.classList.add("hidden"), {once:true});
     });
+
+    /* SUBTLE POINTER LIFT — same location, no exaggerated parallax. */
+    if(matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+      const floaters = document.querySelectorAll(".ops-shell,.market-shell,.client-desk,.live-ai-shell");
+      floaters.forEach(el => {
+        el.addEventListener("pointermove", e => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX-r.left)/r.width-.5;
+          const y = (e.clientY-r.top)/r.height-.5;
+          el.style.transform = `translate3d(${x*2.5}px,${y*2.5-2}px,0)`;
+        });
+        el.addEventListener("pointerleave", () => el.style.transform = "");
+      });
+    }
 
     /* REVEAL */
     if("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches){
@@ -1690,30 +1942,3 @@
   </script>
 </body>
 </html>
-<link
-  href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"
-  rel="stylesheet"
-/>
-
-<script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-  createChat({
-    webhookUrl: 'https://guns-schools-exceed-considered.trycloudflare.com/webhook/3e3d45af-1577-4dcb-aff6-88ad046f3d87/chat',
-    mode: 'window',
-    showWelcomeScreen: false,
-    initialMessages: [
-      'Hi there! 👋',
-      'Welcome to INVENIO AI SOLUTIONS. How can I assist you?'
-    ],
-    i18n: {
-      en: {
-        title: 'INVENIO AI',
-        subtitle: 'Ask us anything about our AI solutions.',
-        footer: '',
-        getStarted: 'Start conversation',
-        inputPlaceholder: 'Type your message...'
-      }
-    }
-  });
-</script>
