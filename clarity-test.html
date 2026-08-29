@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>INVENIO AI SOLUTIONS — Clarity Test</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:#070807;
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* NAV */
+
+nav{
+    height:82px;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+    width:min(1180px,92%);
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-weight:800;
+    letter-spacing:.5px;
+    font-size:18px;
+}
+
+.logo span{
+    color:#b7ff38;
+}
+
+.nav-button{
+    border:1px solid rgba(183,255,56,.45);
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:650;
+    font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+    padding:100px 0 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:#94ff0020;
+    filter:blur(150px);
+    top:-400px;
+    left:50%;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid rgba(183,255,56,.22);
+    background:rgba(183,255,56,.05);
+    color:#caff77;
+    padding:7px 14px;
+    border-radius:100px;
+    font-size:13px;
+    margin-bottom:24px;
+    font-weight:650;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    background:#b7ff38;
+    border-radius:50%;
+    box-shadow:0 0 14px #b7ff38;
+}
+
+h1{
+    font-size:clamp(43px,6vw,79px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    max-width:1000px;
+    margin:auto;
+}
+
+h1 span{
+    color:#b7ff38;
+}
+
+.hero-copy{
+    max-width:830px;
+    margin:28px auto 0;
+    font-size:19px;
+    color:#b8beb8;
+    line-height:1.75;
+}
+
+.hero-copy strong{
+    color:#fff;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.primary{
+    background:#b7ff38;
+    color:#071000;
+    padding:14px 24px;
+    border-radius:9px;
+    font-weight:800;
+}
+
+.secondary{
+    border:1px solid rgba(255,255,255,.18);
+    padding:14px 24px;
+    border-radius:9px;
+    color:#e5e9e5;
+    font-weight:700;
+}
+
+/* SIMPLE EXPLANATION */
+
+.explanation{
+    padding:65px 0;
+}
+
+.section-label{
+    color:#b7ff38;
+    font-weight:750;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-title{
+    max-width:760px;
+    font-size:clamp(32px,4vw,49px);
+    letter-spacing:-1.5px;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.section-copy{
+    max-width:760px;
+    color:#969d96;
+    font-size:17px;
+}
+
+/* CARDS */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:45px;
+}
+
+.card{
+    border:1px solid rgba(255,255,255,.09);
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.015)
+    );
+    padding:27px;
+    border-radius:16px;
+    min-height:210px;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(183,255,56,.35);
+}
+
+.icon{
+    font-size:25px;
+    margin-bottom:19px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#949b94;
+    font-size:15px;
+    line-height:1.65;
+}
+
+/* BUSINESS FLOW */
+
+.flow-section{
+    padding:95px 0;
+}
+
+.flow{
+    margin-top:40px;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.flow-row{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.flow-row:last-child{
+    border-bottom:0;
+}
+
+.flow-number{
+    padding:24px;
+    color:#b7ff38;
+    font-weight:800;
+}
+
+.flow-content{
+    padding:24px;
+    border-left:1px solid rgba(255,255,255,.08);
+}
+
+.flow-content strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+.flow-content span{
+    color:#8f968f;
+}
+
+/* MESSAGE */
+
+.message{
+    margin:80px auto 100px;
+    padding:55px;
+    border-radius:24px;
+    background:
+        radial-gradient(circle at top right,#b7ff3815,transparent 40%),
+        #0c0e0c;
+    border:1px solid rgba(183,255,56,.18);
+    text-align:center;
+}
+
+.message h2{
+    font-size:clamp(31px,4vw,48px);
+    line-height:1.12;
+    letter-spacing:-1.4px;
+    max-width:850px;
+    margin:auto;
+}
+
+.message p{
+    color:#999f99;
+    max-width:720px;
+    margin:20px auto 0;
+    font-size:17px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:75px;
+    }
+
+    h1{
+        letter-spacing:-2px;
+    }
+
+    .flow-row{
+        grid-template-columns:70px 1fr;
+    }
+
+    .message{
+        padding:35px 20px;
+    }
+
+    .nav-button{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="logo">
+            INVENIO <span>AI SOLUTIONS</span>
+        </div>
+
+        <a class="nav-button" href="#services">
+            See what we automate
+        </a>
+    </div>
+</nav>
+
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            <span class="dot"></span>
+            AI BUSINESS AUTOMATION
+        </div>
+
+        <h1>
+            AI systems that handle the
+            <span>repetitive work</span>
+            slowing your business down.
+        </h1>
+
+        <p class="hero-copy">
+            INVENIO builds AI systems that can
+            <strong>answer calls and customer enquiries, qualify leads,
+            book appointments, follow up customers, update your CRM,
+            handle routine admin and connect your business systems</strong>
+            — automatically, 24/7.
+        </p>
+
+        <div class="buttons">
+            <a href="#services" class="primary">
+                See What We Automate
+            </a>
+
+            <a href="#how" class="secondary">
+                How It Works
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="explanation" id="services">
+
+<div class="container">
+
+    <div class="section-label">
+        WHAT INVENIO ACTUALLY DOES
+    </div>
+
+    <h2 class="section-title">
+        Give repetitive business work to AI.
+        Keep your people focused on work that needs people.
+    </h2>
+
+    <p class="section-copy">
+        We identify work that repeatedly consumes staff time,
+        then build connected AI systems to perform, coordinate
+        or assist with that work inside your business.
+    </p>
+
+
+    <div class="services">
+
+        <div class="card">
+            <div class="icon">☎</div>
+
+            <h3>AI Receptionist</h3>
+
+            <p>
+                Answers customer enquiries, captures information,
+                qualifies customers, books appointments and routes
+                requests without leaving people waiting.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">🎧</div>
+
+            <h3>AI Call Centre</h3>
+
+            <p>
+                AI voice agents can handle routine inbound and outbound
+                conversations, customer questions, qualification,
+                confirmations and follow-ups at scale.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">💬</div>
+
+            <h3>Website & WhatsApp AI</h3>
+
+            <p>
+                Turn customer conversations into useful actions:
+                answering questions, capturing leads, recommending
+                services, booking and following up.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">⚙</div>
+
+            <h3>Admin Automation</h3>
+
+            <p>
+                Automate repetitive office work including data entry,
+                notifications, document movement, internal requests,
+                emails and routine administrative processes.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">📈</div>
+
+            <h3>Sales & CRM Automation</h3>
+
+            <p>
+                Qualify incoming leads, update your CRM, trigger
+                follow-ups, remind sales teams and stop opportunities
+                from quietly being forgotten.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">🔗</div>
+
+            <h3>Connected AI Workflows</h3>
+
+            <p>
+                Connect your website, email, WhatsApp, CRM, calendar
+                and internal software so information moves between
+                systems automatically.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="flow-section" id="how">
+
+<div class="container">
+
+    <div class="section-label">
+        THE DIFFERENCE
+    </div>
+
+    <h2 class="section-title">
+        Not another chatbot.
+        A system that actually does work.
+    </h2>
+
+    <p class="section-copy">
+        The conversation is only the front door. Behind it, INVENIO can
+        connect AI to the systems your business already uses and trigger
+        real business processes.
+    </p>
+
+
+    <div class="flow">
+
+        <div class="flow-row">
+
+            <div class="flow-number">
+                01
+            </div>
+
+            <div class="flow-content">
+                <strong>A customer contacts your business</strong>
+                <span>
+                    Website, WhatsApp, phone, email or another channel.
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="flow-row">
+
+            <div class="flow-number">
+                02
+            </div>
+
+            <div class="flow-content">
+                <strong>AI understands what they need</strong>
+                <span>
+                    It answers questions, gathers information,
+                    qualifies the request and determines the next action.
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="flow-row">
+
+            <div class="flow-number">
+                03
+            </div>
+
+            <div class="flow-content">
+                <strong>The system takes action</strong>
+                <span>
+                    Book an appointment, update the CRM, notify staff,
+                    send information, create a task or trigger another workflow.
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="flow-row">
+
+            <div class="flow-number">
+                04
+            </div>
+
+            <div class="flow-content">
+                <strong>Your team steps in only when needed</strong>
+                <span>
+                    Routine work keeps moving automatically while
+                    people handle decisions, exceptions and high-value work.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<div class="container">
+
+    <div class="message">
+
+        <h2>
+            Start with one repetitive workload.
+            Build toward an AI-powered operation.
+        </h2>
+
+        <p>
+            INVENIO can automate one specific bottleneck or connect
+            multiple areas of your business into a coordinated AI system.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
